@@ -114,7 +114,7 @@
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <version>5.1.30</version>
+            <version>8.0.18</version>
         </dependency>
         <!-- 添加阿里巴巴连接池Druid支持 -->
         <dependency>
@@ -147,7 +147,12 @@
             <scope>test</scope>
         </dependency>
 
-
+<!--jsp重写-->
+        <dependency>
+            <groupId>com.googlecode.rapid-framework</groupId>
+            <artifactId>rapid-core</artifactId>
+            <version>4.0.5</version>
+        </dependency>
 
         <dependency>
             <groupId>commons-io</groupId>
