@@ -1,12 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>后台</title>
+    <title>首页</title>
     <meta name="description" content="这是一个 index 页面">
     <meta name="keywords" content="index">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -18,7 +19,7 @@
 </head>
 
 <body >
-    <script src="assets/js/theme.js"></script>
+    <script src="/js/theme.js"></script>
     <div class="am-g tpl-g">
      
      	<%@include file="slider.jsp" %>
@@ -31,9 +32,7 @@
                         <div class="page-header-heading"><span class="am-icon-home page-header-heading-icon"></span> 后台首页 <small>myBlog</small></div>
                         <p class="page-header-description">这是一段广告词。</p>
                     </div>
-                    <div class="am-u-lg-3 tpl-index-settings-button">
-                        <button type="button" class="page-header-button"><span class="am-icon-paint-brush"></span> 设置</button>
-                    </div>
+                   
                 </div>
 
             </div>
@@ -48,11 +47,9 @@
                             </div>
                             <div class="widget-statistic-body">
                                 <div class="widget-statistic-value">
-                                    8
+                                    ${requestScope.userSampList[0] }
                                 </div>
-                                <div class="widget-statistic-description">
-                                    本季度比去年多收入 <strong>2593元</strong> 人民币
-                                </div>
+                                
                                 <span class="widget-statistic-icon am-icon-credit-card-alt"></span>
                             </div>
                         </div>
@@ -65,11 +62,9 @@
                             </div>
                             <div class="widget-statistic-body">
                                 <div class="widget-statistic-value">
-                                    201
+                                    $${requestScope.userSampList[1] }
                                 </div>
-                                <div class="widget-statistic-description">
-                                    本季度比去年多收入 <strong>2593元</strong> 人民币
-                                </div>
+                                
                                 <span class="widget-statistic-icon am-icon-credit-card-alt"></span>
                             </div>
                         </div>
@@ -81,11 +76,9 @@
                             </div>
                             <div class="widget-statistic-body">
                                 <div class="widget-statistic-value">
-                                    5
+                                    ${requestScope.userSampList[2] }
                                 </div>
-                                <div class="widget-statistic-description">
-                                    本季度比去年多收入 <strong>2593元</strong> 人民币
-                                </div>
+                               
                                 <span class="widget-statistic-icon am-icon-support"></span>
                             </div>
                         </div>
@@ -116,26 +109,15 @@
                                     </thead>
                                     <tbody>
                                       
+                                      	<c:forEach var="rankInfo" varStatus="status" items="${requestScope.rankList }">
                                         <tr class="gradeX">
-                                            <td>1</td>
-                                            <td>王宽师</td>
-											<td>102</td>
-                                            <td>2016-09-23</td>        
+                                            <td><c:out value="${status.count }"></c:out></td>
+                                            <td><c:out value="${rankInfo.userName }"></c:out></td>
+											<td><c:out value="${rankInfo.checkCount }"></c:out></td>
+                                            <td><c:out value="${rankInfo.userLastTime }"></c:out></td>
                                         </tr>
-                                       
-									     <tr class="gradeX">
-                                            <td>2</td>
-                                            <td>王宽师</td>
-											<td>12</td>
-                                            <td>2016-09-26</td>        
-                                        </tr>
-										
-										  <tr class="gradeX">
-                                            <td>3</td>
-                                            <td>王宽师</td>
-											<td>10</td>
-                                            <td>2016-09-26</td>        
-                                        </tr>
+                                       </c:forEach>
+									   
                                         <!-- more data -->
                                     </tbody>
 									
@@ -191,15 +173,16 @@
                                             </tr>
                                         </thead>
                                         <tbody>
+                                        	<c:forEach var="info" items="${requestScope.dialy}">
                                             <tr class="gradeX">
-                                                <td>用户登录</td>
-                                                <td>张鹏飞</td>
-												<td>58.194.168.63</td>
-												<td>POST /admin/getLogin</td>
-                                                <td>2016-09-26</td>
+                                                <td><c:out value="${ info.message}"></c:out></td>
+                                                <td><c:out value="${ info.nickname}"></c:out></td>
+												<td><c:out value="${ info.address}"></c:out></td>
+												<td><c:out value="${ info.detail}"></c:out></td>
+                                                <td><c:out value="${ info.time}"></c:out></td>
                                                
                                             </tr>
-                                       
+                                       </c:forEach>
 
 
                                             <!-- more data -->
@@ -217,6 +200,11 @@
     </div>
   
 
+   <script>
+
+     // 侧边菜单
+  
+        </script>
 </body>
 
 </html>

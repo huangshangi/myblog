@@ -18,7 +18,7 @@
 </head>
 
 <body data-type="widgets">
-    <script src="assets/js/theme.js"></script>
+    <script src="/js/theme.js"></script>
     <div class="am-g tpl-g">
     <%@include file="slider.jsp" %>
         <!-- 内容区域 -->
