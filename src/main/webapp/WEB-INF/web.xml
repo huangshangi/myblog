@@ -69,7 +69,7 @@
         </init-param>
 
         <multipart-config>
-            <location>/c/uploads</location>
+            <location>C:/upload</location>
             <max-file-size>52428800</max-file-size>
             <max-request-size>52428800</max-request-size>
         </multipart-config>

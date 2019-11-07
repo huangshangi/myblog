@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper>
+    <resultMap id="BaseResultMap" type="com.huangshangi.myblog.entity.User">
+        <id column="userId" property="userId" jdbcType="INTEGER"/>
+        <result column="userName" property="userName" jdbcType="VARCHAR"/>
+        <result column="userPass" property="userPass" jdbcType="VARCHAR"/>
+        <result column="userEmail" property="userEmail" jdbcType="VARCHAR"/>
+        <result column="userImage" property="userImage" jdbcType="VARCHAR"/>
+        <result column="userIp" property="userIp" jdbcType="VARCAHR"/>
+        <result column="userRegisterTime" property="userRegisterTime" jdbcType="DATE"/>
+        <result column="userLastTime" property="userLastTime" jdbcType="DATE"/>
+        <result column="checkCount" property="checkCount" jdbcType="INTEGER"/>
+        <result column="commentCount" property="commentCount" jdbcType="INTEGER"/>
+        <result column="articleCount" property="articleCount" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <sql id="tn">
+        user
+    </sql>
+
+    <sql id="baseList">
+        userId,userName,userPass,userEmail,userImage,userIp,userRegisterTime,userLastTime,checkCount,commentCount,articleCount
+
+    </sql>
+
+    <select id="getUserList" resultType="com.huangshangi.myblog.entity.User">
+        select
+        <include refid="baseList"></include>
+        from
+        user
+        order  by userLastTime
+        limit #{sum}
+
+    </select>
+
+    <select id="getUserByNameOrEmail" resultType="com.huangshangi.myblog.entity.User">
+        select
+        <include refid="baseList"></include>
+        from
+        user
+        where userName=#{string} or userEmail=#{string }
+    </select>
+
+    <select id="getUserByName" resultType="com.huangshangi.myblog.entity.User">
+        select
+        <include refid="baseList"></include>
+        from
+        user
+        where userName=#{name}
+    </select>
+
+    <select id="getUserByEmail" resultType="com.huangshangi.myblog.entity.User">
+        select
+        <include refid="baseList"></include>
+        from
+        user
+        where userEmail=#{email }
+    </select>
+
+    <select id="getUserOrderArticle" resultType="com.huangshangi.myblog.entity.User">
+        select
+        <include refid="baseList"></include>
+        from
+        <include refid="tn"></include>
+        where
+        userId
+        in
+        (
+            select articleUserId from article group by articleUserId limit #{sum}
+        )
+    </select>
+    <delete id="deleteByNameOrEmail" parameterType="java.lang.String">
+        delete
+        from
+        <include refid="tn"></include>
+        where userName=#{string} or userEmail=#{string }
+    </delete>
+
+    <insert id="insertUser" parameterType="com.huangshangi.myblog.entity.User" useGeneratedKeys="true"
+            keyProperty="userId">
+        insert into
+        <include refid="tn"></include>
+        (userName,userPass,userEmail,userImage,userIp,userRegisterTime,userLastTime)
+        values
+        (#{userName},#{userPass},#{userEmail},#{userImage},#{userIp},#{userRegisterTime},
+        #{userLastTime})
+
+    </insert>
+
+    <update id="updateUser" parameterType="com.huangshangi.myblog.entity.User">
+        update
+        <include refid="tn"></include>
+        <set>
+
+            userName=#{userName},
+            userEmail=#{userEmail},
+            userImage=#{userImage},
+            userIp=#{userIp},
+            userRegisterTime=#{userRegisterTime},
+            userLastTime=#{userLastTime}
+
+        </set>
+        where  userId=#{userId}
+    </update>
+</mapper>

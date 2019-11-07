@@ -31,7 +31,7 @@ public class AdminController {
 
         User user= (User) request.getSession().getAttribute("user");
         //获取用户简略信息(文章数 游览量 评论量)
-        List<Integer>userSampList=articleService.getUserSampInfos(user.getUserName());
+        List<Integer>userSampList=articleService.getUserSampInfos(user.getUserId());
 
         //获取排行榜(基于文章发表数)
         List<User>rankList=userService.getUserList();

@@ -227,7 +227,7 @@
 		    $('#newArticle').on('click',function(){
 		    	//用户将要进行发表新文章的操作
 		    	console.log('发表新文章');
-		    	
+				window.location.href="/article/edit";
 		    	
 		    });
 		    
@@ -263,7 +263,18 @@
 				list.push($(this).val())
 			})
 			//list中存放article ids 使用ajax删除
-			
+			$.ajax({
+				type:'POST',
+				url:'article/deletes',
+				data:JSON.stringify(list),
+				success:function (result) {
+					console.log(result)
+				},
+				error:function (e) {
+					console.log(e.status)
+					console.log(e.responseText)
+				}
+			})
 		}
 			    
 	        </script>

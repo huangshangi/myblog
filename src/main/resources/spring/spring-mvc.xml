@@ -31,7 +31,7 @@
 
 
 <!--    文件上传解析器-->
-    <bean id="multipartResolver" class="org.springframework.web.multipart.support.StandardServletMultipartResolver"></bean>
+    <bean id="multipartResolver" class="org.springframework.web.multipart.support.StandardServletMultipartResolver"/>
 
 
 

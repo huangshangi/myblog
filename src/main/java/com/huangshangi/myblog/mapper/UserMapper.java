@@ -11,11 +11,11 @@ public interface UserMapper {
 
     /*
         获取用户列表()
-        sum->用户列表长度 根据文章
+        sum->用户列表长度 根据用户注册时间
      */
     List<User>getUserList(@Param(value = "sum") Integer sum);
 
-    //根据用户id或邮箱地址获取用户个人信息
+    //根据用户name或邮箱地址获取用户个人信息
     User getUserByNameOrEmail(@Param(value="string") String string);
 
     //根据用户name获取用户个人信息
@@ -24,6 +24,9 @@ public interface UserMapper {
 
     //根据用户email获取个人信息
     User getUserByEmail(@Param(value="email") String email);
+
+    //获取文章排名前sum的用户
+    List<User>getUserOrderArticle(@Param(value="sum")Integer sum);
 
     //删除用户
     int deleteByNameOrEmail(@Param(value="string") String string);

@@ -7,7 +7,7 @@ public class Article implements Serializable {
 
     private int articleId;
 
-    private String articleUserId;
+    private int articleUserId;
 
     private String articleTitle;
 
@@ -23,10 +23,13 @@ public class Article implements Serializable {
 
     private String articleSummary;
 
+    private int articleStatus;
+
     public Article() {
     }
 
-    public Article(int articleId, String articleUserId, String articleTitle, String articleContent, int articleCommentCount, int articleCheckCount, Date articleCreateTime, Date articleUpdateTime, String articleSummary) {
+    public Article(int articleId, int articleUserId, String articleTitle, String articleContent, int articleCommentCount, int articleCheckCount,
+                   Date articleCreateTime, Date articleUpdateTime, String articleSummary,int articleStatus) {
         this.articleId = articleId;
         this.articleUserId = articleUserId;
         this.articleTitle = articleTitle;
@@ -36,6 +39,7 @@ public class Article implements Serializable {
         this.articleCreateTime = articleCreateTime;
         this.articleUpdateTime = articleUpdateTime;
         this.articleSummary = articleSummary;
+        this.articleStatus=articleStatus;
     }
 
     public int getArticleId() {
@@ -46,11 +50,11 @@ public class Article implements Serializable {
         this.articleId = articleId;
     }
 
-    public String getArticleUserId() {
+    public int getArticleUserId() {
         return articleUserId;
     }
 
-    public void setArticleUserId(String articleUserId) {
+    public void setArticleUserId(int articleUserId) {
         this.articleUserId = articleUserId;
     }
 
@@ -108,5 +112,13 @@ public class Article implements Serializable {
 
     public void setArticleSummary(String articleSummary) {
         this.articleSummary = articleSummary;
+    }
+
+    public int getArticleStatus() {
+        return articleStatus;
+    }
+
+    public void setArticleStatus(int articleStatus) {
+        this.articleStatus = articleStatus;
     }
 }

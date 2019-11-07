@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.huangshangi.myblog.mapper.ArticleMapper">
+    <resultMap id="BaseResultMap" type="com.huangshangi.myblog.entity.Article">
+        <id column="article_id" property="articleId" jdbcType="INTEGER"/>
+        <result column="articleUserId" property="articleUserId" jdbcType="INTEGER"/>
+        <result column="articleTitle" property="articleTitle" jdbcType="VARCHAR"/>
+        <result column="articleContent" property="articleContent" jdbcType="CLOB"/>
+        <result column="articleSummary" property="articleSummary" jdbcType="VARCHAR"/>
+        <result column="articleCheckCount" property="articleCheckCount" jdbcType="INTEGER"/>
+        <result column="articleCommentCount" property="articleCommentCount" jdbcType="INTEGER"/>
+        <result column="articleCreateTime" property="articleCreateTime" jdbcType="TIMESTAMP"/>
+        <result column="articleUpdateTime" property="articleUpdateTime" jdbcType="TIMESTAMP"/>
+        <result column="articleStatus" property="articleStatus" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <sql id="tn">article</sql>
+
+    <sql id="baseList">
+    articleId, articleUserId, articleTitle, articleContent,articleSummary, articleCheckCount, articleCommentCount, articleCreateTime,
+    articleUpdateTime
+    </sql>
+
+
+    <insert id="insertArticle" parameterType="com.huangshangi.myblog.entity.Article" useGeneratedKeys="true"
+            keyProperty="articleId">
+        insert into
+        <include refid="tn"/>
+        (articleUserId, articleTitle,
+        articleCheckCount, articleCommentCount,
+        articleCreateTime, articleUpdateTime,
+        articleContent, articleSummary)
+        values (#{articleUserId,jdbcType=INTEGER}, #{articleTitle,jdbcType=VARCHAR},
+        #{articleCheckCount,jdbcType=INTEGER},
+        #{articleCommentCount,jdbcType=INTEGER},
+        #{articleCreateTime,jdbcType=TIMESTAMP},
+        #{articleUpdateTime,jdbcType=TIMESTAMP},
+        #{articleContent,jdbcType=CLOB}, #{articleSummary,jdbcType=VARCHAR})
+    </insert>
+
+
+    <select id="getArticleById" parameterType="java.lang.Integer" resultType="com.huangshangi.myblog.entity.Article">
+
+        SELECT
+        <include refid="baseList"/>
+        from
+        <include refid="tn"></include>
+
+       where articleId=#{articleId,jdbcType=INTEGER}
+
+    </select>
+
+    <select id="getArticles" parameterType="java.lang.Integer" resultType="com.huangshangi.myblog.entity.Article">
+        SELECT
+        <include refid="baseList"/>
+        from
+        <include refid="tn"></include>
+
+        where articleUserId=#{id}
+
+        order by articleUpdateTime desc
+
+    </select>
+
+    <select id="getArticlesByPage" parameterType="java.lang.Integer" resultType="com.huangshangi.myblog.entity.Article">
+        SELECT
+        <include refid="baseList"/>
+        from
+        <include refid="tn"></include>
+
+        where articleUserId=#{id}
+
+        order by articleUpdateTime desc limit #{page}*#{pageSize},#{pageSize}
+
+    </select>
+
+    <update id="updateArticle" parameterType="com.huangshangi.myblog.entity.Article">
+        update
+        <include refid="tn"/>
+        <set>
+            articleUserId = #{articleUserId,jdbcType=INTEGER},
+            articleTitle = #{articleTitle,jdbcType=VARCHAR},
+            articleCheckCount = #{articleViewCount,jdbcType=INTEGER},
+            articleCommentCount = #{articleCommentCount,jdbcType=INTEGER},
+            articleCreateTime = #{articleCreateTime,jdbcType=TIMESTAMP},
+            articleUpdateTime = #{articleUpdateTime,jdbcType=TIMESTAMP},
+            articleContent = #{articleContent,jdbcType=LONGVARCHAR},
+            articleSummary = #{articleSummary,jdbcType=VARCHAR}
+
+        </set>
+        where articleId = #{articleId,jdbcType=INTEGER}
+    </update>
+
+    <select id="getArticleCountById" resultType="java.lang.Integer">
+
+        select count(*)
+        from
+        <include refid="tn"></include>
+        where
+        articleUserId=#{id}
+
+
+    </select>
+
+    <select id="getArticleCheckCountById" resultType="java.lang.Integer">
+
+        select count(articleCheckCount)
+        from
+        <include refid="tn"></include>
+        where
+        articleUserId=#{id}
+
+
+    </select>
+
+    <select id="getArticleCommentCountById" resultType="java.lang.Integer">
+
+        select count(articleCommentCount)
+        from
+        <include refid="tn"></include>
+        where
+        articleUserId=#{id}
+
+
+    </select>
+
+    <update id="updateArticleCheckCount" parameterType="java.lang.Integer">
+        update
+        <include refid="tn"></include>
+        <set>
+            articleCheckCount=articleCheckCount+1
+        </set>
+
+        <where>
+            articleId=#{articleId}
+        </where>
+
+    </update>
+
+
+    <update id="updateArticleCommentCount" parameterType="java.lang.Integer">
+        update
+        <include refid="tn"></include>
+        <set>
+            articleCommentCount=articleCommentCount+1
+        </set>
+
+        <where>
+            articleId=#{articleId}
+        </where>
+
+    </update>
+
+    <delete id="deleteArticleById" parameterType="java.lang.Integer">
+        delete
+        from
+        <include refid="tn"></include>
+        where
+        articleId=#{id}
+
+    </delete>
+
+    <delete id="deleteArticleByIds" parameterType="java.lang.String">
+
+        delete
+        from
+        <include refid="tn"></include>
+        where
+        articleId in #{ids}
+    </delete>
+</mapper>
