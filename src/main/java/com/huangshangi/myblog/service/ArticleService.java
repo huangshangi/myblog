@@ -15,6 +15,11 @@ public interface ArticleService {
     //根据用户id获取某个用户文章信息
     List<Article>getArticlesByName(int id,int page,int pageSize);
 
+    //根据文章id获取某篇文章
+    Article getArticleById(int id);
+
+    List<Article>getArticlesBySign(@Param(value = "id")int id,@Param(value = "sign")int sign,@Param(value = "key")String key);
+
     //批量删除信息(json 数据)
     int deleteArticlesByIds(ArrayList<Integer> ids);
 

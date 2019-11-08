@@ -26,4 +26,9 @@ public class UserServiceImpl implements UserService {
         List<User>list=userMapper.getUserOrderArticle(3);
         return list;
     }
+
+    @Override
+    public User getUserInfo(int id) {
+        return null;
+    }
 }

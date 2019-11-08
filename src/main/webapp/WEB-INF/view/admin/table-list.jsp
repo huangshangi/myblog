@@ -56,17 +56,17 @@
 							<div class="am-u-sm-12 am-u-md-6 am-u-lg-3">
                                     <div class="am-form-group tpl-table-list-select">
                                         <select data-am-selected="{btnSize: 'sm'}">
-											  <option value="option1"  disabled="">搜索范围</option>
-											  <option value="option2" selected >标题</option>
-											  <option value="option3">内容</option>
+											  <option   disabled="">搜索范围</option>
+											  <option value="0" selected >标题</option>
+											  <option value="1">内容</option>
 										</select>
                                     </div>		
                             </div>
                                 <div class="am-u-sm-12 am-u-md-12 am-u-lg-3">
                                     <div class="am-input-group am-input-group-sm tpl-form-border-form cl-p">
-                                        <input type="text" class="am-form-field ">
+                                        <input type="text" class="am-form-field " placeholder="请输入关键词">
                                         <span class="am-input-group-btn">
-            <button class="am-btn  am-btn-default am-btn-success tpl-table-list-field am-icon-search" type="button"></button>
+            <button class="am-btn  am-btn-default am-btn-success tpl-table-list-field am-icon-search" type="button" onclick="findArticle()"></button>
           </span>
                                     </div>
                                 </div>
@@ -123,14 +123,14 @@
 		                                                </td>
 		                                            </tr>
                                         <c:choose>
-                                        	<c:when test="${requestScope.articles==null }">
+                                        	<c:when test="${articles==null }">
 	                                        	<tr>
 													<th colspan="8" style="text-align: center">暂无数据</th>
 												</tr>
 											</c:when>
 											
 											<c:otherwise>
-	                                        	<c:forEach items="${requestScope.articles }" var="item">
+	                                        	<c:forEach items="${articles }" var="item">
 	                                        	 		<input class="itemId" value="${item.articleId}" type="hidden"/>
 		                                            <tr class="gradeX">	                                           
 														<td><input value="${item.articleId}" type="checkbox"/></td>
@@ -140,8 +140,8 @@
 		                                                <td><c:out value="${item.createTime }"></c:out></td>
 		                                                <td>
 		                                                    <div class="tpl-table-black-operation">
-		                                                        <a href="javascript:;">
-		                                                            <i class="am-icon-pencil"></i> 编辑
+		                                                        <a href="javascript:;" onclick="editArticle(${item.articleId})">
+		                                                            <i class="am-icon-pencil" ></i> 编辑
 		                                                        </a>
 		                                                        <a href="javascript:;" class="tpl-table-black-operation-del" onclick="deleteArticle(${item.articleId})">
 		                                                            <i class="am-icon-trash"></i> 删除
@@ -227,21 +227,43 @@
 		    $('#newArticle').on('click',function(){
 		    	//用户将要进行发表新文章的操作
 		    	console.log('发表新文章');
-				window.location.href="/article/edit";
+				window.location.href="/article/newArticle";
 		    	
 		    });
 		    
-		    $('#deleteActicles').on('click',function(){
-		    	//批量删除
-		    	console.log('用户将要进行批量删除操作');
-		    });
-    	
 
     	});
-			  
+
+		function findArticle() {
+			var type=$('div.am-u-sm-12 div.tpl-table-list-select select').val();
+			var key=$('div.am-u-sm-12 div.am-input-group input').val();
+			var data={'type':type,'key':key};
+			if(!key){
+				layer.alert('关键词不能为空!');
+				return
+			}
+			$.ajax({
+				type:'POST',
+				url:'article/find',
+				data:JSON.stringify(data),
+				success:function (result) {
+					console.log(result)
+				},
+				error:function (e) {
+					console.log(e.status)
+					console.log(e.responseText)
+				}
+			})
+
+		}
+
+    	//编辑文章
+		function editArticle(value){
+
+		}
     
     	
-    	//批量删除文章系列操作
+    	//删除文章系列操作
     	//1.全部选择 checkbox
     	$('div.am-u-sm-12 table thead tr th input').on('click',function(){
     		
@@ -254,6 +276,18 @@
     	//2.删除单个 article
     	function deleteArticle(value) {
 			//value代表删除的article id 使用ajax删除
+			$.ajax({
+				type:'POST',
+				url:'article/delete',
+				data:value,
+				success:function (result) {
+					console.log(result)
+				},
+				error:function (e) {
+					console.log(e.status)
+					console.log(e.responseText)
+				}
+			})
 		}
     	//3.执行批量选择按钮
     	function deleteArticles() {

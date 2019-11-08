@@ -5,6 +5,7 @@ import com.huangshangi.myblog.entity.User;
 import com.huangshangi.myblog.service.ArticleService;
 import com.huangshangi.myblog.service.UserService;
 import org.json.JSONArray;
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -61,8 +62,8 @@ public class BackArticleController {
     }
 
 
-    @RequestMapping(value = "/article/edit")
-    public String editArticle(){
+    @RequestMapping(value = "/article/newArticle")
+    public String newArticle(){
 
         return "admin/newArticle";
     }
@@ -72,8 +73,30 @@ public class BackArticleController {
     public void submitArticle(@RequestBody Article article){
 
         articleService.submitArticle(article);
+    }
 
+    @RequestMapping(value = "/article/edit",method = RequestMethod.POST)
+    public String editArticle(@RequestParam(value = "id") int id,Model model){
 
+        Article article=articleService.getArticleById(id);
+        model.addAttribute("article",article);
+
+        return "admin/newArticle";
+    }
+
+    @RequestMapping(value = "/article/find",method = RequestMethod.POST)
+    public String findArticles(HttpServletRequest request,@RequestBody String param,Model model){
+
+        User user=(User)request.getSession().getAttribute("user");
+        JSONObject jsonObject=new JSONObject(param);
+
+        int sign=(int)jsonObject.get("sign");
+
+        String key=(String)jsonObject.get("key");
+
+        List<Article>articleList=articleService.getArticlesBySign(user.getUserId(),sign,key);
+        model.addAttribute("articleList",articleList);
+        return "admin/table-list";
     }
 
 

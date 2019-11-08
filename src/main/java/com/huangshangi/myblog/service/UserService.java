@@ -13,4 +13,7 @@ public interface UserService {
 
     //获取新注册用户信息表(取最新3条)
     List<User>getRegisterList();
+
+    //根据用户id查询用户信息
+    User getUserInfo(int id);
 }

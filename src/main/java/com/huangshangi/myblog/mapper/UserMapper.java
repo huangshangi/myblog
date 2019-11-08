@@ -21,6 +21,8 @@ public interface UserMapper {
     //根据用户name获取用户个人信息
     User getUserByName(@Param(value="name") String name);
 
+    //根据用户name获取用户个人信息
+    User getUserById(@Param(value="id") int id);
 
     //根据用户email获取个人信息
     User getUserByEmail(@Param(value="email") String email);

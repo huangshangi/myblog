@@ -47,7 +47,7 @@
                             </div>
                             <div class="widget-statistic-body">
                                 <div class="widget-statistic-value">
-                                    ${requestScope.userSampList[0] }
+                                    ${userSampList[0] }
                                 </div>
                                 
                                 <span class="widget-statistic-icon am-icon-credit-card-alt"></span>
@@ -62,7 +62,7 @@
                             </div>
                             <div class="widget-statistic-body">
                                 <div class="widget-statistic-value">
-                                    $${requestScope.userSampList[1] }
+                                    $${userSampList[1] }
                                 </div>
                                 
                                 <span class="widget-statistic-icon am-icon-credit-card-alt"></span>
@@ -76,7 +76,7 @@
                             </div>
                             <div class="widget-statistic-body">
                                 <div class="widget-statistic-value">
-                                    ${requestScope.userSampList[2] }
+                                    ${userSampList[2] }
                                 </div>
                                
                                 <span class="widget-statistic-icon am-icon-support"></span>
@@ -109,7 +109,7 @@
                                     </thead>
                                     <tbody>
                                       
-                                      	<c:forEach var="rankInfo" varStatus="status" items="${requestScope.rankList }">
+                                      	<c:forEach var="rankInfo" varStatus="status" items="${rankList }">
                                         <tr class="gradeX">
                                             <td><c:out value="${status.count }"></c:out></td>
                                             <td><c:out value="${rankInfo.userName }"></c:out></td>
@@ -173,7 +173,7 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                        	<c:forEach var="info" items="${requestScope.dialy}">
+                                        	<c:forEach var="info" items="${dialy}">
                                             <tr class="gradeX">
                                                 <td><c:out value="${ info.message}"></c:out></td>
                                                 <td><c:out value="${ info.nickname}"></c:out></td>

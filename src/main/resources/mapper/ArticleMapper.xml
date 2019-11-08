@@ -74,6 +74,15 @@
 
     </select>
 
+    <select id="getArticlesBySign" resultType="com.huangshangi.myblog.entity.Article">
+        select
+        <include refid="baseList"></include>
+        from
+        <include refid="tn"></include>
+
+        where articleUserId=#{id}
+    </select>
+
     <update id="updateArticle" parameterType="com.huangshangi.myblog.entity.Article">
         update
         <include refid="tn"/>

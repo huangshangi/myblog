@@ -68,13 +68,7 @@
     </header>
 
     <div id="test-editormd">
-                <textarea style="display:none;">### Settings
-
-					```javascript
-					var testEditor = editormd("test-editormd", {
-					    autoHeight : true
-					});
-					```
+                <textarea style="display:none;">${article.articleContent}
 				</textarea>
     </div>
 </div>

@@ -11,6 +11,9 @@
       </list>
     </option>
   </component>
+  <component name="ProjectPlainTextFileTypeManager">
+    <file url="file://$PROJECT_DIR$/src/main/resources/mapper/CommentMapper" />
+  </component>
   <component name="ProjectResources">
     <resource url="http://mybatis.org/dtd/mybatis-3-config.dtd" location="$USER_HOME$/.IntelliJIdea2019.1/system/extResources/69c70a2f_mybatis-3-config.dtd" />
   </component>

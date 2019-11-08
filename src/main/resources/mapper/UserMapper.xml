@@ -50,6 +50,14 @@
         where userName=#{name}
     </select>
 
+    <select id="getUserById" resultType="com.huangshangi.myblog.entity.User">
+        select
+        <include refid="baseList"></include>
+        from
+        user
+        where userName=#{id}
+    </select>
+
     <select id="getUserByEmail" resultType="com.huangshangi.myblog.entity.User">
         select
         <include refid="baseList"></include>

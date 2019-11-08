@@ -54,4 +54,11 @@ public class ArticleServiceImpl implements ArticleService {
         articleMapper.insertArticle(article);
         return 0;
     }
+
+    @Override
+    public Article getArticleById(int id) {
+
+        Article article=articleMapper.getArticleById(id);
+        return article;
+    }
 }

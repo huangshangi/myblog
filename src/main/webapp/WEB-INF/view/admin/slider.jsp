@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-
+    <link rel="stylesheet" href="/plugin/layui/css/layui.css"  media="all">
 
 </head>
 <body>
@@ -35,7 +35,7 @@
                     <ul>
                         <!-- 欢迎语 -->
                         <li class="am-text-sm tpl-header-navbar-welcome">
-                            <a href="javascript:;">欢迎你, <span><%= session.getAttribute("nickname")%></span> </a>
+                            <a href="javascript:;">欢迎你, <span>${sessionScope.user.userName}</span> </a>
                         </li>
 
                
@@ -124,6 +124,7 @@
           
             </ul>
         </div>
+ <script src="/plugin/layui/layui.js" charset="utf-8"></script>
 	   <script>
 	
 		     // 侧边菜单
@@ -149,9 +150,13 @@
 		
 			    //退出操作
 			    $('#logout').on('click',function(){
-			    	console.log('you have logout')
-			    	//重定向至logout
-			    })
+                    layer.confirm('你确定要退出吗?', function(index){
+                        //do something
+                        if(index)
+                            window.location.href="/login";
+                        layer.close(index);
+                    });
+                })
 	        
 			    
 			    $('.tpl-skiner-toggle').on('click', function() {
