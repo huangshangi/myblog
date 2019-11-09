@@ -26,8 +26,28 @@ public class ForeArticleController {
         Article article=articleService.getArticleById(id);
         User user=userService.getUserInfo(article.getArticleUserId());
 
+        //用户查看的博客具体内容
         model.addAttribute("article",article);
+
+        //博客拥有者信息
         model.addAttribute("articleUser",user);
+
+        //获取上一篇博客信息
+        model.addAttribute("preArticle",articleService.getPreArticle(id));
+        //获取下一篇博客信息
+        model.addAttribute("nextArticle",articleService.getNextArticle(id));
+        //获取文章排行信息
+        model.addAttribute("rankList",articleService.getRankList());
+        //获取本栏推荐信息
+        model.addAttribute("recommendList",articleService.getRecommendList());
+        //获取文章推荐信息
+        model.addAttribute("headRecommendList",articleService.getHeadRecommendList());
+        //随便看看界面
+        model.addAttribute("randomList",articleService.getRandomList());
+
+        //获取评论列表(json)
+        model.addAttribute("commentList",articleService.getCommentList(id));
+
         return "fore/checkArticle";
     }
 }

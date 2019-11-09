@@ -16,6 +16,24 @@ public interface ArticleMapper {
     //根据文章id获取某篇文章
     Article getArticleById(@Param(value = "articleId") Integer articleId);
 
+    //获取前一篇文章
+    Article getPreArticle(@Param(value = "articleId")int articleId);
+
+    //获取后一篇文章
+    Article getNextArticle(@Param(value = "articleId")int articleId);
+
+    //获取文章排行
+    List<Article> getRankArticle();
+
+    //获取优质好文
+    List<Article>getGoodArticles();
+
+    //获取本栏推荐
+    List<Article>getRecommendArticles(@Param(value="id") int id);
+
+    //获取随便看看
+    List<Article>getRandomArticles();
+
     //获取某位用户所有文章
     List<Article>getArticles(@Param(value="id") String id);
 

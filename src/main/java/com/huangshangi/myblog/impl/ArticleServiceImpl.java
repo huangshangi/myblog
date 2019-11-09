@@ -61,4 +61,44 @@ public class ArticleServiceImpl implements ArticleService {
         Article article=articleMapper.getArticleById(id);
         return article;
     }
+
+    @Override
+    public List<Article> getArticlesBySign(int id, int sign, String key) {
+        return null;
+    }
+
+    @Override
+    public Article getPreArticle(int id) {
+        return articleMapper.getPreArticle(id);
+    }
+
+    @Override
+    public Article getNextArticle(int id) {
+        return articleMapper.getNextArticle(id);
+    }
+
+    @Override
+    public List<Article> getRankList() {
+        return null;
+    }
+
+    @Override
+    public List<Article> getRecommendList() {
+        return null;
+    }
+
+    @Override
+    public List<Article> getHeadRecommendList() {
+        return null;
+    }
+
+    @Override
+    public List<Article> getRandomList() {
+        return null;
+    }
+
+    @Override
+    public String getCommentList(int id) {
+        return null;
+    }
 }

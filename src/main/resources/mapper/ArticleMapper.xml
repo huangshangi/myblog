@@ -50,6 +50,25 @@
 
     </select>
 
+    <select id="getPreArticle" parameterType="java.lang.Integer" resultMap="com.huangshangi.myblog.entity.Article">
+        select
+        <include refid="baseList"></include>
+        from
+        <include refid="tn"></include>
+
+        where articleId &lt; ${articleId} order by articleId desc limit 1
+    </select>
+
+    <select id="getNextArticle" parameterType="java.lang.Integer" resultMap="com.huangshangi.myblog.entity.Article">
+        select
+        <include refid="baseList"></include>
+        from
+        <include refid="tn"></include>
+
+        where articleId &gt; ${articleId} order by articleId asc limit 1
+    </select>
+
+
     <select id="getArticles" parameterType="java.lang.Integer" resultType="com.huangshangi.myblog.entity.Article">
         SELECT
         <include refid="baseList"/>
@@ -61,6 +80,56 @@
         order by articleUpdateTime desc
 
     </select>
+
+    <select id="getGoodArticles"  resultType="com.huangshangi.myblog.entity.Article">
+        SELECT
+        <include refid="baseList"/>
+        from
+        <include refid="tn"></include>
+
+
+
+        order by articleCommentCount desc limit 8
+
+    </select>
+
+    <select id="getRankArticle" resultType="com.huangshangi.myblog.entity.Article">
+        SELECT
+        <include refid="baseList"/>
+        from
+        <include refid="tn"></include>
+
+
+
+        order by articleCheckCount desc limit 8
+
+    </select>
+
+    <select id="getRandomArticles"  resultType="com.huangshangi.myblog.entity.Article">
+        SELECT
+        <include refid="baseList"/>
+        from
+        <include refid="tn"></include>
+
+
+
+        order by RAND() limit 4
+
+    </select>
+
+    <select id="getRecommendArticles"  parameterType="java.lang.Integer" resultType="com.huangshangi.myblog.entity.Article">
+        SELECT
+        <include refid="baseList"/>
+        from
+        <include refid="tn"></include>
+
+        where articleStatus=#{id}
+
+        order by articleCheckCount desc limit 8
+
+    </select>
+
+
 
     <select id="getArticlesByPage" parameterType="java.lang.Integer" resultType="com.huangshangi.myblog.entity.Article">
         SELECT
