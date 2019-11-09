@@ -23,16 +23,16 @@ public interface ArticleMapper {
     Article getNextArticle(@Param(value = "articleId")int articleId);
 
     //获取文章排行
-    List<Article> getRankArticle();
+    List<Article> getRankArticles();
 
     //获取优质好文
     List<Article>getGoodArticles();
 
     //获取本栏推荐
-    List<Article>getRecommendArticles(@Param(value="id") int id);
+    List<Article>getHeadRecommendArticles(@Param(value="id") int id);
 
     //获取随便看看
-    List<Article>getRandomArticles();
+    List<Article>getRandomArticles(@Param("count")int count);
 
     //获取某位用户所有文章
     List<Article>getArticles(@Param(value="id") String id);

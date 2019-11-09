@@ -105,7 +105,7 @@
 
     </select>
 
-    <select id="getRandomArticles"  resultType="com.huangshangi.myblog.entity.Article">
+    <select id="getRandomArticles" parameterType="java.lang.Integer" resultType="com.huangshangi.myblog.entity.Article">
         SELECT
         <include refid="baseList"/>
         from
@@ -113,7 +113,7 @@
 
 
 
-        order by RAND() limit 4
+        order by RAND() limit #{count}
 
     </select>
 

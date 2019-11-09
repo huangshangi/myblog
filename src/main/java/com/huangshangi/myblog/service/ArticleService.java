@@ -45,11 +45,10 @@ public interface ArticleService {
     List<Article>getRecommendList();
 
     //获取本栏推荐内容(随机推荐)
-    List<Article>getHeadRecommendList();
+    List<Article>getHeadRecommendList(int id);
 
     //随便看看
-    List<Article>getRandomList();
+    List<Article>getRandomList(int count);
 
-    //获取文章评论信息
-    String getCommentList(int id);
+
 }

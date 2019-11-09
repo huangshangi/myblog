@@ -2,6 +2,7 @@ package com.huangshangi.myblog.impl;
 
 import com.huangshangi.myblog.entity.Article;
 import com.huangshangi.myblog.mapper.ArticleMapper;
+import com.huangshangi.myblog.mapper.CommentMapper;
 import com.huangshangi.myblog.service.ArticleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,6 +15,9 @@ public class ArticleServiceImpl implements ArticleService {
 
     @Autowired
     ArticleMapper articleMapper;
+
+    @Autowired
+    CommentMapper commentMapper;
 
     @Override
     public List<Integer> getUserSampInfos(int id) {
@@ -79,26 +83,23 @@ public class ArticleServiceImpl implements ArticleService {
 
     @Override
     public List<Article> getRankList() {
-        return null;
+        return articleMapper.getRankArticles();
     }
 
     @Override
     public List<Article> getRecommendList() {
-        return null;
+        return articleMapper.getGoodArticles();
     }
 
     @Override
-    public List<Article> getHeadRecommendList() {
-        return null;
+    public List<Article> getHeadRecommendList(int id) {
+        return articleMapper.getHeadRecommendArticles(id);
     }
 
     @Override
-    public List<Article> getRandomList() {
-        return null;
+    public List<Article> getRandomList(int count) {
+        return articleMapper.getRandomArticles(count);
     }
 
-    @Override
-    public String getCommentList(int id) {
-        return null;
-    }
+
 }

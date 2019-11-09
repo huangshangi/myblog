@@ -3,6 +3,7 @@ package com.huangshangi.myblog.controller;
 import com.huangshangi.myblog.entity.Article;
 import com.huangshangi.myblog.entity.User;
 import com.huangshangi.myblog.service.ArticleService;
+import com.huangshangi.myblog.service.CommentService;
 import com.huangshangi.myblog.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -19,6 +20,9 @@ public class ForeArticleController {
 
     @Autowired
     UserService userService;
+
+    @Autowired
+    CommentService commentService;
 
     @RequestMapping(value = "/checkArticle/{id}",method = RequestMethod.POST)
     public String checkArticle(@PathVariable int id, Model model){
@@ -41,12 +45,12 @@ public class ForeArticleController {
         //获取本栏推荐信息
         model.addAttribute("recommendList",articleService.getRecommendList());
         //获取文章推荐信息
-        model.addAttribute("headRecommendList",articleService.getHeadRecommendList());
+        model.addAttribute("headRecommendList",articleService.getHeadRecommendList(article.getArticleStatus()));
         //随便看看界面
         model.addAttribute("randomList",articleService.getRandomList());
 
         //获取评论列表(json)
-        model.addAttribute("commentList",articleService.getCommentList(id));
+        model.addAttribute("commentList",commentService.getCommentListJson(article.getArticleId()));
 
         return "fore/checkArticle";
     }
