@@ -81,6 +81,20 @@
 
     </select>
 
+    <select id="getArticlesByCategory"  parameterType="java.lang.Integer" resultType="com.huangshangi.myblog.entity.Article">
+        SELECT
+        <include refid="baseList"/>
+        from
+        <include refid="tn"></include>
+
+        where
+        articleStatus=#{status}
+
+
+        order by articleCheckCount desc limit 8
+
+    </select>
+
     <select id="getGoodArticles"  resultType="com.huangshangi.myblog.entity.Article">
         SELECT
         <include refid="baseList"/>

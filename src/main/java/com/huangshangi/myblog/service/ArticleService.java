@@ -38,6 +38,9 @@ public interface ArticleService {
     //获取下一篇文章
     Article getNextArticle(int id);
 
+    //根据文章类别获取文章列表
+    List<Article>getListByCategory(int status);
+
     //获取文章排行信息(根据文章游览量进行排行)
     List<Article>getRankList();
 

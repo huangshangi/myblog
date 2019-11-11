@@ -101,5 +101,8 @@ public class ArticleServiceImpl implements ArticleService {
         return articleMapper.getRandomArticles(count);
     }
 
-
+    @Override
+    public List<Article> getListByCategory(int status) {
+        return articleMapper.getArticlesByCategory(status);
+    }
 }

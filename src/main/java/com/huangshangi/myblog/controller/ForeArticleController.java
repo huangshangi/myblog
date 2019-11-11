@@ -47,11 +47,23 @@ public class ForeArticleController {
         //获取文章推荐信息
         model.addAttribute("headRecommendList",articleService.getHeadRecommendList(article.getArticleStatus()));
         //随便看看界面
-        model.addAttribute("randomList",articleService.getRandomList());
+        model.addAttribute("randomList",articleService.getRandomList(4));
 
         //获取评论列表(json)
         model.addAttribute("commentList",commentService.getCommentListJson(article.getArticleId()));
 
         return "fore/checkArticle";
+    }
+
+
+
+    @RequestMapping(value = "/index",method = RequestMethod.GET)
+    public String getForeIndex(Model model){
+        String []array={"yuyanList","kexueList","shizhanList","zhishiList","jishuList","aboutmeList"};
+
+        for(int i=1;i<7;i++)
+            model.addAttribute(array[i-1],articleService.getListByCategory(i));
+
+        return "fore/index";
     }
 }
