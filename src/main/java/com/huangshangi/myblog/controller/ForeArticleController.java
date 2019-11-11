@@ -66,4 +66,16 @@ public class ForeArticleController {
 
         return "fore/index";
     }
+
+    //分类界面
+    @RequestMapping(value = "/articleList/{category}",method = RequestMethod.GET)
+    public String getArticlesCategory(){
+        return null;
+    }
+
+    //分类界面下的分页界面
+    @RequestMapping(value = "/articleList/{category}/{pageId}",method = RequestMethod.GET)
+    public String getArticlesCategoryByPage(){
+        return null;
+    }
 }

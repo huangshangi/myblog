@@ -87,41 +87,7 @@
                                         </thead>
                                         <tbody>
                                            
-                                        <tr class="gradeX">	    
-                                                                         
-														<td><input type="checkbox" value="1"/></td>
-		                                                <td><c:out value="${item.title }"></c:out></td>
-		                                                <td><c:out value="${item.commentCount }"></c:out></td>
-														<td><c:out value="${item.checkCount }"></c:out></td>
-		                                                <td><c:out value="${item.createTime }"></c:out></td>
-		                                                <td>
-		                                                    <div class="tpl-table-black-operation">
-		                                                        <a href="javascript:;">
-		                                                            <i class="am-icon-pencil"></i> 编辑
-		                                                        </a>
-		                                                        <a href="javascript:;" class="tpl-table-black-operation-del" onclick="deleteArticle(${1})">
-		                                                            <i class="am-icon-trash"></i> 删除
-		                                                        </a>
-		                                                    </div>
-		                                                </td>
-		                                            </tr>
-		                                              <tr class="gradeX">	                                           
-														<td><input type="checkbox" value="2"/></td>
-		                                                <td><c:out value="${item.title }"></c:out></td>
-		                                                <td><c:out value="${item.commentCount }"></c:out></td>
-														<td><c:out value="${item.checkCount }"></c:out></td>
-		                                                <td><c:out value="${item.createTime }"></c:out></td>
-		                                                <td>
-		                                                    <div class="tpl-table-black-operation">
-		                                                        <a href="javascript:;">
-		                                                            <i class="am-icon-pencil"></i> 编辑
-		                                                        </a>
-		                                                        <a href="javascript:;" class="tpl-table-black-operation-del">
-		                                                            <i class="am-icon-trash"></i> 删除
-		                                                        </a>
-		                                                    </div>
-		                                                </td>
-		                                            </tr>
+
                                         <c:choose>
                                         	<c:when test="${articles==null }">
 	                                        	<tr>
