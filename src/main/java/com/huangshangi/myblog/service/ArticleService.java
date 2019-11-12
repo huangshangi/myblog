@@ -39,7 +39,7 @@ public interface ArticleService {
     Article getNextArticle(int id);
 
     //根据文章类别获取文章列表
-    List<Article>getListByCategory(int status);
+    List<Article>getListByCategory(int status,int num,int page);
 
     //获取文章排行信息(根据文章游览量进行排行)
     List<Article>getRankList();
@@ -53,5 +53,10 @@ public interface ArticleService {
     //随便看看
     List<Article>getRandomList(int count);
 
+    //获取某一类别文章总数
+    int getArticleCountByCategory(int status);
+
+    //获取某一类别文章页数
+    int getArticlePageByCategory(int status,int pageNum);
 
 }

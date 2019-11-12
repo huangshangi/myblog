@@ -31,92 +31,68 @@
     <div class="blogbox">
         <div class="bloglist">
             <ul>
-                <li>
-                    <h2><a href="/">【匆匆那些年】总结个人博客经历的这四年…</a></h2>
-                    <i><a href="/"><img src="http://www.yangqq.com/d/file/jstt/bj/2018-06-29/3f0b6da48a6fd4e626a021ff7bd0d74f.jpg"></a></i>
-                    <p class="blogtext">博客从最初的域名购买，到上线已经有四年的时间了，这四年的时间，有笑过，有怨过，有悔过，有执着过，也有放弃过…但最后还是坚持了下来，时间如此匆匆，等再回过头已来不及去弥补…</p>
-                    <p class="bloginfo"><span>杨青</span><span>2018年3月19日</span><span><a href="/">个人博客模板</a></span></p>
-                </li>
-                <li>
-                    <h2><a href="/">【匆匆那些年】总结个人博客经历的这四年…</a></h2>
-                    <i><a href="/"><img src="http://www.yangqq.com/d/file/news/life/2018-04-27/762f99f369ae786f970477feeb3b9d77.jpg"></a></i>
-                    <p class="blogtext">博客从最初的域名购买，到上线已经有四年的时间了，这四年的时间，有笑过，有怨过，有悔过，有执着过，也有放弃过…但最后还是坚持了下来，时间如此匆匆，等再回过头已来不及去弥补…</p>
-                    <p class="bloginfo"><span>杨青</span><span>2018年3月19日</span><span><a href="/">个人博客模板</a></span></p>
-                </li>
-                <li>
-                    <h2><a href="/">【匆匆那些年】总结个人博客经历的这四年…</a></h2>
-                    <i><a href="/"><img src="http://www.yangqq.com/d/file/news/life/2018-06-17/917d732926d79cc2ae1012831ce51d1e.jpg"></a></i>
-                    <p class="blogtext">博客从最初的域名购买，到上线已经有四年的时间了，这四年的时间，有笑过，有怨过，有悔过，有执着过，也有放弃过…但最后还是坚持了下来，时间如此匆匆，等再回过头已来不及去弥补…</p>
-                    <p class="bloginfo"><span>杨青</span><span>2018年3月19日</span><span><a href="/">个人博客模板</a></span></p>
-                </li>
-                <li>
-                    <h2><a href="/">【匆匆那些年】总结个人博客经历的这四年…</a></h2>
-                    <i><a href="/"><img src="http://www.yangqq.com/d/file/jstt/bj/2018-06-29/3f0b6da48a6fd4e626a021ff7bd0d74f.jpg"></a></i>
-                    <p class="blogtext">博客从最初的域名购买，到上线已经有四年的时间了，这四年的时间，有笑过，有怨过，有悔过，有执着过，也有放弃过…但最后还是坚持了下来，时间如此匆匆，等再回过头已来不及去弥补…</p>
-                    <p class="bloginfo"><span>杨青</span><span>2018年3月19日</span><span><a href="/">个人博客模板</a></span></p>
-                </li>
-                <li>
-                    <h2><a href="/">【匆匆那些年】总结个人博客经历的这四年…</a></h2>
-                    <i><a href="/"><img src="http://www.yangqq.com/d/file/news/life/2018-04-27/762f99f369ae786f970477feeb3b9d77.jpg"></a></i>
-                    <p class="blogtext">博客从最初的域名购买，到上线已经有四年的时间了，这四年的时间，有笑过，有怨过，有悔过，有执着过，也有放弃过…但最后还是坚持了下来，时间如此匆匆，等再回过头已来不及去弥补…</p>
-                    <p class="bloginfo"><span>杨青</span><span>2018年3月19日</span><span><a href="/">个人博客模板</a></span></p>
-                </li>
-                <li>
-                    <h2><a href="/">【匆匆那些年】总结个人博客经历的这四年…</a></h2>
-                    <i><a href="/"><img src="http://www.yangqq.com/d/file/jstt/bj/2018-06-29/3f0b6da48a6fd4e626a021ff7bd0d74f.jpg"></a></i>
-                    <p class="blogtext">博客从最初的域名购买，到上线已经有四年的时间了，这四年的时间，有笑过，有怨过，有悔过，有执着过，也有放弃过…但最后还是坚持了下来，时间如此匆匆，等再回过头已来不及去弥补…</p>
-                    <p class="bloginfo"><span>杨青</span><span>2018年3月19日</span><span><a href="/">个人博客模板</a></span></p>
-                </li>
+
+                    <c:when test="${articleList!=null}">
+                        <c:forEach var="item" items="${articleList}">
+                            <li>
+                                <h2><a href="/checkArticle/${item.articleId}"+>${item.articleTitle}</a></h2>
+                                <i><a href="/checkArticle/${item.articleId}"><img src="http://www.yangqq.com/d/file/jstt/bj/2018-06-29/3f0b6da48a6fd4e626a021ff7bd0d74f.jpg"></a></i>
+                                <p class="blogtext">${item.articleSummary}</p>
+                                <p class="bloginfo"><span>${item.articleUserId}</span><span>${item.articleCreateTime}</span><span>浏览量:${item.articleCheckCount}</span></p>
+                            </li>
+                        </c:forEach>
+
+                    </c:when>
+
+
             </ul>
         </div>
         <div class="pagelist">
-            <a href="#">首页</a>
+            <a >首页</a>
             <c:when test="${articlePage}!=1">
                 <c:forEach begin="1" end="${articlePage}" var="item">
                     <a href="$"><c:out value="${item}"></c:out> </a>&nbsp;
                 </c:forEach>
             </c:when>
-            <a href="#">下一页</a>&nbsp;
-            <a href="#">尾页</a></div>
+            <a >下一页</a>&nbsp;
+            <a >尾页</a></div>
     </div>
     <div class="rside">
         <div class="news">
             <h2 class="newstitle"><b>文章排行</b></h2>
             <ul>
-                <li><a href="/"><span>08-30</span>如何快速建立自己的个人博客网站</a></li>
-                <li><a href="/"><span>08-30</span>个人博客，属于我的小世界！</a></li>
-                <li><a href="/"><span>08-30</span>网易博客关闭，何不从此开始潇洒行走江湖！</a></li>
-                <li><a href="/"><span>08-30</span>个人网站做好了，百度不收录怎么办？来，看看他们怎么做的。</a></li>
-                <li><a href="/"><span>08-30</span>帝国cms 循环调用子栏目信息以及头条图片</a></li>
-                <li><a href="/"><span>08-30</span>我是怎么评价自己的？</a></li>
-                <li><a href="/"><span>08-30</span>html5 个人博客模板《蓝色畅想》</a></li>
-                <li><a href="/"><span>08-30</span>【匆匆那些年】总结个人博客经历的这四年</a></li>
+
+                <c:when test="${rankList}!=null}">
+                <c:forEach items="${rankList}" var="item">
+
+                    <li><a href="/checkArticle/${item.articleId}"><span>${item.articleCreateTime}</span>${item.articleTitle}</a></li>
+
+                </c:forEach>
+                </c:when>
             </ul>
         </div>
         <div class="news">
             <h2 class="newstitle"><b>本栏推荐</b></h2>
             <ul>
-                <li><a href="/"><span>08-30</span>如何快速建立自己的个人博客网站</a></li>
-                <li><a href="/"><span>08-30</span>个人博客，属于我的小世界！</a></li>
-                <li><a href="/"><span>08-30</span>网易博客关闭，何不从此开始潇洒行走江湖！</a></li>
-                <li><a href="/"><span>08-30</span>个人网站做好了，百度不收录怎么办？来，看看他们怎么做的。</a></li>
-                <li><a href="/"><span>08-30</span>帝国cms 循环调用子栏目信息以及头条图片</a></li>
-                <li><a href="/"><span>08-30</span>我是怎么评价自己的？</a></li>
-                <li><a href="/"><span>08-30</span>html5 个人博客模板《蓝色畅想》</a></li>
-                <li><a href="/"><span>08-30</span>【匆匆那些年】总结个人博客经历的这四年</a></li>
+                <c:when test="${recommendList}!=null}">
+                    <c:forEach items="${recommendList}" var="item">
+
+                        <li><a href="/checkArticle/${item.articleId}"><span>${item.articleCreateTime}</span>${item.articleTitle}</a></li>
+
+                    </c:forEach>
+                </c:when>
             </ul>
         </div>
         <div class="news">
             <h2 class="newstitle"><b>栏目更新</b></h2>
             <ul>
-                <li><a href="/"><span>08-30</span>如何快速建立自己的个人博客网站</a></li>
-                <li><a href="/"><span>08-30</span>个人博客，属于我的小世界！</a></li>
-                <li><a href="/"><span>08-30</span>网易博客关闭，何不从此开始潇洒行走江湖！</a></li>
-                <li><a href="/"><span>08-30</span>个人网站做好了，百度不收录怎么办？来，看看他们怎么做的。</a></li>
-                <li><a href="/"><span>08-30</span>帝国cms 循环调用子栏目信息以及头条图片</a></li>
-                <li><a href="/"><span>08-30</span>我是怎么评价自己的？</a></li>
-                <li><a href="/"><span>08-30</span>html5 个人博客模板《蓝色畅想》</a></li>
-                <li><a href="/"><span>08-30</span>【匆匆那些年】总结个人博客经历的这四年</a></li>
+                <c:when test="${headRecommendList}!=null}">
+                    <c:forEach items="${headRecommendList}" var="item">
+
+                        <li><a href="/checkArticle/${item.articleId}"><span>${item.articleCreateTime}</span>${item.articleTitle}</a></li>
+
+                    </c:forEach>
+                </c:when>
             </ul>
         </div>
     </div>
@@ -135,10 +111,12 @@
         selected=$(this).val();
         if(selected=="首页")
             index=1;
-        else if(selected=="下一页" )
+        else if(selected=="下一页" &&index!=${articlePage})
             index=index+1;
+        else if(selected=="下一页"&&index==${articlePage})
+            return;
         else if(selected=="尾页")
-            index=-1;
+            index=${articlePage};
         else
             index=Number(selected)
 

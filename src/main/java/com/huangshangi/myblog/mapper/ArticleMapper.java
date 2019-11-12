@@ -40,7 +40,7 @@ public interface ArticleMapper {
     List<Article>getArticlesByPage(@Param(value="id") int id,@Param(value="page")int page,@Param(value="pageSize")int pageSize);
 
     //根据文章类别获取文章列表
-    List<Article>getArticlesByCategory(@Param(value="status")int status);
+    List<Article>getArticlesByCategory(@Param(value="status")int status,@Param(value="num")int num,@Param(value="page")int page);
 
     //根据关键词搜索文章
     List<Article>getArticlesBySign(@Param(value = "id")int id,@Param(value = "sign")int sign,@Param(value = "key")String key);
@@ -68,4 +68,9 @@ public interface ArticleMapper {
 
     //更新评论数
     int updateArticleCommentCount(@Param(value="articleId") String articleId);
+
+    //获取某一类别文章数
+    int getArticleCountByCategory(@Param(value = "category")int category);
+
+
 }

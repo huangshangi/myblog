@@ -102,7 +102,23 @@ public class ArticleServiceImpl implements ArticleService {
     }
 
     @Override
-    public List<Article> getListByCategory(int status) {
-        return articleMapper.getArticlesByCategory(status);
+    public List<Article> getListByCategory(int status,int num,int page) {
+        return articleMapper.getArticlesByCategory(status,num,page);
+    }
+
+    @Override
+    public int getArticleCountByCategory(int status) {
+        return articleMapper.getArticleCountByCategory(status);
+    }
+
+    @Override
+    public int getArticlePageByCategory(int status, int pageNum) {
+        int count=getArticleCountByCategory(status);
+
+        if(count%pageNum==0)
+            return count/pageNum;
+        else
+            return count/pageNum+1;
+
     }
 }

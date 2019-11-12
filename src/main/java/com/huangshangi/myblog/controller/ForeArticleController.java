@@ -62,20 +62,37 @@ public class ForeArticleController {
         String []array={"yuyanList","kexueList","shizhanList","zhishiList","jishuList","aboutmeList"};
 
         for(int i=1;i<7;i++)
-            model.addAttribute(array[i-1],articleService.getListByCategory(i));
+            model.addAttribute(array[i-1],articleService.getListByCategory(i,8,1));
 
         return "fore/index";
     }
 
-    //分类界面
+    //分类界面(多余操作 待删除)
     @RequestMapping(value = "/articleList/{category}",method = RequestMethod.GET)
-    public String getArticlesCategory(){
-        return null;
+    public String getArticlesCategory(@PathVariable int category,Model model){
+
+        model.addAttribute("articleList",articleService.getListByCategory(category,6,1));
+
+        return "fore/articleList";
     }
 
     //分类界面下的分页界面
     @RequestMapping(value = "/articleList/{category}/{pageId}",method = RequestMethod.GET)
-    public String getArticlesCategoryByPage(){
-        return null;
+    public String getArticlesCategoryByPage(@PathVariable(value = "category")int category,@PathVariable(value = "pageId")int pageId,Model model ){
+
+        model.addAttribute("articleList",articleService.getListByCategory(category,6,pageId));
+
+        //获取文章排行信息
+        model.addAttribute("rankList",articleService.getRankList());
+        //获取本栏推荐信息
+        model.addAttribute("recommendList",articleService.getRecommendList());
+        //获取文章推荐信息
+        model.addAttribute("headRecommendList",articleService.getHeadRecommendList(category));
+
+        //获取本分类下文章分页数
+
+        model.addAttribute("articlePage",articleService.getArticlePageByCategory(category,6));
+        return "fore/articleList";
+
     }
 }

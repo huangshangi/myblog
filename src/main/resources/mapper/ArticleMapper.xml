@@ -39,6 +39,14 @@
     </insert>
 
 
+    <select id="getArticleCountByCategory" parameterType="java.lang.Integer" resultType="java.lang.Integer">
+
+        select count(*)
+        from
+        <include refid="tn"></include>
+
+        where articleStatus=#{category}
+    </select>
     <select id="getArticleById" parameterType="java.lang.Integer" resultType="com.huangshangi.myblog.entity.Article">
 
         SELECT
@@ -91,7 +99,7 @@
         articleStatus=#{status}
 
 
-        order by articleCheckCount desc limit 8
+        order by articleCheckCount desc limit #{num*(page-1)},num
 
     </select>
 
