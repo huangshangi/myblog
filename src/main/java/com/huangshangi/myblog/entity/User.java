@@ -13,11 +13,13 @@ public class User implements Serializable {
 
     private String userImage;//用户头衔地址
 
+    private String userEmail;//用户邮箱地址
+
     private String userIp;//用户ip地址
 
-    private Date userRegisterTime;//用户首次注册时间
+    private String userRegisterTime;//用户首次注册时间
 
-    private Date userLastTime;//用户上次登录时间
+    private String userLastTime;//用户上次登录时间
 
     private int checkCount;//文章游览总次数
 
@@ -29,11 +31,12 @@ public class User implements Serializable {
     public User() {
     }
 
-    public User(int userId, String userName, String userPass, String userImage, String userIp, Date userRegisterTime, Date userLastTime, int checkCount, int commentCount, int articleCount) {
+    public User(int userId, String userName, String userPass, String userImage,String userEmail, String userIp, String userRegisterTime, String userLastTime, int checkCount, int commentCount, int articleCount) {
         this.userId = userId;
         this.userName = userName;
         this.userPass = userPass;
         this.userImage = userImage;
+        this.userEmail=userEmail;
         this.userIp = userIp;
         this.userRegisterTime = userRegisterTime;
         this.userLastTime = userLastTime;
@@ -82,19 +85,19 @@ public class User implements Serializable {
         this.userIp = userIp;
     }
 
-    public Date getUserRegisterTime() {
+    public String getUserRegisterTime() {
         return userRegisterTime;
     }
 
-    public void setUserRegisterTime(Date userRegisterTime) {
+    public void setUserRegisterTime(String userRegisterTime) {
         this.userRegisterTime = userRegisterTime;
     }
 
-    public Date getUserLastTime() {
+    public String getUserLastTime() {
         return userLastTime;
     }
 
-    public void setUserLastTime(Date userLastTime) {
+    public void setUserLastTime(String userLastTime) {
         this.userLastTime = userLastTime;
     }
 
@@ -121,4 +124,14 @@ public class User implements Serializable {
     public void setArticleCount(int articleCount) {
         this.articleCount = articleCount;
     }
+
+    public String getUserEmail() {
+        return userEmail;
+    }
+
+    public void setUserEmail(String userEmail) {
+        this.userEmail = userEmail;
+    }
+
+
 }

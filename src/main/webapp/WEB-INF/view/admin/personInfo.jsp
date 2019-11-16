@@ -44,39 +44,39 @@
 
                                 <form class="am-form tpl-form-border-form tpl-form-border-br">
                                     <div class="am-form-group">
-                                        <label for="user-email" class="am-u-sm-1 am-form-label">用户id:</label>
-										<label for="user-email" class="am-u-sm-1 am-form-label">1</label>
+                                        <label  class="am-u-sm-1 am-form-label">用户id:</label>
+										<label class="am-u-sm-1 am-form-label">${sessionScope.user.userId}</label>
                                         <div class="am-u-sm-2">
                                             
                                         </div>
                                     </div>
 
                                     <div class="am-form-group">
-                                        <label for="user-email" class="am-u-sm-1 am-form-label">用户名:</label>
-										<label for="user-email" class="am-u-sm-1 am-form-label">admin</label>
+                                        <label  class="am-u-sm-1 am-form-label">用户名:</label>
+										<label  class="am-u-sm-1 am-form-label">${sessionScope.user.userName}</label>
                                         <div class="am-u-sm-2">
                                             
                                         </div>
                                     </div>
 
                                     <div class="am-form-group">
-                                        <label for="user-email" class="am-u-sm-1 am-form-label">邮箱: </label>
-										<label for="user-email" class="am-u-sm-1 am-form-label">1730256822@qq.com</label>
+                                        <label  class="am-u-sm-1 am-form-label">邮箱: </label>
+										<label  class="am-u-sm-1 am-form-label">${sessionScope.user.userEmail}</label>
                                         <div class="am-u-sm-2">
                                             
                                         </div>
                                     </div>
 
                                     <div class="am-form-group">
-                                       <label for="user-email" class="am-u-sm-1 am-form-label">注册时间: </label>
-										<label for="user-email" class="am-u-sm-1 am-form-label">2019.11.03 </label>
+                                       <label  class="am-u-sm-1 am-form-label">注册时间: </label>
+										<label class="am-u-sm-1 am-form-label">${sessionScope.user.userCreateTime} </label>
                                         <div class="am-u-sm-2">
                                             
                                         </div>
                                     </div>
 
                                     <div class="am-form-group">
-                                        <label for="user-weibo" class="am-u-sm-1 am-form-label">头像地址:</label>
+                                        <label  class="am-u-sm-1 am-form-label">头像地址:</label>
 										
                                         <div class="am-u-sm-2">
                                             <div class="am-form-group am-form-file">
@@ -97,8 +97,8 @@
 
                                     
                                     <div class="am-form-group">
-                                         <label for="user-email" class="am-u-sm-1 am-form-label">个人说明:</label>
-										<label for="user-email" class="am-u-sm-1 am-form-label">无</label>
+                                         <label  class="am-u-sm-1 am-form-label">个人说明:</label>
+										<label  class="am-u-sm-1 am-form-label">无</label>
                                         <div class="am-u-sm-2">
                                             
                                         </div>

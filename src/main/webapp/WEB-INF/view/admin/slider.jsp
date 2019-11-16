@@ -153,7 +153,7 @@
                     layer.confirm('你确定要退出吗?', function(index){
                         //do something
                         if(index)
-                            window.location.href="/login";
+                            window.location.href="/loginout";
                         layer.close(index);
                     });
                 })

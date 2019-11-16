@@ -58,7 +58,7 @@
 
     </select>
 
-    <select id="getPreArticle" parameterType="java.lang.Integer" resultMap="com.huangshangi.myblog.entity.Article">
+    <select id="getPreArticle" parameterType="java.lang.Integer" resultType="com.huangshangi.myblog.entity.Article">
         select
         <include refid="baseList"></include>
         from
@@ -67,7 +67,7 @@
         where articleId &lt; ${articleId} order by articleId desc limit 1
     </select>
 
-    <select id="getNextArticle" parameterType="java.lang.Integer" resultMap="com.huangshangi.myblog.entity.Article">
+    <select id="getNextArticle" parameterType="java.lang.Integer" resultType="com.huangshangi.myblog.entity.Article">
         select
         <include refid="baseList"></include>
         from

@@ -15,7 +15,7 @@ public interface UserMapper {
      */
     List<User>getUserList(@Param(value = "sum") Integer sum);
 
-    //根据用户name或邮箱地址获取用户个人信息
+    //根据用户name获取用户个人信息
     User getUserByNameOrEmail(@Param(value="string") String string);
 
     //根据用户name获取用户个人信息
@@ -35,6 +35,8 @@ public interface UserMapper {
 
     //添加用户
     int insertUser(User user);
+
+
 
     //更新用户
     int updateUser(User user);

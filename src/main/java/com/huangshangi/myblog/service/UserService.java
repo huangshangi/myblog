@@ -16,4 +16,12 @@ public interface UserService {
 
     //根据用户id查询用户信息
     User getUserInfo(int id);
+
+    //添加用户
+    int insertUser(String json);
+
+    int insertUser(User user);
+
+    //根据用户名或邮箱id
+    User getUserByNameOrEmail(String username);
 }

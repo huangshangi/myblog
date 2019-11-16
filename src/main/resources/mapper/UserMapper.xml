@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper>
+<mapper namespace="com.huangshangi.myblog.mapper.UserMapper">
     <resultMap id="BaseResultMap" type="com.huangshangi.myblog.entity.User">
         <id column="userId" property="userId" jdbcType="INTEGER"/>
         <result column="userName" property="userName" jdbcType="VARCHAR"/>
         <result column="userPass" property="userPass" jdbcType="VARCHAR"/>
         <result column="userEmail" property="userEmail" jdbcType="VARCHAR"/>
         <result column="userImage" property="userImage" jdbcType="VARCHAR"/>
-        <result column="userIp" property="userIp" jdbcType="VARCAHR"/>
+        <result column="userIp" property="userIp" jdbcType="VARCHAR"/>
         <result column="userRegisterTime" property="userRegisterTime" jdbcType="DATE"/>
         <result column="userLastTime" property="userLastTime" jdbcType="DATE"/>
         <result column="checkCount" property="checkCount" jdbcType="INTEGER"/>
@@ -39,7 +39,7 @@
         <include refid="baseList"></include>
         from
         user
-        where userName=#{string} or userEmail=#{string }
+        where userName=#{string}
     </select>
 
     <select id="getUserByName" resultType="com.huangshangi.myblog.entity.User">
