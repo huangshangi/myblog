@@ -31,6 +31,7 @@
     <div class="blogbox">
         <div class="bloglist">
             <ul>
+                <c:choose>
 
                     <c:when test="${articleList!=null}">
                         <c:forEach var="item" items="${articleList}">
@@ -43,17 +44,23 @@
                         </c:forEach>
 
                     </c:when>
+                </c:choose>
+
 
 
             </ul>
         </div>
         <div class="pagelist">
             <a >首页</a>
-            <c:when test="${articlePage}!=1">
-                <c:forEach begin="1" end="${articlePage}" var="item">
-                    <a href="$"><c:out value="${item}"></c:out> </a>&nbsp;
-                </c:forEach>
-            </c:when>
+            <c:choose>
+                <c:when test="${articlePage}!=1">
+                    <c:forEach begin="1" end="${articlePage}" var="item">
+                        <a href="$"><c:out value="${item}"></c:out> </a>&nbsp;
+                    </c:forEach>
+                </c:when>
+
+            </c:choose>
+
             <a >下一页</a>&nbsp;
             <a >尾页</a></div>
     </div>
@@ -61,38 +68,46 @@
         <div class="news">
             <h2 class="newstitle"><b>文章排行</b></h2>
             <ul>
+                <c:choose>
+                    <c:when test="${rankList}!=null}">
+                        <c:forEach items="${rankList}" var="item">
 
-                <c:when test="${rankList}!=null}">
-                <c:forEach items="${rankList}" var="item">
+                            <li><a href="/checkArticle/${item.articleId}"><span>${item.articleCreateTime}</span>${item.articleTitle}</a></li>
 
-                    <li><a href="/checkArticle/${item.articleId}"><span>${item.articleCreateTime}</span>${item.articleTitle}</a></li>
+                        </c:forEach>
+                    </c:when>
+                </c:choose>
 
-                </c:forEach>
-                </c:when>
             </ul>
         </div>
         <div class="news">
             <h2 class="newstitle"><b>本栏推荐</b></h2>
             <ul>
-                <c:when test="${recommendList}!=null}">
-                    <c:forEach items="${recommendList}" var="item">
+                <c:choose>
+                    <c:when test="${recommendList}!=null}">
+                        <c:forEach items="${recommendList}" var="item">
 
-                        <li><a href="/checkArticle/${item.articleId}"><span>${item.articleCreateTime}</span>${item.articleTitle}</a></li>
+                            <li><a href="/checkArticle/${item.articleId}"><span>${item.articleCreateTime}</span>${item.articleTitle}</a></li>
 
-                    </c:forEach>
-                </c:when>
+                        </c:forEach>
+                    </c:when>
+                </c:choose>
+
             </ul>
         </div>
         <div class="news">
             <h2 class="newstitle"><b>栏目更新</b></h2>
             <ul>
-                <c:when test="${headRecommendList}!=null}">
-                    <c:forEach items="${headRecommendList}" var="item">
+                <c:choose>
+                    <c:when test="${headRecommendList}!=null}">
+                        <c:forEach items="${headRecommendList}" var="item">
 
-                        <li><a href="/checkArticle/${item.articleId}"><span>${item.articleCreateTime}</span>${item.articleTitle}</a></li>
+                            <li><a href="/checkArticle/${item.articleId}"><span>${item.articleCreateTime}</span>${item.articleTitle}</a></li>
 
-                    </c:forEach>
-                </c:when>
+                        </c:forEach>
+                    </c:when>
+                </c:choose>
+
             </ul>
         </div>
     </div>

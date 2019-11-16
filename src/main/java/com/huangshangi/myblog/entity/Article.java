@@ -17,9 +17,9 @@ public class Article implements Serializable {
 
     private int articleCheckCount;
 
-    private Date articleCreateTime;
+    private String articleCreateTime;
 
-    private Date articleUpdateTime;
+    private String articleUpdateTime;
 
     private String articleSummary;
 
@@ -29,7 +29,7 @@ public class Article implements Serializable {
     }
 
     public Article(int articleId, int articleUserId, String articleTitle, String articleContent, int articleCommentCount, int articleCheckCount,
-                   Date articleCreateTime, Date articleUpdateTime, String articleSummary,int articleStatus) {
+                   String   articleCreateTime, String articleUpdateTime, String articleSummary,int articleStatus) {
         this.articleId = articleId;
         this.articleUserId = articleUserId;
         this.articleTitle = articleTitle;
@@ -90,19 +90,19 @@ public class Article implements Serializable {
         this.articleCheckCount = articleCheckCount;
     }
 
-    public Date getArticleCreateTime() {
+    public String getArticleCreateTime() {
         return articleCreateTime;
     }
 
-    public void setArticleCreateTime(Date articleCreateTime) {
+    public void setArticleCreateTime(String articleCreateTime) {
         this.articleCreateTime = articleCreateTime;
     }
 
-    public Date getArticleUpdateTime() {
+    public String getArticleUpdateTime() {
         return articleUpdateTime;
     }
 
-    public void setArticleUpdateTime(Date articleUpdateTime) {
+    public void setArticleUpdateTime(String articleUpdateTime) {
         this.articleUpdateTime = articleUpdateTime;
     }
 

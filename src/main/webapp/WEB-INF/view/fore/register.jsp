@@ -97,7 +97,7 @@
 
         var data={'username':username,'email':email,'password':password1};
 
-        console.log(JSON.stringify(data))
+
         $.ajax({
             method:'POST',
             url:'/register',
@@ -105,7 +105,7 @@
             data:JSON.stringify(data),
             success:function (res) {
                 var json=JSON.parse(res)
-                console.log( typeof json)
+
                 if(Number(json.result)==1)
                     window.location.href="/login";
                 else

@@ -40,7 +40,7 @@ public interface ArticleMapper {
     List<Article>getArticlesByPage(@Param(value="id") int id,@Param(value="page")int page,@Param(value="pageSize")int pageSize);
 
     //根据文章类别获取文章列表
-    List<Article>getArticlesByCategory(@Param(value="status")int status,@Param(value="num")int num,@Param(value="page")int page);
+    List<Article>getArticlesByCategory(@Param(value="status")int status,@Param(value="num")int num,@Param(value="limitCount")int limitCount);
 
     //根据关键词搜索文章
     List<Article>getArticlesBySign(@Param(value = "id")int id,@Param(value = "sign")int sign,@Param(value = "key")String key);

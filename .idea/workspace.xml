@@ -7,40 +7,77 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dda03f4b-adad-458a-ad93-76dc33516f66" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/huangshangi/myblog/utils/util.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/fore/login.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/fore/register.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/assets/css/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/assets/css/font-awesome.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/assets/css/main.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/assets/css/material-design-iconic-font.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/assets/css/util.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/assets/fonts/Material-Design-Iconic-Font.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/assets/fonts/Material-Design-Iconic-Font.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/assets/fonts/Material-Design-Iconic-Font.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/assets/fonts/Material-Design-Iconic-Font.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/assets/fonts/Material-Design-Iconic-Font.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/assets/fonts/fontawesome-webfont.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/assets/js/main.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/Test.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/huangshangi/myblog/controller/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/huangshangi/myblog/controller/AdminController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/huangshangi/myblog/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/huangshangi/myblog/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/huangshangi/myblog/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/huangshangi/myblog/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/huangshangi/myblog/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/huangshangi/myblog/mapper/UserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/huangshangi/myblog/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/huangshangi/myblog/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/huangshangi/myblog/util.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/huangshangi/myblog/controller/ForeArticleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/huangshangi/myblog/controller/ForeArticleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/huangshangi/myblog/entity/Article.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/huangshangi/myblog/entity/Article.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/huangshangi/myblog/impl/ArticleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/huangshangi/myblog/impl/ArticleServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/huangshangi/myblog/mapper/ArticleMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/huangshangi/myblog/mapper/ArticleMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/ArticleMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/ArticleMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/spring/spring-mybatis.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/spring/spring-mybatis.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/admin/personInfo.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/admin/personInfo.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/admin/slider.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/admin/slider.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/resource/assets/fonts/FontAwesome.otf" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resource/assets/fonts/FontAwesome.otf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/resource/assets/fonts/fontawesome-webfont.eot" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resource/assets/fonts/fontawesome-webfont.eot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/resource/assets/fonts/fontawesome-webfont.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resource/assets/fonts/fontawesome-webfont.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/resource/assets/fonts/fontawesome-webfont.woff" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resource/assets/fonts/fontawesome-webfont.woff" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/resource/assets/fonts/fontawesome-webfont.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resource/assets/fonts/fontawesome-webfont.woff2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/CommentMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/CommentMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/spring/spring-mvc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/spring/spring-mvc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/fore/articleList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/fore/articleList.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/fore/checkArticle.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/fore/checkArticle.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/fore/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/fore/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/fore/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/fore/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/fore/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/fore/register.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/fore/slider.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/fore/slider.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resource/assets/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resource/assets/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resource/assets/css/app.less" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resource/assets/css/app.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resource/assets/img/5.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resource/assets/images/5.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resource/assets/img/6.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resource/assets/images/6.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resource/assets/img/7.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resource/assets/images/7.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resource/assets/img/8.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resource/assets/images/8.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resource/assets/img/9.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resource/assets/images/9.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resource/assets/img/a5.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resource/assets/images/a5.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resource/assets/img/avatar.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resource/assets/images/avatar.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resource/assets/img/bg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resource/assets/images/bg.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resource/assets/img/bq.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resource/assets/images/bq.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resource/assets/img/cp1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resource/assets/images/cp1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resource/assets/img/cp2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resource/assets/images/cp2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resource/assets/img/cp3.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resource/assets/images/cp3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resource/assets/img/cp4.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resource/assets/images/cp4.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resource/assets/img/dian.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resource/assets/images/dian.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resource/assets/img/img.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resource/assets/images/img.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resource/assets/img/k.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resource/assets/images/k.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resource/assets/img/li.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resource/assets/images/li.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resource/assets/img/list.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resource/assets/images/list.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resource/assets/img/ll.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resource/assets/images/ll.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resource/assets/img/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resource/assets/images/logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resource/assets/img/logoa.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resource/assets/images/logoa.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resource/assets/img/logob.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resource/assets/images/logob.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resource/assets/img/newslist.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resource/assets/images/newslist.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resource/assets/img/search.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resource/assets/images/search.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resource/assets/img/sj.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resource/assets/images/sj.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resource/assets/img/top.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resource/assets/images/top.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resource/assets/img/user01.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resource/assets/images/user01.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resource/assets/img/user02.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resource/assets/images/user02.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resource/assets/img/user03.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resource/assets/images/user03.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resource/assets/img/user04.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resource/assets/images/user04.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resource/assets/img/user05.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resource/assets/images/user05.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resource/assets/img/user06.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resource/assets/images/user06.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resource/assets/img/user07.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resource/assets/images/user07.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resource/assets/img/yh.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resource/assets/images/yh.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resource/assets/img/yqlj.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resource/assets/images/yqlj.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resource/assets/img/zhuye.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resource/assets/images/zhuye.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resource/assets/js/amazeui.datatables.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resource/assets/js/amazeui.datatables.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resource/assets/js/amazeui.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resource/assets/js/amazeui.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resource/assets/js/bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resource/assets/js/bootstrap.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resource/assets/js/echarts.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resource/assets/js/echarts.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resource/assets/js/fullcalendar.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resource/assets/js/fullcalendar.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resource/assets/js/jquery.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resource/assets/js/jquery.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resource/assets/js/modernizr.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resource/assets/js/modernizr.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resource/assets/plugin/amazeui.datatables.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resource/assets/plugin/amazeui.datatables.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resource/assets/plugin/editormd/examples/js/jquery.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resource/assets/plugin/editormd/examples/js/jquery.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resource/assets/plugin/editormd/lib/codemirror/codemirror.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resource/assets/plugin/editormd/lib/codemirror/codemirror.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resource/assets/plugin/editormd/lib/codemirror/modes.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resource/assets/plugin/editormd/lib/codemirror/modes.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resource/assets/plugin/editormd/tests/js/bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resource/assets/plugin/editormd/tests/js/bootstrap.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resource/assets/plugin/layui/lay/modules/colorpicker.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resource/assets/plugin/layui/lay/modules/colorpicker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resource/assets/plugin/layui/lay/modules/flow.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resource/assets/plugin/layui/lay/modules/flow.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resource/assets/plugin/layui/lay/modules/jquery.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resource/assets/plugin/layui/lay/modules/jquery.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resource/assets/plugin/layui/lay/modules/layer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resource/assets/plugin/layui/lay/modules/layer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resource/assets/plugin/layui/lay/modules/util.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resource/assets/plugin/layui/lay/modules/util.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resource/assets/plugin/layui/layui.all.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resource/assets/plugin/layui/layui.all.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -54,7 +91,47 @@
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/huangshangi/myblog/controller/ForeArticleController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1039">
+              <caret line="97" column="21" selection-start-line="97" selection-start-column="21" selection-end-line="97" selection-end-column="21" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/fore/slider.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-95">
+              <caret line="37" column="37" lean-forward="true" selection-start-line="37" selection-start-column="37" selection-end-line="37" selection-end-column="37" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/fore/articleList.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="152">
+              <caret line="20" column="23" lean-forward="true" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/fore/checkArticle.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="456">
+              <caret line="48" lean-forward="true" selection-start-line="48" selection-end-line="48" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -68,12 +145,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>core</find>
-      <find>error</find>
-      <find>mysql</find>
-      <find>rapid</find>
-      <find>options</find>
-      <find>assets</find>
       <find>insertArticle</find>
       <find>update</find>
       <find>delete</find>
@@ -85,13 +156,25 @@
       <find>commentbox</find>
       <find>insert</find>
       <find>Category</find>
-      <find>getArticlesByCategory</find>
       <find>insertUser</find>
-      <find>Date</find>
       <find>VARCAHR</find>
       <find>resultMap</find>
       <find>layer</find>
       <find>layui</find>
+      <find>getListByCategory</find>
+      <find>asset</find>
+      <find>assetes</find>
+      <find>getArticlesByCategory</find>
+      <find>Date</find>
+      <find>getRankArticles</find>
+      <find>getHeadRecommendArticles</find>
+      <find>getHeadRecommendArticle</find>
+      <find>getRecommendArticles</find>
+      <find>value</find>
+      <find>check</find>
+      <find>getCommentTree</find>
+      <find>getRecommendList</find>
+      <find>sele</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -105,26 +188,20 @@
         <option value="$PROJECT_DIR$/src/main/webapp/resource/assets/css/app.css" />
         <option value="$PROJECT_DIR$/src/main/webapp/resource/assets/plugin/editormd/docs/fonts/OpenSans-Bold-webfont.svg" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
-        <option value="$PROJECT_DIR$/src/main/resources/spring/spring-mvc.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/index.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/resource/assets/plugin/editormd/docs/fonts/OpenSans-BoldItalic-webfont.svg" />
         <option value="$PROJECT_DIR$/src/main/java/com/huangshangi/myblog/controller/FileController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/huangshangi/myblog/enums/ArticleEnum.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/huangshangi/myblog/entity/Article.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/admin/index.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/admin/newArticle.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/huangshangi/myblog/controller/BackArticleController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/huangshangi/myblog/entity/Comment.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/huangshangi/myblog/mapper/CommentMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/huangshangi/myblog/entity/CommentTree.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapper/CommentMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/fore/slider.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/resource/assets/css/bootstrap.css" />
         <option value="$PROJECT_DIR$/src/main/webapp/resource/assets/js/jquery.comment.js" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/fore/checkArticle.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/huangshangi/myblog/service/CommentService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/huangshangi/myblog/impl/CommentServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/fore/index.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/huangshangi/myblog/entity/Friend.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/huangshangi/myblog/service/FriendService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/huangshangi/myblog/mapper/FriendMapper.java" />
@@ -133,24 +210,30 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/admin/table-list.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/admin/comment-list.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/huangshangi/myblog/service/ArticleService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/huangshangi/myblog/controller/ForeArticleController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/huangshangi/myblog/mapper/ArticleMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/huangshangi/myblog/impl/ArticleServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/fore/articleList.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/admin/personInfo.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/admin/slider.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/huangshangi/myblog/util.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/huangshangi/myblog/service/UserService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/huangshangi/myblog/impl/UserServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/test/java/Test.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/fore/login.jsp" />
         <option value="$PROJECT_DIR$/src/main/resources/spring/spring-mybatis.xml" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapper/ArticleMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/huangshangi/myblog/entity/User.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/huangshangi/myblog/controller/AdminController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/huangshangi/myblog/mapper/UserMapper.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/fore/register.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/fore/login.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/huangshangi/myblog/controller/AdminController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/huangshangi/myblog/mapper/ArticleMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/spring/spring-mvc.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/huangshangi/myblog/impl/ArticleServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/huangshangi/myblog/entity/Article.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/fore/index.jsp" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapper/ArticleMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapper/CommentMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/fore/checkArticle.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/huangshangi/myblog/controller/ForeArticleController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/fore/articleList.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/fore/slider.jsp" />
       </list>
     </option>
   </component>
@@ -237,6 +320,15 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="myblog" type="462c0819:PsiDirectoryNode" />
+              <item name="entity" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="myblog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="myblog" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="myblog" type="462c0819:PsiDirectoryNode" />
               <item name="impl" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -311,16 +403,6 @@
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
               <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
               <item name="view" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="myblog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="myblog" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="myblog" type="b2602c69:ProjectViewProjectNode" />
@@ -495,16 +577,17 @@
     <property name="settings.editor.selected.configurable" value="preferences.externalResources" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\workplace\idea\myblog\src\main\webapp\WEB-INF\lib" />
-      <recent name="C:\workplace\idea\myblog\src\main\webapp\WEB-INF" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\workplace\idea\myblog\src\main\webapp\resource\assets\fonts" />
       <recent name="C:\workplace\idea\myblog\src\main\webapp\resource\assets\js" />
       <recent name="C:\workplace\idea\myblog\src\main\webapp\resource\assets\css" />
       <recent name="C:\workplace\idea\myblog\src\main\webapp\resource\assets\img" />
       <recent name="C:\workplace\idea\myblog\src\main\webapp\resource\assets\plugin" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\workplace\idea\myblog\src\main\webapp\resource\assets\images" />
+      <recent name="C:\workplace\idea\myblog\src\main\webapp\WEB-INF\lib" />
+      <recent name="C:\workplace\idea\myblog\src\main\webapp\WEB-INF" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -803,7 +886,7 @@
       <workItem from="1573698735015" duration="1360000" />
       <workItem from="1573809860093" duration="5750000" />
       <workItem from="1573874123003" duration="8109000" />
-      <workItem from="1573882589346" duration="5857000" />
+      <workItem from="1573882589346" duration="17990000" />
     </task>
     <task id="LOCAL-00001" summary="目录确定">
       <created>1572445981409</created>
@@ -889,11 +972,18 @@
       <option name="project" value="LOCAL" />
       <updated>1573573916471</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="开始测试">
+      <created>1573888564937</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1573888564937</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="116760000" />
+    <option name="totallyTimeSpent" value="128893000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -907,7 +997,7 @@
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49655172" visible="true" weight="0.23927614" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49655172" visible="true" weight="0.23927614" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -917,7 +1007,7 @@
       <window_info id="Web" order="7" sideWeight="0.50344825" side_tool="true" weight="0.30563003" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.24645892" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3186969" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -995,24 +1085,13 @@
     <MESSAGE value="后台接口基本实现" />
     <MESSAGE value="前端界面" />
     <MESSAGE value="后台评论实现" />
-    <option name="LAST_COMMIT_MESSAGE" value="后台评论实现" />
+    <MESSAGE value="开始测试" />
+    <option name="LAST_COMMIT_MESSAGE" value="开始测试" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/myblog$Tomcat_8_5_47.ic" NAME="Tomcat 8.5.47 Coverage Results" MODIFIED="1573877693113" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/CommentMapper" />
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/fore/slider.tld" />
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/admin/newArticle.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="70" column="72" selection-start-line="70" selection-start-column="72" selection-end-line="70" selection-end-column="72" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resource/assets/js/bootstrap.min.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/resource/assets/js/jquery.comment.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="618">
@@ -1027,18 +1106,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="209">
           <caret line="11" column="131" selection-start-line="11" selection-start-column="125" selection-end-line="11" selection-end-column="131" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/huangshangi/myblog/entity/Article.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="25" column="30" lean-forward="true" selection-start-line="25" selection-start-column="30" selection-end-line="25" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2995#2996#0" expanded="true" />
-            <element signature="e#3031#3032#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1106,27 +1173,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/fore/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="490">
-          <caret line="133" column="29" lean-forward="true" selection-start-line="127" selection-start-column="21" selection-end-line="133" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/fore/checkArticle.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="129">
-          <caret line="89" column="39" selection-start-line="89" selection-start-column="39" selection-end-line="89" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/fore/articleList.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1079">
-          <caret line="116" column="19" selection-start-line="116" selection-start-column="19" selection-end-line="116" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/admin/comment-list.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2755">
@@ -1160,20 +1206,6 @@
     <entry file="file://$PROJECT_DIR$/src/main/webapp/resource/assets/js/main.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/fore/login.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/CommentMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="39" lean-forward="true" selection-start-column="39" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/FriendMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="798">
@@ -1191,72 +1223,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/huangshangi/myblog/controller/FileController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="31" column="37" selection-start-line="31" selection-start-column="37" selection-end-line="31" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/huangshangi/myblog/controller/ForeArticleController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1634">
-          <caret line="92" selection-start-line="92" selection-end-line="92" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/huangshangi/myblog/impl/ArticleServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1938">
-          <caret line="116" lean-forward="true" selection-start-line="116" selection-end-line="116" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2849#2850#0" expanded="true" />
-            <element signature="e#2919#2920#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/huangshangi/myblog/impl/FriendServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="494">
           <caret line="29" column="43" selection-start-line="29" selection-start-column="43" selection-end-line="29" selection-end-column="43" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/huangshangi/myblog/impl/CommentServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1102">
-          <caret line="64" column="25" selection-start-line="64" selection-start-column="25" selection-end-line="64" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/huangshangi/myblog/mapper/ArticleMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1322">
-          <caret line="72" column="33" selection-start-line="72" selection-start-column="8" selection-end-line="72" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/huangshangi/myblog/mapper/CommentMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="551">
-          <caret line="29" column="35" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1288,11 +1258,6 @@
         <state relative-caret-position="95">
           <caret line="59" column="70" lean-forward="true" selection-start-line="59" selection-start-column="70" selection-end-line="59" selection-end-column="70" />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis/mybatis-conf.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-241" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/huangshangi/myblog/service/CommentService.java">
@@ -1328,16 +1293,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/huangshangi/myblog/service/ArticleService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1121">
-          <caret line="59" column="31" lean-forward="true" selection-start-line="59" selection-start-column="31" selection-end-line="59" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/admin/common.jspf">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="247">
@@ -1356,13 +1311,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-3102">
           <caret selection-end-line="2" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/fore/slider.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="56" column="3" selection-start-line="56" selection-start-column="3" selection-end-line="58" selection-end-column="6" />
         </state>
       </provider>
     </entry>
@@ -1400,10 +1348,50 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/fore/register.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="349">
+          <caret line="25" column="4" lean-forward="true" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/fore/login.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="97" column="33" lean-forward="true" selection-start-line="97" selection-start-column="33" selection-end-line="97" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis/mybatis-conf.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resource/assets/images/avatar.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resource/assets/images/a5.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/spring/spring-mvc.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="40" column="73" selection-start-line="40" selection-start-column="73" selection-end-line="40" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/huangshangi/myblog/controller/FileController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="31" column="37" selection-start-line="31" selection-start-column="37" selection-end-line="31" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/huangshangi/myblog/controller/AdminController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-730">
-          <caret line="64" selection-start-line="64" selection-end-line="64" />
+        <state relative-caret-position="296">
+          <caret line="111" column="72" lean-forward="true" selection-start-line="111" selection-start-column="72" selection-end-line="111" selection-end-column="72" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1633#1634#0" expanded="true" />
@@ -1412,21 +1400,128 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/fore/register.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/fore/index.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2014">
-          <caret line="106" column="40" selection-start-line="106" selection-start-column="40" selection-end-line="106" selection-end-column="40" />
-          <folding>
-            <element signature="n#style#0;n#div#3;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#3;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="646">
+          <caret line="47" column="31" lean-forward="true" selection-start-line="47" selection-start-column="31" selection-end-line="47" selection-end-column="31" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/ArticleMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="69" column="78" selection-start-line="69" selection-start-column="78" selection-end-line="69" selection-end-column="78" />
+        <state relative-caret-position="195">
+          <caret line="32" column="13" selection-start-line="32" selection-start-column="8" selection-end-line="32" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/huangshangi/myblog/mapper/ArticleMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-608">
+          <caret line="37" column="41" selection-start-line="37" selection-start-column="36" selection-end-line="37" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/huangshangi/myblog/entity/Article.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="99">
+          <caret line="44" column="15" selection-start-line="44" selection-start-column="15" selection-end-line="44" selection-end-column="15" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1287#1288#0" expanded="true" />
+            <element signature="e#1319#1320#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/huangshangi/myblog/impl/CommentServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="91">
+          <caret line="32" column="36" lean-forward="true" selection-start-line="32" selection-start-column="36" selection-end-line="32" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#918#919#0" expanded="true" />
+            <element signature="e#980#981#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/CommentMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="157">
+          <caret line="39" column="28" selection-start-line="39" selection-start-column="28" selection-end-line="39" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/huangshangi/myblog/mapper/CommentMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="122">
+          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/huangshangi/myblog/service/ArticleService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="151">
+          <caret line="47" column="33" selection-start-line="47" selection-start-column="17" selection-end-line="47" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/huangshangi/myblog/impl/ArticleServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="89" column="41" selection-start-line="89" selection-start-column="25" selection-end-line="89" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2182#2183#0" expanded="true" />
+            <element signature="e#2236#2237#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/huangshangi/myblog/controller/ForeArticleController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1039">
+          <caret line="97" column="21" selection-start-line="97" selection-start-column="21" selection-end-line="97" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/fore/checkArticle.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="48" lean-forward="true" selection-start-line="48" selection-end-line="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/fore/slider.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-95">
+          <caret line="37" column="37" lean-forward="true" selection-start-line="37" selection-start-column="37" selection-end-line="37" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resource/assets/js/comm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="8" column="17" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/fore/articleList.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="20" column="23" lean-forward="true" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
         </state>
       </provider>
     </entry>

@@ -100,22 +100,23 @@ public class AdminController {
         return "fore/login";
     }
 
-    @RequestMapping(value = "/loginVerify",method = RequestMethod.POST)
+    @RequestMapping(value = "/login",method = RequestMethod.POST)
     @ResponseBody
-    public String LoginVerify(HttpServletRequest request,@RequestParam(value = "username")String username,@RequestParam(value = "password")String password){
+    public String LoginVerify(HttpServletRequest request,@RequestBody String data){
 
-        JSONObject jsonObject=new JSONObject();
+        JSONObject res=new JSONObject();
 
-        User user=userService.getUserByNameOrEmail(username);
+        JSONObject jsonObject=JSONObject.parseObject(data);
+        User user=userService.getUserByNameOrEmail(jsonObject.getString("username"));
 
-        if(user.getUserPass().equals(password)){
-            jsonObject.put("result",1);
+        if(user.getUserPass().equals(jsonObject.getString("password"))){
+            res.put("result",1);
             request.getSession().setAttribute("user",user);
         }
         else
-            jsonObject.put("result",0);
+            res.put("result",0);
 
-        return jsonObject.toString();
+        return res.toString();
     }
 
 

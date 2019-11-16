@@ -99,7 +99,7 @@
         articleStatus=#{status}
 
 
-        order by articleCheckCount desc limit #{num*(page-1)},num
+        order by articleCheckCount desc limit #{limitCount},#{num}
 
     </select>
 
@@ -115,7 +115,7 @@
 
     </select>
 
-    <select id="getRankArticle" resultType="com.huangshangi.myblog.entity.Article">
+    <select id="getRankArticles" resultType="com.huangshangi.myblog.entity.Article">
         SELECT
         <include refid="baseList"/>
         from
@@ -139,7 +139,9 @@
 
     </select>
 
-    <select id="getRecommendArticles"  parameterType="java.lang.Integer" resultType="com.huangshangi.myblog.entity.Article">
+
+
+    <select id="getHeadRecommendArticles"  parameterType="java.lang.Integer" resultType="com.huangshangi.myblog.entity.Article">
         SELECT
         <include refid="baseList"/>
         from

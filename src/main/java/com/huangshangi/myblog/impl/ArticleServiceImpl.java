@@ -103,7 +103,7 @@ public class ArticleServiceImpl implements ArticleService {
 
     @Override
     public List<Article> getListByCategory(int status,int num,int page) {
-        return articleMapper.getArticlesByCategory(status,num,page);
+        return articleMapper.getArticlesByCategory(status,num,(page-1)*num);
     }
 
     @Override

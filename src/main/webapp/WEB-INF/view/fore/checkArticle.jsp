@@ -14,7 +14,16 @@
     <link rel="stylesheet"  href="/css/bootstrap.css">
     <script src="/js/jquery.min.js" ></script>
     <script src="/js/comm.js" ></script>
-
+    <script src="/plugin/editormd/lib/marked.min.js"></script>
+    <script src="/plugin/editormd/lib/prettify.min.js"></script>
+    <script src="/plugin/editormd/lib/raphael.min.js"></script>
+    <script src="/plugin/editormd/lib/underscore.min.js"></script>
+    <script src="/plugin/editormd/lib/sequence-diagram.min.js"></script>
+    <script src="/plugin/editormd/lib/flowchart.min.js"></script>
+    <script src="/plugin/editormd/lib/jquery.flowchart.min.js"></script>
+    <script src="/plugin/editormd/editormd.min.js"></script>
+    <script src="/plugin/editormd/editormd.js"></script>
+    <link href="/plugin/editormd/css/editormd.min.css" rel="stylesheet" />
     <!--[if lt IE 9]>
     <script src="/js/modernizr.js"></script>
     <![endif]-->
@@ -32,37 +41,39 @@
             <h2 class="contitle">${article.articleTitle}</h2>
             <p class="bloginfo"><span>${articleUser.userName}</span><span>${article.articleCreateTime}</span><span>阅读数 ${article.articleCheckCount}</span></p>
             <div id="test-editormd-view">
-                <textarea style="display:none;">
+                <textarea style="display:none;" name="textContent">
                     ${article.articleContent}
                 </textarea>
             </div>
 
-            <div class="share"> 分享 </div>
+
             <div class="nextinfo">
-                <p>上一篇：<a href="${'/checkArticle/'+preArticle.articleId}">${preArticle.articleTitle}</a></p>
-                <p>下一篇：<a href="${'/checkArticle/'+nextArticle.articleId}">${nextArticle.articleTitle}</a></p>
+                <p>上一篇：<a href="/checkArticle/${preArticle.articleId}">${preArticle.articleTitle}</a></p>
+                <p>下一篇：<a href="/checkArticle/${nextArticle.articleId}">${nextArticle.articleTitle}</a></p>
             </div>
         </div>
-        <c:when test="${randomList!=null} ">
-            <div class="viewbox">
-                <h2 class="newstitle"><b>随便看看</b></h2>
-                <ul>
-                   <c:forEach items="${randomList}" var="item">
-                       <li>
-                           <a href="/">
-                               <i>
-                                 <img src="http://www.yangqq.com/d/file/news/life/2018-06-17/917d732926d79cc2ae1012831ce51d1e.jpg">
-                               </i>
-                                <p>${item.articleTitle}</p>
-                                <span>${item.articleCreateTime}</span>
-                            </a>
-                       </li>
-                   </c:forEach>
+        <c:choose>
+            <c:when test="${randomList!=null} ">
+                <div class="viewbox">
+                    <h2 class="newstitle"><b>随便看看</b></h2>
+                    <ul>
+                        <c:forEach items="${randomList}" var="item">
+                            <li>
+                                <a href="/">
+                                    <i>
+                                        <img src="http://www.yangqq.com/d/file/news/life/2018-06-17/917d732926d79cc2ae1012831ce51d1e.jpg">
+                                    </i>
+                                    <p>${item.articleTitle}</p>
+                                    <span>${item.articleCreateTime}</span>
+                                </a>
+                            </li>
+                        </c:forEach>
+                    </ul>
+                </div>
+            </c:when>
 
+        </c:choose>
 
-                </ul>
-            </div>
-        </c:when>
         <div class="pinlun">
             <h2 class="newstitle"><b>评论</b></h2>
             <div class="gbok">
@@ -89,10 +100,15 @@
         <div class="news">
             <h2 class="newstitle"><b>文章排行</b></h2>
             <ul>
-                <c:forEach items="${rankList}" var="item">
-                    <li><a href="${'/checkArticle/'+item.articleId}"><span>${item.articleCreateTime}</span>${item.articleTitle}</a></li>
+                <c:choose>
+                    <c:when test="${rankList!=null}">
+                        <c:forEach items="${rankList}" var="item">
+                            <li><a href="/checkArticle/${item.articleId}"><span>${item.articleCreateTime}</span>${item.articleTitle}</a></li>
 
-                </c:forEach>
+                        </c:forEach>
+                    </c:when>
+                </c:choose>
+
 
 
             </ul>
@@ -100,19 +116,29 @@
         <div class="news">
             <h2 class="newstitle"><b>优质好文</b></h2>
             <ul>
-                <c:forEach items="${recommendList}" var="item">
-                    <li><a href="${'/checkArticle/'+item.articleId}"><span>${item.articleCreateTime}</span>${item.articleTitle}</a></li>
+                <c:choose>
+                    <c:when test="${recommendList!=null}">
+                        <c:forEach items="${recommendList}" var="item">
+                            <li><a href="/checkArticle/${item.articleId}"><span>${item.articleCreateTime}</span>${item.articleTitle}</a></li>
 
-                </c:forEach>
+                        </c:forEach>
+                    </c:when>
+                </c:choose>
+
             </ul>
         </div>
         <div class="news">
             <h2 class="newstitle"><b>本栏推荐</b></h2>
             <ul>
-                <c:forEach items="${headRecommendList}" var="item">
-                    <li><a href="${'/checkArticle/'+item.articleId}"><span>${item.articleCreateTime}</span>${item.articleTitle}</a></li>
+                <c:choose>
+                    <c:when test="${headRecommendList!=null}">
+                        <c:forEach items="${headRecommendList}" var="item">
+                            <li><a href="/checkArticle/${item.articleId}"><span>${item.articleCreateTime}</span>${item.articleTitle}</a></li>
 
-                </c:forEach>
+                        </c:forEach>
+                    </c:when>
+                </c:choose>
+
             </ul>
         </div>
     </div>

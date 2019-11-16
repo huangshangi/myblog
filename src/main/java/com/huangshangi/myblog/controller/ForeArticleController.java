@@ -24,7 +24,7 @@ public class ForeArticleController {
     @Autowired
     CommentService commentService;
 
-    @RequestMapping(value = "/checkArticle/{id}",method = RequestMethod.POST)
+    @RequestMapping(value = "/checkArticle/{id}",method = RequestMethod.GET)
     public String checkArticle(@PathVariable int id, Model model){
 
         Article article=articleService.getArticleById(id);
@@ -42,9 +42,9 @@ public class ForeArticleController {
         model.addAttribute("nextArticle",articleService.getNextArticle(id));
         //获取文章排行信息
         model.addAttribute("rankList",articleService.getRankList());
-        //获取本栏推荐信息
-        model.addAttribute("recommendList",articleService.getRecommendList());
         //获取文章推荐信息
+        model.addAttribute("recommendList",articleService.getRecommendList());
+        //获取本栏推荐信息
         model.addAttribute("headRecommendList",articleService.getHeadRecommendList(article.getArticleStatus()));
         //随便看看界面
         model.addAttribute("randomList",articleService.getRandomList(4));
@@ -59,10 +59,16 @@ public class ForeArticleController {
 
     @RequestMapping(value = "/index",method = RequestMethod.GET)
     public String getForeIndex(Model model){
-        String []array={"yuyanList","kexueList","shizhanList","zhishiList","jishuList","aboutmeList"};
+        String []array={"yuyanList","kexueList","shizhanList","zhishiList","jishuList","dailyList"};
 
-        for(int i=1;i<7;i++)
+        model.addAttribute("randomList",articleService.getRandomList(8));
+
+        for(int i=1;i<7;i++){
             model.addAttribute(array[i-1],articleService.getListByCategory(i,8,1));
+            System.out.println(articleService.getListByCategory(i,8,1).size());
+        }
+
+
 
         return "fore/index";
     }
@@ -90,8 +96,8 @@ public class ForeArticleController {
         model.addAttribute("headRecommendList",articleService.getHeadRecommendList(category));
 
         //获取本分类下文章分页数
-
         model.addAttribute("articlePage",articleService.getArticlePageByCategory(category,6));
+
         return "fore/articleList";
 
     }

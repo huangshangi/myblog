@@ -21,12 +21,12 @@
     <div class="top-nav">
         <h2 id="mnavh"><span class="navicon"></span></h2>
         <ul id="nav">
-            <li><a href="index.jsp">网站首页</a></li>
-            <li><a href="articleList.jsp">编程语言</a></li>
-            <li><a href="/2">计算机科学</a></li>
-            <li><a href="/3">框架与实战</a></li>
-            <li><a href="/4">资源与知识</a></li>
-            <li><a href="/5">其他技术</a></li>
+            <li><a href="/index">网站首页</a></li>
+            <li><a href="/articleList/1/1">编程语言</a></li>
+            <li><a href="/articleList/2/1">计算机科学</a></li>
+            <li><a href="/articleList/3/1">框架与实战</a></li>
+            <li><a href="/articleList/4/1">资源与知识</a></li>
+            <li><a href="/articleList/5/1">其他技术</a></li>
             <li><a href="/5">关于我</a></li>
             <li><a href="/5">留言</a></li>
         </ul>
@@ -43,7 +43,7 @@
 </header>
 
 <aside class="side">
-    <div class="about"> <i><a href="/"><img src="assets/images/avatar.jpg"></a></i>
+    <div class="about"> <i><a href="/"><img src="/images/avatar.jpg"></a></i>
         <p>关于站长的介绍</p>
     </div>
     <div class="weixin"> <img src="http://www.yangqq.com/skin/html/images/wx.jpg">
@@ -52,7 +52,7 @@
 </aside>
 
 </body>
-<script src="lib/layui/layui.js" charset="utf-8"></script>
+<script src="/plugin/layui/layui.js" charset="utf-8"></script>
 <script type="text/javascript">
     layui.use("layer",function(){
         var $ = layui.jquery, layer = layui.layer;

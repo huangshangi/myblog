@@ -37,6 +37,6 @@
         SELECT
         *
         FROM comment
-        WHERE articleId=#{value }
+        WHERE articleId=#{id }
     </select>
 </mapper>
