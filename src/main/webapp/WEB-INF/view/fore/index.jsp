@@ -37,7 +37,7 @@
                         <c:when test="${randomList!=null}">
                             <c:forEach items="${randomList}" var="item">
 
-                                <li class="cur"><a href="/checkArticle/${item.articleId}"><img src="http://www.yangqq.com/d/file/news/life/2018-04-27/762f99f369ae786f970477feeb3b9d77.jpg" alt=""/>
+                                <li class="cur"><a href="/checkArticle/${item.articleStatus}/${item.articleId}"><img src="http://www.yangqq.com/d/file/news/life/2018-04-27/762f99f369ae786f970477feeb3b9d77.jpg" alt=""/>
                                     <p>${item.articleTitle}</p>
                                 </a>
                                 </li>
@@ -62,7 +62,7 @@
                         <c:when test="${yuyanList!=null}">
                             <c:forEach items="${yuyanList}" var="item">
 
-                                <li><a href="/checkArticle/${item.articleId}"><span>${item.articleCreateTime}</span>${item.articleTitle}</a></li>
+                                <li><a href="/checkArticle/${item.articleStatus}/${item.articleId}"><span>${item.articleCreateTime}</span>${item.articleTitle}</a></li>
 
                             </c:forEach>
                         </c:when>
@@ -81,7 +81,7 @@
                         <c:when test="${kexueList!=null}">
                             <c:forEach items="${kexueList}" var="item">
 
-                                <li><a href="/checkArticle/${item.articleId}"><span>${item.articleCreateTime}</span>${item.articleTitle}</a></li>
+                                <li><a href="/checkArticle/${item.articleStatus}/${item.articleId}"><span>${item.articleCreateTime}</span>${item.articleTitle}</a></li>
 
                             </c:forEach>
                         </c:when>
@@ -99,7 +99,7 @@
                         <c:when test="${shizhanList!=null}">
                             <c:forEach items="${shizhanList}" var="item">
 
-                                <li><a href="/checkArticle/${item.articleId}"><span>${item.articleCreateTime}</span>${item.articleTitle}</a></li>
+                                <li><a href="/checkArticle/${item.articleStatus}/${item.articleId}"><span>${item.articleCreateTime}</span>${item.articleTitle}</a></li>
 
                             </c:forEach>
                         </c:when>
@@ -117,7 +117,7 @@
                         <c:when test="${zhishiList!=null}">
                             <c:forEach items="${zhishiList}" var="item">
 
-                                <li><a href="/checkArticle/${item.articleId}"><span>${item.articleCreateTime}</span>${item.articleTitle}</a></li>
+                                <li><a href="/checkArticle/${item.articleStatus}/${item.articleId}"><span>${item.articleCreateTime}</span>${item.articleTitle}</a></li>
 
                             </c:forEach>
                         </c:when>
@@ -135,7 +135,7 @@
                         <c:when test="${jishuList}!=null}">
                             <c:forEach items="${jishuList}" var="item">
 
-                                <li><a href="/checkArticle/${item.articleId}"><span>${item.articleCreateTime}</span>${item.articleTitle}</a></li>
+                                <li><a href="/checkArticle/${item.articleStatus}/${item.articleId}"><span>${item.articleCreateTime}</span>${item.articleTitle}</a></li>
 
                             </c:forEach>
                         </c:when>
@@ -152,7 +152,7 @@
                         <c:when test="${dailyList!=null}">
                             <c:forEach items="${dailyList}" var="item">
 
-                                <li><a href="/checkArticle/${item.articleId}"><span>${item.articleCreateTime}</span>${item.articleTitle}</a></li>
+                                <li><a href="/checkArticle/${item.articleStatus}/${item.articleId}"><span>${item.articleCreateTime}</span>${item.articleTitle}</a></li>
 
                             </c:forEach>
                         </c:when>

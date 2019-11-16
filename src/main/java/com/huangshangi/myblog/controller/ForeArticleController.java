@@ -2,6 +2,7 @@ package com.huangshangi.myblog.controller;
 
 import com.huangshangi.myblog.entity.Article;
 import com.huangshangi.myblog.entity.User;
+import com.huangshangi.myblog.enums.Contant;
 import com.huangshangi.myblog.service.ArticleService;
 import com.huangshangi.myblog.service.CommentService;
 import com.huangshangi.myblog.service.UserService;
@@ -24,8 +25,8 @@ public class ForeArticleController {
     @Autowired
     CommentService commentService;
 
-    @RequestMapping(value = "/checkArticle/{id}",method = RequestMethod.GET)
-    public String checkArticle(@PathVariable int id, Model model){
+    @RequestMapping(value = "/checkArticle/{category}/{id}",method = RequestMethod.GET)
+    public String checkArticle(@PathVariable int category,@PathVariable int id, Model model){
 
         Article article=articleService.getArticleById(id);
         User user=userService.getUserInfo(article.getArticleUserId());
@@ -52,6 +53,11 @@ public class ForeArticleController {
         //获取评论列表(json)
         model.addAttribute("commentList",commentService.getCommentListJson(article.getArticleId()));
 
+        //面包屑常量
+        String contant="您现在的位置是：首页>"+Contant.list.get(category-1)+">正文";
+        model.addAttribute("contant", contant);
+        //文章类型
+        model.addAttribute("category",category);
         return "fore/checkArticle";
     }
 
@@ -65,7 +71,7 @@ public class ForeArticleController {
 
         for(int i=1;i<7;i++){
             model.addAttribute(array[i-1],articleService.getListByCategory(i,8,1));
-            System.out.println(articleService.getListByCategory(i,8,1).size());
+            System.out.println(i);
         }
 
 
@@ -97,6 +103,10 @@ public class ForeArticleController {
 
         //获取本分类下文章分页数
         model.addAttribute("articlePage",articleService.getArticlePageByCategory(category,6));
+
+        //面包屑常量
+        String contant="您现在的位置是：首页>"+Contant.list.get(category-1);
+        model.addAttribute("contant", contant);
 
         return "fore/articleList";
 

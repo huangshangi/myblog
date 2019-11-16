@@ -3,9 +3,12 @@ $(document).ready(function () {
 	
  var obj=null;
     var As=document.getElementById('nav').getElementsByTagName('a');
-     obj = As[0];
+     obj = As[4];
+
      for(i=1;i<As.length;i++){if(window.location.href.indexOf(As[i].href)>=0)
      obj=As[i];}
+     if(find(window.location.href,'/',5)!=0)
+    	obj=As[Number(window.location.href.substring(find(window.location.href,'/',4)+1,find(window.location.href,'/',5)))]
      obj.id='selected';
 
    $("#starlist li:nth-child(1) span").click(function(){
@@ -38,7 +41,7 @@ $(document).ready(function () {
 
 	
   
-    //¹ö¶¯ÔªËØid£¬×óÇÐ»»°´Å¥£¬ÓÒÇÐ»»°´Å¥£¬ÇÐ»»ÔªËØ¸öÊýid,¹ö¶¯·½Ê½£¬ÇÐ»»·½Ïò£¬ÊÇ·ñ×Ô¶¯¹ö¶¯£¬¹ö¶¯¾àÀë£¬¹ö¶¯Ê±¼ä£¬¹ö¶¯¼ä¸ô£¬ÏÔÊ¾¸öÊý	
+    //ï¿½ï¿½ï¿½ï¿½Ôªï¿½ï¿½idï¿½ï¿½ï¿½ï¿½ï¿½Ð»ï¿½ï¿½ï¿½Å¥ï¿½ï¿½ï¿½ï¿½ï¿½Ð»ï¿½ï¿½ï¿½Å¥ï¿½ï¿½ï¿½Ð»ï¿½Ôªï¿½Ø¸ï¿½ï¿½ï¿½id,ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê½ï¿½ï¿½ï¿½Ð»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç·ï¿½ï¿½Ô¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ë£¬ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ä£¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½	
  LbMove('BoxUl','btnl','btnr','BoxSwitch',true,'left',true,230,1000,5000,7);
 
   
@@ -65,7 +68,13 @@ $(document).ready(function () {
     });
 			
 	});
-	
+function find(str,cha,num){
+	var x=str.indexOf(cha);
+	for(var i=1;i<num;i++){
+		x=str.indexOf(cha,x+1);
+	}
+	return x;
+}
 	
 	
 	function LbMove(boxID,btn_left,btn_right,btnBox,Car,direction,way,moveLengh,speed,Interval,number){

@@ -18,7 +18,7 @@
 
     <sql id="baseList">
     articleId, articleUserId, articleTitle, articleContent,articleSummary, articleCheckCount, articleCommentCount, articleCreateTime,
-    articleUpdateTime
+    articleUpdateTime,articleStatus
     </sql>
 
 

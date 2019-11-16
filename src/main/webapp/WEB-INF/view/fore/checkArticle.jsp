@@ -35,7 +35,7 @@
 <%@include file="slider.jsp" %>
 <div class="main-content">
 
-    <div class="welcome">您现在的位置是：首页>个人博客模板</div>
+    <div class="welcome">${contant}</div>
     <div class="blogbox">
         <div class="contentbox">
             <h2 class="contitle">${article.articleTitle}</h2>
@@ -159,6 +159,8 @@
     //初始化数据
 
     $(function(){
+
+
 
         var arr= ${commentList}
 
