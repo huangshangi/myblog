@@ -146,7 +146,7 @@
         </section>
         <section>
             <div class="news">
-                <h2 class="newstitle"><span><a href="/">更多</a></span><b>设计心得</b></h2>
+                <h2 class="newstitle"><span><a href="/">更多</a></span><b>日常生活</b></h2>
                 <ul>
                     <c:choose>
                         <c:when test="${dailyList!=null}">

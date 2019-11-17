@@ -55,7 +55,7 @@
         <include refid="baseList"></include>
         from
         user
-        where userName=#{id}
+        where userId=#{id}
     </select>
 
     <select id="getUserByEmail" resultType="com.huangshangi.myblog.entity.User">

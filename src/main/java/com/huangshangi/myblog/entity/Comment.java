@@ -14,12 +14,12 @@ public class Comment {
 
     private int articleId;//评论文章id
 
-    private Date createTime;//评论创建时间
+    private String createTime;//评论创建时间
 
     public Comment() {
     }
 
-    public Comment(int id, int parentId, String content, int uid, int articleId,Date createTime) {
+    public Comment(int id, int parentId, String content, int uid, int articleId,String createTime) {
         this.id = id;
         this.parentId = parentId;
         this.content = content;
@@ -69,11 +69,11 @@ public class Comment {
         this.articleId = articleId;
     }
 
-    public Date getCreateTime() {
+    public String getCreateTime() {
         return createTime;
     }
 
-    public void setCreateTime(Date createTime) {
+    public void setCreateTime(String createTime) {
         this.createTime = createTime;
     }
 }

@@ -11,7 +11,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="lib/layui/css/layui.css"  media="all">
+    <link rel="stylesheet" href="/plugin/layui/css/layui.css"  media="all">
 </head>
 <body>
 
@@ -27,8 +27,8 @@
             <li><a href="/articleList/3/1">框架与实战</a></li>
             <li><a href="/articleList/4/1">资源与知识</a></li>
             <li><a href="/articleList/5/1">其他技术</a></li>
-            <li><a href="/5">关于我</a></li>
-            <li><a href="/5">留言</a></li>
+            <li><a href="/articleList/5/1">日常生活</a></li>
+            <li><a href="/5">留言板</a></li>
         </ul>
     </div>
     <div class="search">
