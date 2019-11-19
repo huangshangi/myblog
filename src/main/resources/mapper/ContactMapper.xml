@@ -7,7 +7,7 @@
         <result property="contactEmail" column="contactEmail" jdbcType="VARCHAR"/>
         <result property="contactName" column="contactName" jdbcType="VARCHAR"/>
         <result property="contactMessage" column="contactMessage" jdbcType="VARCHAR"/>
-        <result property="contactTime" column="contactTime" jdbcType="VARCHAR"/>
+        <result property="contactTime" column="contactTime" jdbcType="TIMESTAMP"/>
     </resultMap>
 
     <sql id="tn">contact</sql>

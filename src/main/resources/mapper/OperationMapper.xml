@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.huangshangi.myblog.mapper.OperationMapper">
+    <resultMap id="baseList" type="com.huangshangi.myblog.entity.Operation">
+        <id column="operationId" property="operationId" jdbcType="INTEGER"/>
+        <result column="operationUserId" property="operationUserId" jdbcType="INTEGER"/>
+        <result column="operationName" property="operationName" jdbcType="VARCAHR"/>
+        <result column="operationIp" property="operationIp" jdbcType="VARCHAR"/>
+        <result column="operationPath" property="operationPath" jdbcType="VARCAHR"/>
+        <result column="operationTime" property="operationTime" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <sql id="tn"></sql>
+    <insert id="insertOperation" parameterType="com.huangshangi.myblog.entity.Operation">
+        insert into
+        <include refid="tn"></include>
+        (operationUserId,operationName,operationIp,operationPath,operationTime)
+        values
+        (#{operationUserId},#{operationName},#{operationIp},#{operationPath},#{operationTime})
+    </insert>
+
+
+    <select id="getOperations" resultType="com.huangshangi.myblog.entity.Operation">
+        select
+        *
+        from
+        <include refid="tn"></include>
+
+        where operationUserId=#{userId} order by operationTime desc limit #{size}
+    </select>
+
+
+    <delete id="deleteOperation" parameterType="java.lang.Integer">
+
+        delete from
+        <include refid="tn"></include>
+        where operationId=#{id}
+
+    </delete>
+</mapper>

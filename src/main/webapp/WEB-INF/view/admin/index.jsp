@@ -108,16 +108,15 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                      
-                                      	<c:forEach var="rankInfo" varStatus="status" items="${rankList }">
-                                        <tr class="gradeX">
-                                            <td><c:out value="${status.count }"></c:out></td>
-                                            <td><c:out value="${rankInfo.userName }"></c:out></td>
-											<td><c:out value="${rankInfo.checkCount }"></c:out></td>
-                                            <td><c:out value="${rankInfo.userLastTime }"></c:out></td>
-                                        </tr>
-                                       </c:forEach>
-									   
+
+                                          <c:forEach var="rankInfo" varStatus="status" items="${rankList }">
+                                              <tr class="gradeX">
+                                                  <td><c:out value="${status.count }"></c:out></td>
+                                                  <td><c:out value="${rankInfo.userName }"></c:out></td>
+                                                  <td><c:out value="${rankInfo.checkCount }"></c:out></td>
+                                                  <td><c:out value="${rankInfo.userLastTime }"></c:out></td>
+                                              </tr>
+                                          </c:forEach>
                                         <!-- more data -->
                                     </tbody>
 									
@@ -138,9 +137,35 @@
                                     <a href="javascript:;" class="am-icon-cog"></a>
                                 </div>
                             </div>
-                            <div class="widget-body widget-body-md am-fr">
-							
-                                
+                            <div class="widget-body-md widget-body tpl-amendment-echarts am-fr" >
+                                <div class="widget-body  widget-body-lg am-fr">
+
+                                    <table width="100%" class="am-table am-table-compact tpl-table-black " >
+
+                                        <thead>
+                                        <tr>
+                                            <th>序号</th>
+                                            <th>用户</th>
+                                            <th>最后登录时间</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+
+                                        <c:forEach var="registerInfo" varStatus="status" items="${registerList }">
+                                            <tr class="gradeX">
+                                                <td><c:out value="${status.count }"></c:out></td>
+                                                <td><c:out value="${registerInfo.userName }"></c:out></td>
+                                                <td><c:out value="${registerInfo.userLastTime }"></c:out></td>
+                                            </tr>
+                                        </c:forEach>
+                                        <!-- more data -->
+                                        </tbody>
+
+                                    </table>
+
+
+
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -173,15 +198,15 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                        	<c:forEach var="info" items="${dialy}">
-                                            <tr class="gradeX">
-                                                <td><c:out value="${ info.message}"></c:out></td>
-                                                <td><c:out value="${ info.nickname}"></c:out></td>
-												<td><c:out value="${ info.address}"></c:out></td>
-												<td><c:out value="${ info.detail}"></c:out></td>
-                                                <td><c:out value="${ info.time}"></c:out></td>
-                                               
-                                            </tr>
+                                        	<c:forEach var="info" items="${operationList}">
+                                                <tr class="gradeX">
+                                                    <td><c:out value="${ info.operationName}"></c:out></td>
+                                                    <td><c:out value="${ sessionScope.user.userName}"></c:out></td>
+                                                    <td><c:out value="${ info.operationIp}"></c:out></td>
+                                                    <td><c:out value="${ info.operationPath}"></c:out></td>
+                                                    <td><c:out value="${ info.operationTime}"></c:out></td>
+
+                                                </tr>
                                        </c:forEach>
 
 

@@ -13,7 +13,7 @@
         <header>
             <!-- logo -->
             <div class="am-fl tpl-header-logo">
-                <a href="javascript:;"><img src="/img/logo.png" alt=""></a>
+                <a href="javascript:;"><img src="${sessionScope.user.userImage}" alt="${sessionScope.user.userName}"></a>
             </div>
             <!-- 右侧内容 -->
             <div class="tpl-header-fluid">
@@ -41,7 +41,7 @@
                
                         <!-- 退出 -->
                         <li class="am-text-sm " id="logout">
-                            <a href="javascript:;">
+                            <a href="/loginout">
                                 <span class="am-icon-sign-out"></span> 退出
                             </a>
                         </li>
@@ -70,11 +70,11 @@
             <div class="tpl-sidebar-user-panel">
                 <div class="tpl-user-panel-slide-toggleable">
                     <div class="tpl-user-panel-profile-picture">
-                        <img src="${sessionScope.imageUrl }" alt="">
+                        <img src="${sessionScope.user.userImage }" alt="">
                     </div>
                     <span class="user-panel-logged-in-text">
               <i class="am-icon-circle-o am-text-success tpl-user-panel-status-icon"></i>
-              <%=session.getAttribute("nickname") %>
+              ${sessionScope.user.userName}
           </span>
                    
                 </div>
@@ -84,7 +84,7 @@
             <ul class="sidebar-nav">
                 <!--<li class="sidebar-nav-heading">Components <span class="sidebar-nav-heading-info"> 附加组件</span></li>-->
                 <li class="sidebar-nav-link">
-                    <a href="index.jsp" >
+                    <a href="/index" >
                         <i class="am-icon-home sidebar-nav-link-logo"></i> 首页
                     </a>
                 </li>
@@ -94,7 +94,7 @@
                     </a>
                 </li>
                 <li class="sidebar-nav-link">
-                    <a href="comment-list.jsp">
+                    <a href="/admin/comment">
                         <i class="am-icon-calendar sidebar-nav-link-logo"></i> 评论
                     </a>
                 </li>

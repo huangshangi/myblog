@@ -4,6 +4,7 @@ import com.huangshangi.myblog.entity.Article;
 import com.huangshangi.myblog.entity.User;
 import com.huangshangi.myblog.service.ArticleService;
 import com.huangshangi.myblog.service.UserService;
+import com.huangshangi.myblog.utils.OperationAnnoation;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,6 +38,7 @@ public class BackArticleController {
         return "admin/table-list";
     }
 
+
     @RequestMapping(value = "/admin/article",method = RequestMethod.POST)
     public String getArticlePage(HttpServletRequest request, @RequestParam(required = false,defaultValue = "1")int page,
                                  @RequestParam(required = false,defaultValue = "10")int pageSize,Model model){
@@ -49,12 +51,14 @@ public class BackArticleController {
         return "admin/table-list";
     }
 
+    @OperationAnnoation(name="文章删除")
     @RequestMapping(value = "/article/delete",method=RequestMethod.POST)
     public void deleteArticles(@RequestParam(value = "postData",required = true)int postData){
        articleService.deleteArticleById(postData);
 
     }
 
+    @OperationAnnoation(name="文章删除")
     @RequestMapping(value = "/article/deletes",method = RequestMethod.POST)
     @ResponseBody
     public void deleteArticles(@RequestBody ArrayList<Integer> ids){
@@ -62,11 +66,13 @@ public class BackArticleController {
     }
 
 
+
     @RequestMapping(value = "/article/newArticle")
     public String newArticle(){
 
         return "admin/newArticle";
     }
+
 
     @RequestMapping(value = "/article/submit")
     @ResponseBody

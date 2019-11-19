@@ -2,9 +2,12 @@ package com.huangshangi.myblog.controller;
 
 import com.alibaba.fastjson.JSONObject;
 import com.huangshangi.myblog.entity.Article;
+import com.huangshangi.myblog.entity.Operation;
 import com.huangshangi.myblog.entity.User;
 import com.huangshangi.myblog.service.ArticleService;
+import com.huangshangi.myblog.service.OperationService;
 import com.huangshangi.myblog.service.UserService;
+import com.huangshangi.myblog.utils.OperationAnnoation;
 import org.apache.ibatis.annotations.Param;
 import org.json.JSONArray;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +17,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,6 +31,10 @@ public class AdminController {
     @Autowired
     ArticleService articleService;
 
+    @Autowired
+    OperationService operationService;
+
+
     @RequestMapping(value = "/admin")
     public String getAdminIndex(HttpServletRequest request, Model model){
 
@@ -39,20 +47,24 @@ public class AdminController {
         //获取新注册用户信息表
         List<User>registerList=userService.getRegisterList();
         //获取操作日志
+        List<Operation>operationList=operationService.getOperations(user.getUserId(),8);
 
         model.addAttribute("userSampList",userSampList);
         model.addAttribute("rankList",rankList);
         model.addAttribute("registerList",registerList);
+        model.addAttribute("operationList",operationList);
 
         return "admin/index";
 
     }
+
 
     @RequestMapping(value = "/register")
     public String getRegisterPage(){
         return "fore/register";
     }
 
+    @OperationAnnoation(name="用户注册")
     @RequestMapping(value = "/register",method = RequestMethod.POST)
     @ResponseBody
     public String addRegister(HttpServletRequest request,@RequestBody String data){
@@ -94,12 +106,14 @@ public class AdminController {
         return res.toJSONString();
     }
 
+
     @RequestMapping(value = "/login",method = RequestMethod.GET)
     public String getLoginPage(){
 
         return "fore/login";
     }
 
+    @OperationAnnoation(name="用户登录")
     @RequestMapping(value = "/login",method = RequestMethod.POST)
     @ResponseBody
     public String LoginVerify(HttpServletRequest request,@RequestBody String data){
@@ -119,5 +133,12 @@ public class AdminController {
         return res.toString();
     }
 
+    @OperationAnnoation(name="退出登录")
+    @RequestMapping(value = "/loginout")
+    public String getLoginOut(HttpSession session){
+        session.removeAttribute("user");
+        session.invalidate();
+        return "redirect:/login";
+    }
 
 }
