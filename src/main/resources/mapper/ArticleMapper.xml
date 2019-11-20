@@ -89,6 +89,8 @@
 
     </select>
 
+
+
     <select id="getArticlesByCategory"  parameterType="java.lang.Integer" resultType="com.huangshangi.myblog.entity.Article">
         SELECT
         <include refid="baseList"/>

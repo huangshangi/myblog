@@ -24,10 +24,10 @@ public interface CommentService {
     List<CommentTree>getCommentList(int articleId);
 
     //获取某个用户评论列表
-    List<Comment>getCommentsList(int uid);
+    List<Comment>getCommentsList(int uid,int page,int size);
 
     //获取某位用户直接评论
-    JSONArray getCommentsJSON(int uid);
+    JSONArray getCommentsJSON(int uid,int page,int size);
 
     //获取文章评论列表json形式
     String getCommentListJson(int articleId);

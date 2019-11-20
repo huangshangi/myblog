@@ -63,6 +63,8 @@ public interface ArticleMapper {
     //删除多条文章信息
     int deleteArticleByIds(@Param(value="ids")String ids);
 
+
+
     //更新游览量
     int updateArticleCheckCount(@Param(value="articleId") String articleId);
 

@@ -9,12 +9,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 @Controller
 public class CommentController {
@@ -51,9 +49,48 @@ public class CommentController {
 
         User user=(User)request.getSession().getAttribute("user");
 
-        commentService.getCommentsJSON()
+        List<Comment> list=commentService.getCommentsList(user.getUserId(),1,10);
+
+        model.addAttribute("commentList",list);
+
+        return "admin/comment-list";
     }
 
+    @RequestMapping(value = "/commentList",method = RequestMethod.POST)
+    @ResponseBody
+    public String getCommentList(HttpServletRequest request,@RequestParam(value = "page",required = true,defaultValue = "1")int page,@RequestParam(
+            value = "pageSize",required = true,defaultValue = "10")int pageSize){
 
+        User user=(User)request.getSession().getAttribute("user");
+
+
+
+        return commentService.getCommentsJSON(user.getUserId(),page,pageSize).toJSONString();
+
+    }
+
+    @RequestMapping(value = "/comment/delete",method = RequestMethod.POST)
+    @ResponseBody
+    public String deleteComment(@RequestParam(value="id")int id){
+        JSONObject res=new JSONObject();
+        if(commentService.deleteCommentById(id)==1)
+            res.put("result",1);
+        else
+            res.put("result",0);
+
+        return res.toString();
+    }
+
+    @RequestMapping(value = "/comment/delete",method = RequestMethod.POST)
+    @ResponseBody
+    public String deleteComments(@RequestParam(value="ids")List<Integer> ids){
+        JSONObject res=new JSONObject();
+        if(commentService.deleteCommentsById(ids)==1)
+            res.put("result",1);
+        else
+            res.put("result",0);
+
+        return res.toString();
+    }
 
 }

@@ -40,11 +40,16 @@
         WHERE articleId=#{id} and parentId=0;
     </select>
 
-    <select id="getComments" parameterType="java.lang.Integer" resultType="com.huangshangi.myblog.entity.Comment">
+    <select id="getComments"  resultType="com.huangshangi.myblog.entity.Comment">
         select *
         from
         comment
-        where articleId=#{id} and parentId=0;
+        where articleId=#{id} and parentId=0
+        <if test="#{size}!=-1" >
+        limit #{size}
+        </if>
+        order by
+        #{style}
     </select>
 
     <delete id="deleteCommentById" parameterType="java.lang.Integer" statementType="CALLABLE">

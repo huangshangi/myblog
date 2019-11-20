@@ -83,27 +83,24 @@ public class CommentServiceImpl implements CommentService {
 
 
     @Override
-    public JSONArray getCommentsJSON(int uid) {
+    public JSONArray getCommentsJSON(int uid,int page,int size) {
 
-        //获取用户所有文章
-        List<Article>articleList=articleMapper.getArticles(uid);
+        List<Comment>list=getCommentsList(uid,page,size);
         JSONArray jsonArray=new JSONArray();
-        for(int i=0;i<articleList.size();i++){
-            List<Comment>list=commentMapper.getComments(articleList.get(i).getArticleId());
-            Article article=articleMapper.getArticleById(articleList.get(i).getArticleId());
-            for(int j=0;j<list.size();j++){
-                JSONObject jsonObject=new JSONObject();
-                Comment comment=list.get(j);
-                jsonObject.put("id",comment.getId());
-                jsonObject.put("articleTitle",article.getArticleTitle());
-                jsonObject.put("content",comment.getContent());
-                jsonObject.put("time",comment.getCreateTime());
-                jsonArray.add(jsonObject);
-            }
+        for(int i=0;i<list.size();i++){
+            JSONObject jsonObject=new JSONObject();
+
+            Comment comment=list.get(i);
+
+            jsonObject.put("commentId",comment.getId());
+            jsonObject.put("articleTitle",articleMapper.getArticleById(comment.getArticleId()).getArticleTitle());
+            jsonObject.put("content",comment.getContent());
+            jsonObject.put("time",comment.getCreateTime());
+            jsonObject.put("commentUser",userMapper.getUserById(comment.getUid()));
+            jsonArray.add(jsonObject);
         }
+        return  jsonArray;
 
-
-        return jsonArray;
     }
 
     @Override
@@ -114,23 +111,32 @@ public class CommentServiceImpl implements CommentService {
     }
 
     @Override
-    public List<Comment> getCommentsList(int uid) {
+    public List<Comment> getCommentsList(int uid,int page,int size) {
+
+        int start=(page-1)*size,end=page*size;
+
+        int temp=0;
+
+        boolean flag=false;
         //获取用户所有文章
         List<Article>articleList=articleMapper.getArticles(uid);
+
+        //起止 (page-1)*size->page*size
         List<Comment>resList=new ArrayList<>();
         for(int i=0;i<articleList.size();i++){
-            List<Comment>list=commentMapper.getComments(articleList.get(i).getArticleId());
-            Article article=articleMapper.getArticleById(articleList.get(i).getArticleId());
-            for(int j=0;j<list.size();j++){
-                JSONObject jsonObject=new JSONObject();
-                Comment comment=list.get(j);
-                jsonObject.put("id",comment.getId());
-                jsonObject.put("articleTitle",article.getArticleTitle());
-                jsonObject.put("content",comment.getContent());
-                jsonObject.put("time",comment.getCreateTime());
-                jsonArray.add(jsonObject);
+
+            if(temp<start)
+                temp+=articleList.get(i).getArticleCommentCount();
+            else {
+                if(!flag){
+                    resList.addAll(commentMapper.getComments(articleList.get(i).getArticleId(),temp-start+1,"desc"));
+                }else{
+                    resList.addAll(commentMapper.getComments(articleList.get(i).getArticleId(),end-temp+1,"asc"));
+                    break;
+                }
             }
         }
 
+        return resList;
     }
 }

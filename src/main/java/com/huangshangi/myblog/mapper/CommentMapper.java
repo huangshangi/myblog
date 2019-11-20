@@ -30,7 +30,7 @@ public interface CommentMapper {
     List<CommentTree>getCommentTree(@Param(value="id")int id);
 
     //获取文章的直接评论->articleId
-    List<Comment>getComments(@Param(value = "id")int id);
+    List<Comment>getComments(@Param(value = "id")int id,@Param(value = "size")int size,@Param(value = "style")String style);
 
 
 
