@@ -1,5 +1,7 @@
 package com.huangshangi.myblog.impl;
 
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
 import com.huangshangi.myblog.entity.Article;
 import com.huangshangi.myblog.mapper.ArticleMapper;
 import com.huangshangi.myblog.mapper.CommentMapper;
@@ -120,5 +122,24 @@ public class ArticleServiceImpl implements ArticleService {
         else
             return count/pageNum+1;
 
+    }
+
+    @Override
+    public JSONArray getJsonArray(List<Article> list) {
+
+        JSONArray jsonArray=new JSONArray();
+        for(int i=0;i<list.size();i++){
+            Article article=list.get(i);
+            JSONObject jsonObject=new JSONObject();
+            jsonObject.put("articleId",article.getArticleId());
+            jsonObject.put("articleCheckCount",article.getArticleCheckCount());
+            jsonObject.put("articleCommentCount",article.getArticleCommentCount());
+            jsonObject.put("articleTitle",article.getArticleTitle());
+            jsonObject.put("articleCreateTime",article.getArticleCreateTime());
+
+            jsonArray.add(jsonObject);
+        }
+
+        return jsonArray;
     }
 }

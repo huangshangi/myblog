@@ -89,25 +89,25 @@
                                            
 
                                         <c:choose>
-                                        	<c:when test="${articles==null }">
+                                        	<c:when test="${articleList==null }">
 	                                        	<tr>
 													<th colspan="8" style="text-align: center">暂无数据</th>
 												</tr>
 											</c:when>
 											
 											<c:otherwise>
-	                                        	<c:forEach items="${articles }" var="item">
+	                                        	<c:forEach items="${articleList }" var="item">
 	                                        	 		<input class="itemId" value="${item.articleId}" type="hidden"/>
-		                                            <tr class="gradeX">	                                           
+		                                            <tr class="gradeX" id="${item.articleId}">
 														<td><input value="${item.articleId}" type="checkbox"/></td>
-		                                                <td><c:out value="${item.title }"></c:out></td>
-		                                                <td><c:out value="${item.commentCount }"></c:out></td>
-														<td><c:out value="${item.checkCount }"></c:out></td>
-		                                                <td><c:out value="${item.createTime }"></c:out></td>
+		                                                <td><c:out value="${item.articleTitle }"></c:out></td>
+		                                                <td><c:out value="${item.articleCommentCount }"></c:out></td>
+														<td><c:out value="${item.articleCheckCount }"></c:out></td>
+		                                                <td><c:out value="${item.articleCreateTime }"></c:out></td>
 		                                                <td>
 		                                                    <div class="tpl-table-black-operation">
-		                                                        <a href="javascript:;" onclick="editArticle(${item.articleId})">
-		                                                            <i class="am-icon-pencil" ></i> 编辑
+		                                                        <a href="javascript:;" onclick="checkArticle(${item.articleStatus},${item.articleId})">
+		                                                            <i class="am-icon-pencil" ></i> 查看
 		                                                        </a>
 		                                                        <a href="javascript:;" class="tpl-table-black-operation-del" onclick="deleteArticle(${item.articleId})">
 		                                                            <i class="am-icon-trash"></i> 删除
@@ -181,8 +181,46 @@
     		if($('div.am-fr ul.am-pagination  li:eq('+(Number(index)-1)+')').html()===$('div.am-fr ul.am-pagination  li:first').html())
     			
     			$('div.am-fr ul.am-pagination  li:eq('+(Number(index)-1)+')').addClass('am-disabled');
-    	
-        		
+
+    		var data={"page":index};
+        		//发送分页显示器
+                $.post({
+                    type:'POST',
+                    url:'article/article',
+                    data:data,
+                    success:function (result) {
+                        $('tbody').remove();
+                        var tbody=$('<tbody></tbody>');
+                        var list=JSON.stringify(result)
+                        for(var i=0;i<list.size();i++){
+                            var item=list[i];
+                            var tr="  <tr class=\"gradeX\ id="+item.articleId +">\t                                           \n" +
+                                "\t\t\t\t\t\t\t\t\t\t\t\t\t\t<td><input value="+item.articleId+"type=\"checkbox\"/></td>\n" +
+                                "\t\t                                                <td>"+item.articleTitle+"</td>\n" +
+                                "\t\t                                                <td>"+item.articleCommentCount+"</td>\n" +
+                                "\t\t\t\t\t\t\t\t\t\t\t\t\t\t<td>"+item.articleCheckCount+"</td>\n" +
+                                "\t\t                                                <td>"+item.articleCreateTime +"</td>\n" +
+                                "\t\t                                                <td>\n" +
+                                "\t\t                                                    <div class=\"tpl-table-black-operation\">\n" +
+                                "\t\t                                                        <a href=\"javascript:;\" onclick=\"checkArticle("+item.articleStatus+","+item.articleId+")\">\n" +
+                                "\t\t                                                            <i class=\"am-icon-pencil\" ></i> 查看\n" +
+                                "\t\t                                                        </a>\n" +
+                                "\t\t                                                        <a href=\"javascript:;\" class=\"tpl-table-black-operation-del\" onclick=\"deleteArticle("+item.articleId+"})\">\n" +
+                                "\t\t                                                            <i class=\"am-icon-trash\"></i> 删除\n" +
+                                "\t\t                                                        </a>\n" +
+                                "\t\t                                                    </div>\n" +
+                                "\t\t                                                </td>\n" +
+                                "\t\t                                            </tr>";
+
+                            tr.appendTo(tbody);
+                        }
+    		            $('thead').after(tbody)
+
+                    },
+                    error:function (e) {
+                        layer.msg('文章删除失败')
+                    }
+                })
         	
         	
         	
@@ -223,8 +261,11 @@
 
 		}
 
-    	//编辑文章
-		function editArticle(value){
+    	//查看文章
+		function checkArticle(category,id){
+
+		    window.location.href="/article/"+category+"/"+id;
+
 
 		}
     
@@ -242,16 +283,19 @@
     	//2.删除单个 article
     	function deleteArticle(value) {
 			//value代表删除的article id 使用ajax删除
+            var data={"postData":value};
 			$.ajax({
 				type:'POST',
 				url:'article/delete',
-				data:value,
+				data:data,
 				success:function (result) {
-					console.log(result)
+                    var json=JSON.stringify(result)
+
+					//删除article
+                    $('#'+value).remove()
 				},
 				error:function (e) {
-					console.log(e.status)
-					console.log(e.responseText)
+					layer.msg('文章删除失败')
 				}
 			})
 		}
@@ -269,10 +313,14 @@
 				data:JSON.stringify(list),
 				success:function (result) {
 					console.log(result)
+                    for(var i=0;i<list.length;i++){
+                        var id=list[i]
+                        $('#'+id).remove()
+                    }
+
 				},
 				error:function (e) {
-					console.log(e.status)
-					console.log(e.responseText)
+					layer.msg('删除文章失败')
 				}
 			})
 		}

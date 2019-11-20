@@ -39,4 +39,15 @@
         FROM comment
         WHERE articleId=#{id} and parentId=0;
     </select>
+
+    <select id="getComments" parameterType="java.lang.Integer" resultType="com.huangshangi.myblog.entity.Comment">
+        select *
+        from
+        comment
+        where articleId=#{id} and parentId=0;
+    </select>
+
+    <delete id="deleteCommentById" parameterType="java.lang.Integer" statementType="CALLABLE">
+        call proc_delete_comment(#{id,mode=IN})
+    </delete>
 </mapper>

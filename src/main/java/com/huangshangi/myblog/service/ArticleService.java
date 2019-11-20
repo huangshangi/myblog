@@ -1,5 +1,6 @@
 package com.huangshangi.myblog.service;
 
+import com.alibaba.fastjson.JSONArray;
 import com.huangshangi.myblog.entity.Article;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Service;
@@ -9,6 +10,10 @@ import java.util.List;
 
 @Service
 public interface ArticleService {
+
+    //将list转化为jsonArray
+    JSONArray getJsonArray(List<Article>list);
+
 
     //获取用户简略信息(文章数 游览量）
     List<Integer> getUserSampInfos(int id);

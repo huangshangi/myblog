@@ -1,11 +1,11 @@
 package com.huangshangi.myblog.controller;
 
+import com.alibaba.fastjson.JSONArray;
 import com.huangshangi.myblog.entity.Article;
 import com.huangshangi.myblog.entity.User;
 import com.huangshangi.myblog.service.ArticleService;
 import com.huangshangi.myblog.service.UserService;
 import com.huangshangi.myblog.utils.OperationAnnoation;
-import org.json.JSONArray;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -40,29 +40,45 @@ public class BackArticleController {
 
 
     @RequestMapping(value = "/admin/article",method = RequestMethod.POST)
+    @ResponseBody
     public String getArticlePage(HttpServletRequest request, @RequestParam(required = false,defaultValue = "1")int page,
                                  @RequestParam(required = false,defaultValue = "10")int pageSize,Model model){
         User user= (User) request.getSession().getAttribute("user");
 
         List<Article>articleList=articleService.getArticlesByName(user.getUserId(),page,pageSize);
 
-        model.addAttribute("articleList",articleList);
+        JSONArray jsonArray=articleService.getJsonArray(articleList);
 
-        return "admin/table-list";
+        return jsonArray.toJSONString();
     }
 
     @OperationAnnoation(name="文章删除")
     @RequestMapping(value = "/article/delete",method=RequestMethod.POST)
-    public void deleteArticles(@RequestParam(value = "postData",required = true)int postData){
-       articleService.deleteArticleById(postData);
+    @ResponseBody
+    public String deleteArticles(@RequestParam(value = "postData",required = true)int postData){
+        com.alibaba.fastjson.JSONObject jsonObject=new com.alibaba.fastjson.JSONObject();
+
+       if(articleService.deleteArticleById(postData)==1)
+           jsonObject.put("result",1);
+       else
+           jsonObject.put("result",0);
+       return jsonObject.toString();
 
     }
 
     @OperationAnnoation(name="文章删除")
     @RequestMapping(value = "/article/deletes",method = RequestMethod.POST)
     @ResponseBody
-    public void deleteArticles(@RequestBody ArrayList<Integer> ids){
-        articleService.deleteArticlesByIds(ids);
+    public String deleteArticles(@RequestBody ArrayList<Integer> ids)
+    {
+        com.alibaba.fastjson.JSONObject jsonObject=new com.alibaba.fastjson.JSONObject();
+
+        if(articleService.deleteArticlesByIds(ids)==1)
+            jsonObject.put("result",1);
+        else
+            jsonObject.put("result",0);
+        return jsonObject.toString();
+
     }
 
 

@@ -35,7 +35,7 @@ public interface ArticleMapper {
     List<Article>getRandomArticles(@Param("count")int count);
 
     //获取某位用户所有文章
-    List<Article>getArticles(@Param(value="id") String id);
+    List<Article>getArticles(@Param(value="id") int id);
 
     List<Article>getArticlesByPage(@Param(value="id") int id,@Param(value="page")int page,@Param(value="pageSize")int pageSize);
 

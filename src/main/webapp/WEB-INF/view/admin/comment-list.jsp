@@ -33,7 +33,7 @@
                 <div class="am-u-sm-12 am-u-md-12 am-u-lg-12">
                     <div class="widget am-cf">
                         <div class="widget-head am-cf">
-                            <div class="widget-title  am-cf">文章列表</div>
+                            <div class="widget-title  am-cf">评论列表</div>
 
 
                         </div>
@@ -113,7 +113,7 @@
                                         <c:otherwise>
                                             <c:forEach items="${requestScope.articles }" var="item">
                                                 <input class="itemId" value="${item.articleId}" type="hidden"/>
-                                                <tr class="gradeX">
+                                                <tr class="gradeX" id="${item.articleId}">
                                                     <td><input value="${item.articleId}" type="checkbox"/></td>
                                                     <td><c:out value="${item.title }"></c:out></td>
                                                     <td><c:out value="${item.commenter }"></c:out></td>
@@ -202,7 +202,42 @@
 
             //根据index分页显示页面
             //ajax
+            $.ajax({
+                type:'POST',
+                url:'article/article',
+                data:data,
+                success:function(res){
+                    $('tbody').remove();
+                    var tbody=$('<tbody></tbody>');
+                    var list=JSON.stringify(result)
+                    for(var i=0;i<list.size();i++){
+                        var item=list[i];
+                        var tr="  <tr class=\"gradeX\ id="+item.articleId +">\t                                           \n" +
+                            "\t\t\t\t\t\t\t\t\t\t\t\t\t\t<td><input value="+item.articleId+"type=\"checkbox\"/></td>\n" +
+                            "\t\t                                                <td>"+item.articleTitle+"</td>\n" +
+                            "\t\t                                                <td>"+item.articleCommentCount+"</td>\n" +
+                            "\t\t\t\t\t\t\t\t\t\t\t\t\t\t<td>"+item.articleCheckCount+"</td>\n" +
+                            "\t\t                                                <td>"+item.articleCreateTime +"</td>\n" +
+                            "\t\t                                                <td>\n" +
+                            "\t\t                                                    <div class=\"tpl-table-black-operation\">\n" +
+                            "\t\t                                                        <a href=\"javascript:;\" onclick=\"checkArticle("+item.articleStatus+","+item.articleId+")\">\n" +
+                            "\t\t                                                            <i class=\"am-icon-pencil\" ></i> 查看\n" +
+                            "\t\t                                                        </a>\n" +
+                            "\t\t                                                        <a href=\"javascript:;\" class=\"tpl-table-black-operation-del\" onclick=\"deleteArticle("+item.articleId+"})\">\n" +
+                            "\t\t                                                            <i class=\"am-icon-trash\"></i> 删除\n" +
+                            "\t\t                                                        </a>\n" +
+                            "\t\t                                                    </div>\n" +
+                            "\t\t                                                </td>\n" +
+                            "\t\t                                            </tr>";
 
+                        tr.appendTo(tbody);
+                    }
+                    $('thead').after(tbody)
+                },
+                error:function (error) {
+
+                }
+            })
 
 
         });

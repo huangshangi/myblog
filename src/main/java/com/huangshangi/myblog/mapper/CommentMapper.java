@@ -29,4 +29,9 @@ public interface CommentMapper {
     //根据文章id获取文章评论树
     List<CommentTree>getCommentTree(@Param(value="id")int id);
 
+    //获取文章的直接评论->articleId
+    List<Comment>getComments(@Param(value = "id")int id);
+
+
+
 }

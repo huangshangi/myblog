@@ -115,25 +115,4 @@ public class ForeArticleController {
 
 
 
-    @RequestMapping(value = "/addComment",method = RequestMethod.POST)
-    @ResponseBody
-    public String addComment(@RequestBody String data){
-
-        JSONObject res=new JSONObject();
-        //将评论信息进行解析
-        JSONObject jsonObject=JSONObject.parseObject(data);
-        Comment comment=new Comment();
-        comment.setArticleId((int)jsonObject.get("articleId"));
-        comment.setContent((String)jsonObject.get("content"));
-        comment.setUid((int)jsonObject.get("uid"));
-        comment.setCreateTime(util.getTime());
-        comment.setParentId((int)jsonObject.get("parentId"));
-
-        if(commentService.insertComment(comment)==1)
-            res.put("result",1);
-        else
-            res.put("result",0);
-        return res.toString();
-
-    }
 }
