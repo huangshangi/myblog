@@ -147,4 +147,9 @@ public class AdminController {
         return null;
     }
 
+    @RequestMapping(value = "/ceshi")
+    public String ceshi(){
+
+        return "index";
+    }
 }

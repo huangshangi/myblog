@@ -4,9 +4,11 @@ import com.huangshangi.myblog.entity.Operation;
 import com.huangshangi.myblog.mapper.OperationMapper;
 import com.huangshangi.myblog.service.OperationService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class OperationServiceImpl implements OperationService {
 
     @Autowired

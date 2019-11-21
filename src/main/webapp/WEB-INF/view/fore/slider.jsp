@@ -27,19 +27,22 @@
             <li><a href="/articleList/3/1">框架与实战</a></li>
             <li><a href="/articleList/4/1">资源与知识</a></li>
             <li><a href="/articleList/5/1">其他技术</a></li>
-            <li><a href="/articleList/5/1">日常生活</a></li>
-            <li><a href="/5">留言板</a></li>
+            <li><a href="/articleList/6/1">日常生活</a></li>
+            <li><a href="/contactus">留言板</a></li>
         </ul>
     </div>
-    <div class="search">
-        <form action="/e/search/index.php" method="post" name="searchform" id="searchform">
-            <input name="keyboard" id="keyboard" class="input_text" value="搜索你喜欢的" style="color: rgb(153, 153, 153);" onfocus="if(value=='搜索你喜欢的'){this.style.color='#000';value=''}" onblur="if(value==''){this.style.color='#999';value='搜索你喜欢的'}" type="text">
-            <input name="show" value="title" type="hidden">
-            <input name="tempid" value="1" type="hidden">
-            <input name="tbname" value="news" type="hidden">
-            <input name="Submit" class="input_submit" value="" type="submit">
-        </form>
-    </div>
+
+    <c:choose>
+        <c:when test="${sessionScope.user!=null}">
+            <a name="show" href="/admin" style="color:white;margin-left:400px;" alt="我的后台">${sessionScope.user.userName}</a>
+        </c:when>
+        <c:otherwise>
+            <a name="show" href="/login" style="color:white;margin-left:400px;" >登录/注册</a>
+
+        </c:otherwise>
+    </c:choose>
+
+
 </header>
 
 <aside class="side">

@@ -41,7 +41,7 @@
     <mvc:resources mapping="/images/**" location="/resource/assets/images/"/>
     <mvc:resources mapping="/plugin/**" location="/resource/assets/plugin/"/>
     <mvc:resources mapping="/fonts/**" location="/resource/assets/fonts/"/>
-
+    <mvc:resources mapping="/uploadImage/**" location="/resource/assets/uploadImage/"/>
 
     <mvc:default-servlet-handler />
 

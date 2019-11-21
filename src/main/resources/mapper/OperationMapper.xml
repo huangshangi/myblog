@@ -4,9 +4,9 @@
     <resultMap id="baseList" type="com.huangshangi.myblog.entity.Operation">
         <id column="operationId" property="operationId" jdbcType="INTEGER"/>
         <result column="operationUserId" property="operationUserId" jdbcType="INTEGER"/>
-        <result column="operationName" property="operationName" jdbcType="VARCAHR"/>
+        <result column="operationName" property="operationName" jdbcType="VARCHAR"/>
         <result column="operationIp" property="operationIp" jdbcType="VARCHAR"/>
-        <result column="operationPath" property="operationPath" jdbcType="VARCAHR"/>
+        <result column="operationPath" property="operationPath" jdbcType="VARCHAR"/>
         <result column="operationTime" property="operationTime" jdbcType="TIMESTAMP"/>
     </resultMap>
 

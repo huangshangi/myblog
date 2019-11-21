@@ -19,24 +19,32 @@ public class FileController {
 
     @ResponseBody
     @RequestMapping(value = "/upload",method = RequestMethod.POST)
-    public JSONObject commUploadC(HttpServletRequest request,@RequestPart("file") MultipartFile uploadFileC) {
+    public String commUploadC(HttpServletRequest request,@RequestPart("file") MultipartFile uploadFileC) {
         User user=(User)request.getSession().getAttribute("user");
         JSONObject json = new JSONObject();
-        String filename=uploadFileC.getName();
-
+        String filename=uploadFileC.getOriginalFilename();
+        String s=File.separator;
+        String basePath=request.getSession().getServletContext().getRealPath("/")+"resource"+s+"assets"+s+"uploadImage"+s;
+        System.out.println(basePath);
         try {
-            File imageFile = new File("c:/upload/"+user.getUserId()+"/"+filename);// 上传后的文件保存目录及名字
+            File file=new File(basePath);
+            if(!file.exists())
+                file.mkdirs();
+            File imageFile = new File(basePath+filename);// 上传后的文件保存目录及名字
+            System.out.println(imageFile.getAbsolutePath());
+            if(!imageFile.exists())
+                imageFile.createNewFile();
             uploadFileC.transferTo(imageFile);// 将上传文件保存到相应位置
             json.put("success", 1);
-            json.put("message","图片上传成功");
+            json.put("message","sucess");
             json.put("url","chenggong");
-            return json;
+            return json.toString();
         } catch (Exception e) {
             json.put("success", 0);
-            json.put("message",e.getStackTrace());
-            json.put("url","shibai");
+            json.put("message","fail");
+
             e.printStackTrace();
-            return json;
+            return json.toString();
         }
     }
 
