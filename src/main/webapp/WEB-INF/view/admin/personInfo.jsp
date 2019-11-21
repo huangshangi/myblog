@@ -84,7 +84,7 @@
                                                 <button type="button" class="am-btn am-btn-danger am-btn-sm">
 													<i class="am-icon-cloud-upload"></i> 更改头像地址
 												</button>
-                                                <input id="doc-form-file" type="file" multiple="">
+                                                <input id="file" type="file" multiple="" accept=".jpg,.jpeg,.png,.bmp">
                                             </div>
 
                                         </div>
@@ -96,27 +96,7 @@
                                     </div>
 
                                     
-                                    <div class="am-form-group">
-                                         <label  class="am-u-sm-1 am-form-label">个人说明:</label>
-										<label  class="am-u-sm-1 am-form-label">无</label>
-                                        <div class="am-u-sm-2">
-                                            
-                                        </div>
-                                    </div>
 
-                                
-
-                                    <div class="am-form-group">
-                                        <div class="am-u-sm-1 ">
-                                            <button type="button" class="am-btn am-btn-primary tpl-btn-bg-color-success ">提交</button>
-                                        </div>
-										 <div class="am-u-sm-2">
-                                            
-                                        </div>
-										 <div class="am-u-sm-2">
-                                            
-                                        </div>
-                                    </div>
                                 </form>
                             </div>
                         </div>
@@ -149,7 +129,23 @@
                 $('.tpl-content-wrapper').addClass('active');
             }
         }
-    })
+    });
+
+     var formData = new FormData();
+     formData.append("file",document.getElementById("file").files[0]);
+
+     $.ajax({
+         url: "/upload",
+         data: formData,
+         type: "post",
+         dataType: "json",
+         cache: false,//上传文件无需缓存
+         processData: false,//用于对data参数进行序列化处理 这里必须false
+         contentType: false, //必须
+         success: function (result) {
+             alert("上传完成!");
+         },
+     })
 
         
         </script>

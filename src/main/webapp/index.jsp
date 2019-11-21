@@ -17,7 +17,7 @@
 <input class="layui-layout-body">
 <form action="/upload" method="post" enctype="multipart/form-data">
 
-    <input type="file" name="uploadFileC"> shanghcuang</input>
+    <input type="file" name="file"> shanghcuang</input>
     <button type="submit">提价</button>
 
 </form>

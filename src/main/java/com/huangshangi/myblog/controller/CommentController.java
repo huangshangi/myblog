@@ -59,7 +59,7 @@ public class CommentController {
     @RequestMapping(value = "/commentList",method = RequestMethod.POST)
     @ResponseBody
     public String getCommentList(HttpServletRequest request,@RequestParam(value = "page",required = true,defaultValue = "1")int page,@RequestParam(
-            value = "pageSize",required = true,defaultValue = "10")int pageSize){
+            value = "pageSize",required = false,defaultValue = "10")int pageSize){
 
         User user=(User)request.getSession().getAttribute("user");
 
@@ -81,7 +81,7 @@ public class CommentController {
         return res.toString();
     }
 
-    @RequestMapping(value = "/comment/delete",method = RequestMethod.POST)
+    @RequestMapping(value = "/comment/deletes",method = RequestMethod.POST)
     @ResponseBody
     public String deleteComments(@RequestParam(value="ids")List<Integer> ids){
         JSONObject res=new JSONObject();

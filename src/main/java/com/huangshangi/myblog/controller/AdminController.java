@@ -141,4 +141,10 @@ public class AdminController {
         return "redirect:/login";
     }
 
+    @RequestMapping(value = "/changePass")
+    public String changePass(){
+
+        return null;
+    }
+
 }

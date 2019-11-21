@@ -86,45 +86,29 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <tr class="gradeX">
-                                        <td><input type="checkbox"/></td>
-                                        <td>Amaze UI 模式窗口</td>
-                                        <td>test</td>
-                                        <td>写的不错!</td>
-                                        <td>2016-09-26</td>
-                                        <td>
-                                            <div class="tpl-table-black-operation">
-                                                <a href="javascript:;">
-                                                    <i class="am-icon-pencil"></i> 编辑
-                                                </a>
-                                                <a href="javascript:;" class="tpl-table-black-operation-del">
-                                                    <i class="am-icon-trash"></i> 删除
-                                                </a>
-                                            </div>
-                                        </td>
-                                    </tr>
+
                                     <c:choose>
-                                        <c:when test="${requestScope.comments==null }">
+                                        <c:when test="${commentList==null }">
                                             <tr>
                                                 <th colspan="8" style="text-align: center">暂无数据</th>
                                             </tr>
                                         </c:when>
 
                                         <c:otherwise>
-                                            <c:forEach items="${requestScope.articles }" var="item">
-                                                <input class="itemId" value="${item.articleId}" type="hidden"/>
-                                                <tr class="gradeX" id="${item.articleId}">
-                                                    <td><input value="${item.articleId}" type="checkbox"/></td>
-                                                    <td><c:out value="${item.title }"></c:out></td>
-                                                    <td><c:out value="${item.commenter }"></c:out></td>
-                                                    <td><c:out value="${item.commentContent }"></c:out></td>
-                                                    <td><c:out value="${item.createTime }"></c:out></td>
+                                            <c:forEach items="${commentList }" var="item">
+                                                <input class="itemId" value="${item.commentId}" type="hidden"/>
+                                                <tr class="gradeX" id="${item.commentId}">
+                                                    <td><input value="${item.commentId}" type="checkbox"/></td>
+                                                    <td><c:out value="${item.articleTitle }"></c:out></td>
+                                                    <td><c:out value="${item.commentUser }"></c:out></td>
+                                                    <td><c:out value="${item.content }"></c:out></td>
+                                                    <td><c:out value="${item.time }"></c:out></td>
                                                     <td>
                                                         <div class="tpl-table-black-operation">
                                                             <a href="javascript:;">
                                                                 <i class="am-icon-pencil"></i> 编辑
                                                             </a>
-                                                            <a href="javascript:;" class="tpl-table-black-operation-del" onclick="deleteArticle(${item.articleId})">
+                                                            <a href="javascript:;" class="tpl-table-black-operation-del" onclick="deleteArticle(${item.commentId})">
                                                                 <i class="am-icon-trash"></i> 删除
                                                             </a>
                                                         </div>
@@ -201,41 +185,43 @@
 
 
             //根据index分页显示页面
+            var data={'page':index};
             //ajax
             $.ajax({
                 type:'POST',
-                url:'article/article',
+                url:'commentList',
                 data:data,
                 success:function(res){
+                    var list=JSON.stringify(res);
                     $('tbody').remove();
                     var tbody=$('<tbody></tbody>');
                     var list=JSON.stringify(result)
                     for(var i=0;i<list.size();i++){
                         var item=list[i];
-                        var tr="  <tr class=\"gradeX\ id="+item.articleId +">\t                                           \n" +
-                            "\t\t\t\t\t\t\t\t\t\t\t\t\t\t<td><input value="+item.articleId+"type=\"checkbox\"/></td>\n" +
-                            "\t\t                                                <td>"+item.articleTitle+"</td>\n" +
-                            "\t\t                                                <td>"+item.articleCommentCount+"</td>\n" +
-                            "\t\t\t\t\t\t\t\t\t\t\t\t\t\t<td>"+item.articleCheckCount+"</td>\n" +
-                            "\t\t                                                <td>"+item.articleCreateTime +"</td>\n" +
-                            "\t\t                                                <td>\n" +
-                            "\t\t                                                    <div class=\"tpl-table-black-operation\">\n" +
-                            "\t\t                                                        <a href=\"javascript:;\" onclick=\"checkArticle("+item.articleStatus+","+item.articleId+")\">\n" +
-                            "\t\t                                                            <i class=\"am-icon-pencil\" ></i> 查看\n" +
-                            "\t\t                                                        </a>\n" +
-                            "\t\t                                                        <a href=\"javascript:;\" class=\"tpl-table-black-operation-del\" onclick=\"deleteArticle("+item.articleId+"})\">\n" +
-                            "\t\t                                                            <i class=\"am-icon-trash\"></i> 删除\n" +
-                            "\t\t                                                        </a>\n" +
-                            "\t\t                                                    </div>\n" +
-                            "\t\t                                                </td>\n" +
-                            "\t\t                                            </tr>";
+                        var tr=" <tr class=\"gradeX\" id=\""+item.commentId+"\">\n" +
+                            "                                                    <td><input value=\""+item.commentId+"\" type=\"checkbox\"/></td>\n" +
+                            "                                                    <td>"+item.articleTitle+"</td>\n" +
+                            "                                                    <td>"+item.commentUser+"</td>\n" +
+                            "                                                    <td>"+item.content+"</td>\n" +
+                            "                                                    <td>"+item.time+"</td>\n" +
+                            "                                                    <td>\n" +
+                            "                                                        <div class=\"tpl-table-black-operation\">\n" +
+                            "                                                            <a href=\"javascript:;\">\n" +
+                            "                                                                <i class=\"am-icon-pencil\"></i> 编辑\n" +
+                            "                                                            </a>\n" +
+                            "                                                            <a href=\"javascript:;\" class=\"tpl-table-black-operation-del\" onclick=\"deleteArticle("+item.commentId+")\">\n" +
+                            "                                                                <i class=\"am-icon-trash\"></i> 删除\n" +
+                            "                                                            </a>\n" +
+                            "                                                        </div>\n" +
+                            "                                                    </td>\n" +
+                            "                                                </tr>";
 
                         tr.appendTo(tbody);
                     }
                     $('thead').after(tbody)
                 },
                 error:function (error) {
-
+                    layer.msg('网络连接错误,请稍后重试')
                 }
             })
 
@@ -263,6 +249,23 @@
     //2.删除单个 article
     function deleteArticle(value) {
         //value代表删除的article id 使用ajax删除
+        var data={"id":value}
+        $.ajax({
+            type:'POST',
+            url:'/comment/delete',
+            data:data,
+            success:function (res) {
+                var result=JSON.stringify(res);
+                if(result.result==1){
+                    $("#"+value).remove();
+                }else{
+                    layer.msg('网络错误,请稍后重试')
+                }
+            },
+            error:function (res) {
+                layer.msg('网络错误,请稍后重试')
+            }
+        })
     }
     //3.执行批量选择按钮
     function deleteArticles() {
@@ -273,6 +276,24 @@
         })
         //list中存放article ids 使用ajax删除
 
+        var data={"ids":JSON.stringify(list)}
+        $.ajax({
+            type:'POST',
+            url:'/comment/deletes',
+            data:data,
+            success:function (res) {
+                var result=JSON.stringify(res);
+                if(result.result==1){
+                    for(var i=0;i<list.length;i++)
+                        $('#'+list[i]).remove();
+                }else{
+                    layer.msg('网络错误,请稍后重试')
+                }
+            },
+            error:function (res) {
+                layer.msg('网络错误,请稍后重试')
+            }
+        })
     }
 
 

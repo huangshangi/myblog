@@ -19,7 +19,7 @@ public class FileController {
 
     @ResponseBody
     @RequestMapping(value = "/upload",method = RequestMethod.POST)
-    public JSONObject commUploadC(HttpServletRequest request,@RequestPart("uploadFileC") MultipartFile uploadFileC) {
+    public JSONObject commUploadC(HttpServletRequest request,@RequestPart("file") MultipartFile uploadFileC) {
         User user=(User)request.getSession().getAttribute("user");
         JSONObject json = new JSONObject();
         String filename=uploadFileC.getName();

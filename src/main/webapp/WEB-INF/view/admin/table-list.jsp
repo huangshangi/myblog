@@ -248,7 +248,7 @@
 			}
 			$.ajax({
 				type:'POST',
-				url:'article/find',
+				url:'/article/find',
 				data:JSON.stringify(data),
 				success:function (result) {
 					console.log(result)
