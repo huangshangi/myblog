@@ -106,6 +106,11 @@
         obj.name=$('#contact-name').val();
         obj.message=$('#contact-message').val();
 
+        if(obj.email==""||obj.name==""||obj.message==""){
+            layer.msg('请填写完整留言信息');
+            return;
+        }
+
         $.ajax({
             method:'POST',
             url:'/contactus',
@@ -114,7 +119,10 @@
             success:function (res) {
                 var json=JSON.parse(res);
                 if(Number(json.result)==1){
-                   layer.msg('留言信息提交成功,感谢您的关注')
+                   layer.msg('留言信息提交成功,感谢您的留言');
+                    $('#contact-email').val("");
+                    $('#contact-name').val("");
+                    $('#contact-message').val("");
                 }
                 else
                     layer.msg('网络异常,请稍后重试')

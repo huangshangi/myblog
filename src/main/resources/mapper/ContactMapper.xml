@@ -18,7 +18,7 @@
         insert into
         <include refid="tn"></include>
         (contactEmail,contactName,contactMessage,contactTime)
-        values(#{contactEmail,jdbcType=VARCHAR },#{contactName,jdbcType=VARCHAR},#{contactMessage,jdbcType=VARCHAR},#{contactTime，jdbcType=TIMESTAMP})
+        values(#{contactEmail,jdbcType=VARCHAR },#{contactName,jdbcType=VARCHAR},#{contactMessage,jdbcType=VARCHAR},#{contactTime,jdbcType=TIMESTAMP})
 
     </insert>
 

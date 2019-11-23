@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.huangshangi.myblog.entity.Comment;
 import com.huangshangi.myblog.entity.User;
 import com.huangshangi.myblog.service.CommentService;
+import com.huangshangi.myblog.service.UserService;
 import com.huangshangi.myblog.utils.util;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpRequest;
@@ -20,6 +21,9 @@ public class CommentController {
     @Autowired
     CommentService commentService;
 
+    @Autowired
+    UserService userService;
+
 
     @RequestMapping(value = "/addComment",method = RequestMethod.POST)
     @ResponseBody
@@ -28,6 +32,7 @@ public class CommentController {
         JSONObject res=new JSONObject();
         //将评论信息进行解析
         JSONObject jsonObject=JSONObject.parseObject(data);
+
         Comment comment=new Comment();
         comment.setArticleId((int)jsonObject.get("articleId"));
         comment.setContent((String)jsonObject.get("content"));
@@ -44,19 +49,22 @@ public class CommentController {
     }
 
 
-    @RequestMapping(value = "/commentList",method = RequestMethod.GET)
+    @RequestMapping(value = "/admin/comment",method = RequestMethod.GET)
     public String getCommentList(HttpServletRequest request, Model model){
 
         User user=(User)request.getSession().getAttribute("user");
 
         List<Comment> list=commentService.getCommentsList(user.getUserId(),1,10);
 
+        int count=userService.getCommentCount(user.getUserId());
+
         model.addAttribute("commentList",list);
+        model.addAttribute("count",count);
 
         return "admin/comment-list";
     }
 
-    @RequestMapping(value = "/commentList",method = RequestMethod.POST)
+    @RequestMapping(value = "/admin/comment",method = RequestMethod.POST)
     @ResponseBody
     public String getCommentList(HttpServletRequest request,@RequestParam(value = "page",required = true,defaultValue = "1")int page,@RequestParam(
             value = "pageSize",required = false,defaultValue = "10")int pageSize){

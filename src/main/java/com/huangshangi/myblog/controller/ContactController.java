@@ -7,9 +7,7 @@ import com.huangshangi.myblog.utils.util;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class ContactController {
@@ -25,15 +23,15 @@ public class ContactController {
 
     @RequestMapping(value = "/contactus",method = RequestMethod.POST)
     @ResponseBody
-    public String getContactMessage(@Param(value="contact-email")String email,@Param(value = "contact-name")String name,@Param(
-            value = "contact-message")String message){
+    public String getContactMessage(@RequestBody String data){
 
+        JSONObject request=JSONObject.parseObject(data);
         JSONObject jsonObject=new JSONObject();
 
         ContactMessage contactMessage=new ContactMessage();
-        contactMessage.setContactEmail(email);
-        contactMessage.setContactName(name);
-        contactMessage.setContactMessage(message);
+        contactMessage.setContactEmail(request.getString("email"));
+        contactMessage.setContactName(request.getString("name"));
+        contactMessage.setContactMessage(request.getString("message"));
         contactMessage.setContactTime(util.getTime());
 
         if(contactService.insertMessage(contactMessage)!=0)

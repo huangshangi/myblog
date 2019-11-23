@@ -123,7 +123,7 @@ public class AdminController {
         JSONObject jsonObject=JSONObject.parseObject(data);
         User user=userService.getUserByNameOrEmail(jsonObject.getString("username"));
 
-        if(user.getUserPass().equals(jsonObject.getString("password"))){
+        if(user!=null&&user.getUserPass().equals(jsonObject.getString("password"))){
             res.put("result",1);
             request.getSession().setAttribute("user",user);
         }

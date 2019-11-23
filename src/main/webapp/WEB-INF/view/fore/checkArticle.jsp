@@ -1,3 +1,4 @@
+<%@ page import="com.huangshangi.myblog.entity.User" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
@@ -157,8 +158,23 @@
 <script type="text/javascript">
 
     var testEditor;
+<%
+    User user=(User) session.getAttribute("user");
+    int userId=0;
+    String userName="ceshi";
+    if(user==null){
+        userName="ceshi";
+         userId=0;
+    }else{
+        userName=user.getUserName();
+        userId=user.getUserId();
+    }
 
-    var uesr=<%=session.getAttribute("user")%>
+
+
+%>
+    var userId=<%=userId%>;
+    var userName="<%=userName%>";
     $(function () {
         $(".comment-list").addCommentList({data:arr,add:""});
         testEditor = editormd.markdownToHTML("test-editormd-view", {
@@ -184,7 +200,7 @@
         //1.登录检查
 
 
-        if(user==null){
+        if(userId==0){
             layer.msg("登录之后才可以评论哟");
 
             return;
@@ -192,7 +208,7 @@
 
 
         //1.检查评论内容是否为空
-        var comment=$('#comment').val();
+        var comment=$('#content').val();
         if(!comment){
             layer.msg('内容不能为空!')
             return;
@@ -200,9 +216,10 @@
         var obj = new Object();
         obj.parentId=0;
         obj.content=comment;
-        obj.uid=user.userId;
+        obj.uid=userId;
         obj.articleId=${article.articleId};
-
+        obj.replyName=userName;
+        obj.replyBody=[]
         $.ajax({
             method:'POST',
             url:'/addComment',
@@ -210,9 +227,10 @@
             data:JSON.stringify(obj),
             success:function (res) {
                 var json=JSON.parse(res)
-
+                console.log(json);
+                console.log(JSON.stringify(obj))
                 if(Number(json.result)==1)
-                    $(".comment-list").addCommentList({data:[],add:JSON.stringify(obj)});
+                    $(".comment-list").addCommentList({data:[],add:obj});
 
                 else
                     layer.msg('用户名或密码错误,请重新输入')
@@ -263,6 +281,7 @@
 
         el = el + "</div><div class='col-md-2'><span class='reply-btn'>回复</span></div></div></div><div class='reply-list'>";
 
+
         //子评论
         if(obj.replyBody != "" && obj.replyBody.length > 0){
             var arr = obj.replyBody;
@@ -300,7 +319,7 @@
     }
     function replyClick(el){
         //登录判断
-        if(user==null){
+        if(userId==0){
             layer.msg("请登录后评论")
             return;
         }
@@ -311,14 +330,16 @@
             if(content != ""){
                 var parentEl = $(this).parent().parent().parent().parent();
                 var obj = new Object();
-                obj.replyName=user.userName;//回复者名称
+                obj.replyName=userName;//回复者名称
+                obj.articleId=${article.articleId};
+                obj.uid=userId;
                 if(el.parent().parent().hasClass("reply")){
                     obj.beReplyName = el.parent().parent().find("a:first").text();
-                    obj.parentId=el.parent().parent().find("a:first").getAttribute("data-id");
+                    obj.parentId=Number(el.parent().parent().find("a:first").attr("data-id"));
                 }else{
 
                     obj.beReplyName=parentEl.find("h3").text();
-                    obj.parentId=parentEl.find("h3").getAttribute("data-id");
+                    obj.parentId=Number(parentEl.find("h3").attr("data-id"));
                 }
                 obj.content=content;
                 obj.time = getNowDateFormat();

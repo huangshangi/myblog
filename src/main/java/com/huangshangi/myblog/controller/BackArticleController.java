@@ -1,12 +1,13 @@
 package com.huangshangi.myblog.controller;
 
 import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
 import com.huangshangi.myblog.entity.Article;
 import com.huangshangi.myblog.entity.User;
 import com.huangshangi.myblog.service.ArticleService;
 import com.huangshangi.myblog.service.UserService;
 import com.huangshangi.myblog.utils.OperationAnnoation;
-import org.json.JSONObject;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -33,8 +34,10 @@ public class BackArticleController {
         //获取某位用户文章信息
         List<Article> articleList=articleService.getArticlesByName(user.getUserId(),1,10);
 
-        model.addAttribute("articleList",articleList);
+        int count=userService.getArticleCount(user.getUserId());
 
+        model.addAttribute("articleList",articleList);
+        model.addAttribute("count",count);
         return "admin/table-list";
     }
 
@@ -90,11 +93,26 @@ public class BackArticleController {
     }
 
 
-    @RequestMapping(value = "/article/submit")
+    @RequestMapping(value = "/article/submit",method = RequestMethod.POST)
     @ResponseBody
-    public void submitArticle(@RequestBody Article article){
+    public String submitArticle(@RequestBody String data){
 
-        articleService.submitArticle(article);
+        JSONObject jsonObject=JSONObject.parseObject(data);
+        JSONObject res=new JSONObject();
+        Article article=new Article();
+        article.setArticleUserId(jsonObject.getInteger("articleUserId"));
+        article.setArticleTitle(jsonObject.getString("articleTitle"));
+        article.setArticleContent(jsonObject.getString("articleContent"));
+        article.setArticleCreateTime(jsonObject.getString("articleCreateTime"));
+        article.setArticleUpdateTime(jsonObject.getString("articleUpdateTime"));
+        article.setArticleSummary(jsonObject.getString("articleSummary"));
+        article.setArticleStatus(Integer.parseInt(jsonObject.getString("articleStatus")));
+        System.out.println("articleStatus中为"+jsonObject.getString("articleStatus"));
+        int result=articleService.submitArticle(article);
+
+        res.put("result",1);
+
+        return res.toString();
     }
 
     @RequestMapping(value = "/article/edit",method = RequestMethod.POST)
@@ -110,7 +128,7 @@ public class BackArticleController {
     public String findArticles(HttpServletRequest request,@RequestBody String param,Model model){
 
         User user=(User)request.getSession().getAttribute("user");
-        JSONObject jsonObject=new JSONObject(param);
+        JSONObject jsonObject=JSONObject.parseObject(param);
 
         int sign=(int)jsonObject.get("sign");
 

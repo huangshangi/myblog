@@ -11,10 +11,7 @@
 
  <!-- 头部 -->
         <header>
-            <!-- logo -->
-            <div class="am-fl tpl-header-logo">
-                <a href="javascript:;"><img src="${sessionScope.user.userImage}" alt="${sessionScope.user.userName}"></a>
-            </div>
+
             <!-- 右侧内容 -->
             <div class="tpl-header-fluid">
                 <!-- 侧边切换 -->
@@ -84,7 +81,7 @@
             <ul class="sidebar-nav">
                 <!--<li class="sidebar-nav-heading">Components <span class="sidebar-nav-heading-info"> 附加组件</span></li>-->
                 <li class="sidebar-nav-link">
-                    <a href="/index" >
+                    <a href="/admin" >
                         <i class="am-icon-home sidebar-nav-link-logo"></i> 首页
                     </a>
                 </li>
@@ -107,13 +104,13 @@
                     </a>
                     <ul class="sidebar-nav sidebar-nav-sub">
                         <li class="sidebar-nav-link">
-                            <a href="personInfo.jsp">
+                            <a href="/admin/person">
                                 <span class="am-icon-angle-right sidebar-nav-link-logo"></span> 个人信息
                             </a>
                         </li>
 
                         <li class="sidebar-nav-link">
-                            <a href="modifyPassword.jsp">
+                            <a href="/admin/changeP">
                                 <span class="am-icon-angle-right sidebar-nav-link-logo"></span> 修改密码
                             </a>
                         </li>

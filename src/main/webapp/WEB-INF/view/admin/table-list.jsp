@@ -127,7 +127,7 @@
                                     <div class="am-fr">
                                         <ul class="am-pagination tpl-pagination">
                                             <li class=""><a href="#" >«</a></li>
-                                            <c:forEach var="i" begin="0" end="9">
+                                            <c:forEach var="i" begin="0" end="${count}">
 		                                            <li class=""><a href="#"><c:out value="${i+1 }"></c:out></a></li>
 		                                            
 	                                            </c:forEach>
@@ -286,7 +286,7 @@
             var data={"postData":value};
 			$.ajax({
 				type:'POST',
-				url:'article/delete',
+				url:'/article/delete',
 				data:data,
 				success:function (result) {
                     var json=JSON.stringify(result)
@@ -309,7 +309,7 @@
 			//list中存放article ids 使用ajax删除
 			$.ajax({
 				type:'POST',
-				url:'article/deletes',
+				url:'/article/deletes',
 				data:JSON.stringify(list),
 				success:function (result) {
 					console.log(result)
@@ -320,10 +320,15 @@
 
 				},
 				error:function (e) {
+				    console.log(e)
 					layer.msg('删除文章失败')
 				}
 			})
 		}
+
+    layui.use("layer",function(){
+        var $ = layui.jquery, layer = layui.layer;
+    })
 			    
 	        </script>
    

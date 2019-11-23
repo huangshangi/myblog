@@ -34,7 +34,7 @@ public class ArticleServiceImpl implements ArticleService {
     @Override
     public List<Article> getArticlesByName(int id, int page, int pageSize) {
 
-        List<Article>list=articleMapper.getArticlesByPage(id,page,pageSize);
+        List<Article>list=articleMapper.getArticlesByPage(id,(page-1)*pageSize,pageSize);
         return list;
     }
 

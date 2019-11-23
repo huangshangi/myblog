@@ -45,7 +45,7 @@
                                 <form class="am-form tpl-form-border-form tpl-form-border-br">
                                     <div class="am-form-group">
                                         <label  class="am-u-sm-1 am-form-label">用户id:</label>
-										<label class="am-u-sm-1 am-form-label">${sessionScope.user.userId}</label>
+										<label class="am-u-sm-2 am-form-label">${sessionScope.user.userId}</label>
                                         <div class="am-u-sm-2">
                                             
                                         </div>
@@ -53,7 +53,7 @@
 
                                     <div class="am-form-group">
                                         <label  class="am-u-sm-1 am-form-label">用户名:</label>
-										<label  class="am-u-sm-1 am-form-label">${sessionScope.user.userName}</label>
+										<label  class="am-u-sm-2 am-form-label">${sessionScope.user.userName}</label>
                                         <div class="am-u-sm-2">
                                             
                                         </div>
@@ -61,7 +61,7 @@
 
                                     <div class="am-form-group">
                                         <label  class="am-u-sm-1 am-form-label">邮箱: </label>
-										<label  class="am-u-sm-1 am-form-label">${sessionScope.user.userEmail}</label>
+										<label  class="am-u-sm-2 am-form-label">${sessionScope.user.userEmail}</label>
                                         <div class="am-u-sm-2">
                                             
                                         </div>
@@ -69,7 +69,7 @@
 
                                     <div class="am-form-group">
                                        <label  class="am-u-sm-1 am-form-label">注册时间: </label>
-										<label class="am-u-sm-1 am-form-label">${sessionScope.user.userCreateTime} </label>
+										<label class="am-u-sm-2 am-form-label">${sessionScope.user.userRegisterTime} </label>
                                         <div class="am-u-sm-2">
                                             
                                         </div>
@@ -94,7 +94,17 @@
 										
 										</div>
                                     </div>
+                                    <div class="am-form-group">
+                                        <div class="am-u-sm-1 ">
+                                            <button type="button" id="submit" class="am-btn am-btn-primary tpl-btn-bg-color-success ">更改</button>
+                                        </div>
+                                        <div class="am-u-sm-2">
 
+                                        </div>
+                                        <div class="am-u-sm-2">
+
+                                        </div>
+                                    </div>
                                     
 
                                 </form>
@@ -103,12 +113,11 @@
                     </div>
                 </div>
 
-</div>
+            </div>
 
-				</div>
-			</div>
-			</div>
-		</div>
+        </div>
+
+    </div>
   
   
   
@@ -131,21 +140,25 @@
         }
     });
 
-     var formData = new FormData();
-     formData.append("file",document.getElementById("file").files[0]);
+   $("#submit").on('click',function () {
+       var formData = new FormData();
+       formData.append("file",document.getElementById("file").files[0]);
+       formData.append("type",1);
 
-     $.ajax({
-         url: "/upload",
-         data: formData,
-         type: "post",
-         dataType: "json",
-         cache: false,//上传文件无需缓存
-         processData: false,//用于对data参数进行序列化处理 这里必须false
-         contentType: false, //必须
-         success: function (result) {
-             alert("上传完成!");
-         },
-     })
+       $.ajax({
+           url: "/upload",
+           data: formData,
+           type: "post",
+           dataType: "json",
+           cache: false,//上传文件无需缓存
+           processData: false,//用于对data参数进行序列化处理 这里必须false
+           contentType: false, //必须
+           success: function (result) {
+               window.location.reload();
+           },
+       })
+   })
+
 
         
         </script>

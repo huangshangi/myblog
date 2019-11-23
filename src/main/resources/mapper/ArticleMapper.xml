@@ -29,13 +29,13 @@
         (articleUserId, articleTitle,
         articleCheckCount, articleCommentCount,
         articleCreateTime, articleUpdateTime,
-        articleContent, articleSummary)
+        articleContent, articleSummary,articleStatus)
         values (#{articleUserId,jdbcType=INTEGER}, #{articleTitle,jdbcType=VARCHAR},
         #{articleCheckCount,jdbcType=INTEGER},
         #{articleCommentCount,jdbcType=INTEGER},
         #{articleCreateTime,jdbcType=TIMESTAMP},
         #{articleUpdateTime,jdbcType=TIMESTAMP},
-        #{articleContent,jdbcType=CLOB}, #{articleSummary,jdbcType=VARCHAR})
+        #{articleContent,jdbcType=CLOB}, #{articleSummary,jdbcType=VARCHAR},#{articleStatus,jdbcType=INTEGER})
     </insert>
 
 
@@ -165,7 +165,7 @@
 
         where articleUserId=#{id}
 
-        order by articleUpdateTime desc limit #{page}*#{pageSize},#{pageSize}
+        order by articleUpdateTime desc limit #{page},#{pageSize}
 
     </select>
 

@@ -10,7 +10,7 @@
         <result column="operationTime" property="operationTime" jdbcType="TIMESTAMP"/>
     </resultMap>
 
-    <sql id="tn"></sql>
+    <sql id="tn">operation</sql>
     <insert id="insertOperation" parameterType="com.huangshangi.myblog.entity.Operation">
         insert into
         <include refid="tn"></include>

@@ -63,8 +63,9 @@ public class CommentServiceImpl implements CommentService {
             jsonObject.put("id",commentTree.getId());
             jsonObject.put("img",commentTree.getUser().getUserImage());
             jsonObject.put("replyName",commentTree.getUser().getUserName());
+
             if (commentTree.getParentId()!=0)
-                jsonObject.put("beReplyName",userMapper.getUserById(commentTree.getParentId()).getUserName());
+                jsonObject.put("beReplyName",userMapper.getUserById(commentTree.getUid()).getUserName());
             else
                 jsonObject.put("beReplyName","");
             jsonObject.put("content",commentTree.getContent());
@@ -129,9 +130,9 @@ public class CommentServiceImpl implements CommentService {
                 temp+=articleList.get(i).getArticleCommentCount();
             else {
                 if(!flag){
-                    resList.addAll(commentMapper.getComments(articleList.get(i).getArticleId(),temp-start+1,"desc"));
+                    resList.addAll(commentMapper.getComments(articleList.get(i).getArticleId(),temp-start+1,1));
                 }else{
-                    resList.addAll(commentMapper.getComments(articleList.get(i).getArticleId(),end-temp+1,"asc"));
+                    resList.addAll(commentMapper.getComments(articleList.get(i).getArticleId(),end-temp+1,0));
                     break;
                 }
             }

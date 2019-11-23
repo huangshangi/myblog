@@ -5,7 +5,6 @@
   Time: 0:00
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -13,14 +12,14 @@
 <head>
     <meta charset="utf-8" />
     <title>Auto height - Editor.md examples</title>
-    <link rel="stylesheet" href="/plugin/editormd/exampless/css/style.css" />
+    <link rel="stylesheet" href="/plugin/editormd/examples/css/style.css" />
     <link rel="stylesheet" href="/plugin/editormd/css/editormd.css" />
     <link rel="shortcut icon" href="https://pandao.github.io/editor.md/favicon.ico" type="image/x-icon" />
     <style type="text/css">
 
         .title{
             width: 50%;
-            margin-left:25%;
+            margin-left:150px;
 
             line-height: 2.5em;
             padding-left:5px;
@@ -62,37 +61,56 @@
 <body>
 <div id="layout">
     <header style="position:relative;">
+        <select style="width:150px;height:2.5em;" id="select">
+            <option value="0" disabled selected>请选择文章类别</option>
+            <option value="1">编程语言</option>
+            <option value="2">计算机科学</option>
+            <option value="3">框架与实战</option>
+            <option value="4">资源与知识</option>
+            <option value="5">其他技术</option>
+            <option value="6">日常生活</option>
+        </select>
         <input class="title" placeholder="请输入标题"></input>
-        <button class="btn_save">保存草稿</button>
-        <button class="btn_pub">发布文章</button>
+
+        <button class="btn_pub" onclick="submitArticle()">发布文章</button>
     </header>
 
     <div id="test-editormd">
-                <textarea style="display:none;">${article.articleContent}
+                <textarea id="articleContent" style="display:none;">
 				</textarea>
     </div>
 </div>
-<script src="/plugin/editormd/exampless/js/jquery.min.js"></script>
+<script src="/plugin/editormd/examples/js/jquery.min.js"></script>
 <script src="/plugin/editormd/editormd.js"></script>
 <script type="text/javascript">
     var testEditor;
 
-    function submitArticle(status){
+    function submitArticle(){
+        var style=$('#select').val()
         var title=$('.title').val();
         var content= $("#articleContent").val();
-        var userId=<% ((User)session.getAttribute("user")).getUserId(); %>;
+        var userId=<%=((User)session.getAttribute("user")).getUserId() %>;
         var createTime=getCurrentDate(2);
         var updateTime=getCurrentDate(2);
         var summary=content.substr(0,100);
         var data={'articleUserId':userId,'articleTitle':title,'articleContent':content,'articleCreateTime'
-        :createTime,'articleUpdateTime':updateTime,'articleSummary':summary,'articleStatus':status}
+        :createTime,'articleUpdateTime':updateTime,'articleSummary':summary,'articleStatus':style}
 
+        if(style==""||title==""||content==""){
+            layer.msg("请填写完整文章信息")
+            return
+        }
         $.ajax({
             type:'POST',
             url:'/article/submit',
+            dataType: 'json',
+            contentType: 'application/json;charset=utf-8',
             data:JSON.stringify(data),
             success:function (result) {
-                console.log(result)
+                layer.msg('文章提交成功')
+                $('#select').val("")
+                $('.title').val("");
+                $("#articleContent").val("");
             },
             error:function (e) {
                 console.log(e.status)

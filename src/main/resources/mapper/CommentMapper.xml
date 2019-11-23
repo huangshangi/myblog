@@ -25,6 +25,14 @@
                     ofType="com.huangshangi.myblog.entity.CommentTree" select="getNextCommentTree"/>
     </resultMap>
 
+    <insert id="insertComment" parameterType="com.huangshangi.myblog.entity.Comment" useGeneratedKeys="true"
+            keyProperty="articleId">
+        insert  into
+        comment (parentId,content,uid,articleId,createTime)
+        values (#{parentId,jdbcType=INTEGER},#{content,jdbcType=VARCHAR},#{uid,jdbcType=INTEGER},
+        #{articleId,jdbcType=INTEGER},#{createTime,jdbcType=TIMESTAMP})
+
+    </insert>
 
     <select id="getNextCommentTree" resultMap="NextTreeResultMap">
         SELECT
@@ -45,11 +53,17 @@
         from
         comment
         where articleId=#{id} and parentId=0
-        <if test="#{size}!=-1" >
-        limit #{size}
+
+        order by createTime
+        <if test="style==0">
+            asc
         </if>
-        order by
-        #{style}
+        <if test="style==1">
+            desc
+        </if>
+        <if test="size!=-1" >
+            limit #{size}
+        </if>
     </select>
 
     <delete id="deleteCommentById" parameterType="java.lang.Integer" statementType="CALLABLE">

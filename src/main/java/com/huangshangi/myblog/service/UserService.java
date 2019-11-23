@@ -24,4 +24,14 @@ public interface UserService {
 
     //根据用户名或邮箱id
     User getUserByNameOrEmail(String username);
+
+    //获取某位用户文章总数
+    int getArticleCount(int id);
+
+    //获取某位用户评论数
+    int getCommentCount(int id);
+
+    int changePass(int id,String oldP,String newP);
+
+    int updateUser(User user);
 }

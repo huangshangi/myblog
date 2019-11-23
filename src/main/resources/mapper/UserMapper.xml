@@ -75,8 +75,9 @@
         userId
         in
         (
-            select articleUserId from article group by articleUserId limit #{sum}
+            select t.articleUserId from (select  * from article group by articleUserId limit #{sum}) as t
         )
+
     </select>
     <delete id="deleteByNameOrEmail" parameterType="java.lang.String">
         delete

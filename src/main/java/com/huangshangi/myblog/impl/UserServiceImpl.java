@@ -50,4 +50,30 @@ public class UserServiceImpl implements UserService {
     public User getUserByNameOrEmail(String username) {
         return userMapper.getUserByNameOrEmail(username);
     }
+
+    @Override
+    public int getArticleCount(int id) {
+        return userMapper.getUserById(id).getArticleCount();
+    }
+
+    @Override
+    public int getCommentCount(int id) {
+        return userMapper.getUserById(id).getCommentCount();
+    }
+
+    @Override
+    public int changePass(int id, String oldP, String newP) {
+        User user=userMapper.getUserById(id);
+        if(user!=null&&user.getUserPass().equals(oldP)){
+            user.setUserPass(newP);
+            return userMapper.updateUser(user);
+        }
+
+        return 0;
+    }
+
+    @Override
+    public int updateUser(User user) {
+        return userMapper.updateUser(user);
+    }
 }

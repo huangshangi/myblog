@@ -142,7 +142,7 @@
 
        $.ajax({
            type:'POST',
-           url:'/article/submit',
+           url:'/admin/changeP',
            data:JSON.stringify(data),
            success:function (result) {
                var res=JSON.stringify(result)

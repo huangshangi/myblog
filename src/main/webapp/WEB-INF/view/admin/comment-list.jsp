@@ -95,7 +95,7 @@
                                         </c:when>
 
                                         <c:otherwise>
-                                            <c:forEach items="${commentList }" var="item">
+                                            <c:forEach  items="${commentList}"  var="item">
                                                 <input class="itemId" value="${item.commentId}" type="hidden"/>
                                                 <tr class="gradeX" id="${item.commentId}">
                                                     <td><input value="${item.commentId}" type="checkbox"/></td>
@@ -126,7 +126,7 @@
                                 <div class="am-fr">
                                     <ul class="am-pagination tpl-pagination">
                                         <li class=""><a href="#" >«</a></li>
-                                        <c:forEach var="i" begin="0" end="9">
+                                        <c:forEach var="i" begin="0" end="${count}">
                                             <li class=""><a ><c:out value="${i+1 }"></c:out></a></li>
 
                                         </c:forEach>
@@ -144,6 +144,8 @@
 
 
 <script>
+
+    console.log(${commentList})
 
     $(document).ready(function(){
         //初始化分页选择器
@@ -189,7 +191,7 @@
             //ajax
             $.ajax({
                 type:'POST',
-                url:'commentList',
+                url:'/admin/comment',
                 data:data,
                 success:function(res){
                     var list=JSON.stringify(res);
@@ -295,7 +297,9 @@
             }
         })
     }
-
+    layui.use("layer",function(){
+        var $ = layui.jquery, layer = layui.layer;
+    })
 
 </script>
 

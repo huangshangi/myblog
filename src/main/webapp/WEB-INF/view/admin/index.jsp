@@ -62,7 +62,7 @@
                             </div>
                             <div class="widget-statistic-body">
                                 <div class="widget-statistic-value">
-                                    $${userSampList[1] }
+                                    ${userSampList[1] }
                                 </div>
                                 
                                 <span class="widget-statistic-icon am-icon-credit-card-alt"></span>
