@@ -7,7 +7,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-         pageEncoding="UTF-8"%>
+         pageEncoding="UTF-8"  isELIgnored="false"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -37,7 +37,7 @@
                         <c:when test="${randomList!=null}">
                             <c:forEach items="${randomList}" var="item">
 
-                                <li class="cur"><a href="/checkArticle/${item.articleStatus}/${item.articleId}"><img src="http://www.yangqq.com/d/file/news/life/2018-04-27/762f99f369ae786f970477feeb3b9d77.jpg" alt=""/>
+                                <li class="cur"><a href="/checkArticle/${item.articleId}"><img src="http://www.yangqq.com/d/file/news/life/2018-04-27/762f99f369ae786f970477feeb3b9d77.jpg" alt=""/>
                                     <p>${item.articleTitle}</p>
                                 </a>
                                 </li>
@@ -56,13 +56,13 @@
     <div class="newsbox">
         <section>
             <div class="news">
-                <h2 class="newstitle"><span><a href="/">更多</a></span><b>编程语言</b></h2>
+                <h2 class="newstitle"><span><a href="/articleList/1">更多</a></span><b>编程语言</b></h2>
                 <ul>
                     <c:choose>
                         <c:when test="${yuyanList!=null}">
                             <c:forEach items="${yuyanList}" var="item">
 
-                                <li><a href="/checkArticle/${item.articleStatus}/${item.articleId}"><span>${item.articleCreateTime}</span>${item.articleTitle}</a></li>
+                                <li><a href="/checkArticle/${item.articleId}"><span>${item.articleCreateTime}</span>${item.articleTitle}</a></li>
 
                             </c:forEach>
                         </c:when>
@@ -75,13 +75,13 @@
         </section>
         <section>
             <div class="news">
-                <h2 class="newstitle"><span><a href="/">更多</a></span><b>计算机科学</b></h2>
+                <h2 class="newstitle"><span><a href="/articleList/2">更多</a></span><b>计算机科学</b></h2>
                 <ul>
                     <c:choose>
                         <c:when test="${kexueList!=null}">
                             <c:forEach items="${kexueList}" var="item">
 
-                                <li><a href="/checkArticle/${item.articleStatus}/${item.articleId}"><span>${item.articleCreateTime}</span>${item.articleTitle}</a></li>
+                                <li><a href="/checkArticle/${item.articleId}"><span>${item.articleCreateTime}</span>${item.articleTitle}</a></li>
 
                             </c:forEach>
                         </c:when>
@@ -93,13 +93,14 @@
         </section>
         <section>
             <div class="news">
-                <h2 class="newstitle"><span><a href="/">更多</a></span><b>框架与实战</b></h2>
+                <h2 class="newstitle"><span><a href="/articleList/3">更多</a></span><b>框架与实战</b></h2>
                 <ul>
                     <c:choose>
                         <c:when test="${shizhanList!=null}">
+
                             <c:forEach items="${shizhanList}" var="item">
 
-                                <li><a href="/checkArticle/${item.articleStatus}/${item.articleId}"><span>${item.articleCreateTime}</span>${item.articleTitle}</a></li>
+                                <li><a href="/checkArticle/${item.articleId}"><span>${item.articleCreateTime}</span>${item.articleTitle}</a></li>
 
                             </c:forEach>
                         </c:when>
@@ -111,13 +112,14 @@
         </section>
         <section>
             <div class="news">
-                <h2 class="newstitle"><span><a href="/">更多</a></span><b>资源与知识</b></h2>
+                <h2 class="newstitle"><span><a href="/articleList/4">更多</a></span><b>资源与知识</b></h2>
                 <ul>
                     <c:choose>
                         <c:when test="${zhishiList!=null}">
+
                             <c:forEach items="${zhishiList}" var="item">
 
-                                <li><a href="/checkArticle/${item.articleStatus}/${item.articleId}"><span>${item.articleCreateTime}</span>${item.articleTitle}</a></li>
+                                <li><a href="/checkArticle/${item.articleId}"><span>${item.articleCreateTime}</span>${item.articleTitle}</a></li>
 
                             </c:forEach>
                         </c:when>
@@ -129,13 +131,19 @@
         </section>
         <section>
             <div class="news">
-                <h2 class="newstitle"><span><a href="/">更多</a></span><b>其他技术</b></h2>
+                <h2 class="newstitle"><span><a href="/articleList/5">更多</a></span><b>其他技术</b></h2>
                 <ul>
                     <c:choose>
-                        <c:when test="${jishuList}!=null}">
-                            <c:forEach items="${jishuList}" var="item">
+                        <c:when test="${jishuList!=null}">
 
-                                <li><a href="/checkArticle/${item.articleStatus}/${item.articleId}"><span>${item.articleCreateTime}</span>${item.articleTitle}</a></li>
+                            <c:forEach items="${jishuList}" var="item2">
+
+                                <li>
+                                    <a href="/checkArticle/${item2.articleId}">
+                                        <span>${item2.articleCreateTime}</span>${item2.articleTitle}
+                                    </a>
+                                </li>
+
 
                             </c:forEach>
                         </c:when>
@@ -146,13 +154,13 @@
         </section>
         <section>
             <div class="news">
-                <h2 class="newstitle"><span><a href="/">更多</a></span><b>日常生活</b></h2>
+                <h2 class="newstitle"><span><a href="/articleList/6">更多</a></span><b>日常生活</b></h2>
                 <ul>
                     <c:choose>
                         <c:when test="${dailyList!=null}">
                             <c:forEach items="${dailyList}" var="item">
 
-                                <li><a href="/checkArticle/${item.articleStatus}/${item.articleId}"><span>${item.articleCreateTime}</span>${item.articleTitle}</a></li>
+                                <li><a href="/checkArticle/${item.articleId}"><span>${item.articleCreateTime}</span>${item.articleTitle}</a></li>
 
                             </c:forEach>
                         </c:when>

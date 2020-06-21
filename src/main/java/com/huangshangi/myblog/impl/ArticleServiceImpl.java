@@ -142,4 +142,10 @@ public class ArticleServiceImpl implements ArticleService {
 
         return jsonArray;
     }
+
+
+    @Override
+    public int updateArticle(Article article) {
+        return articleMapper.updateArticle(article);
+    }
 }

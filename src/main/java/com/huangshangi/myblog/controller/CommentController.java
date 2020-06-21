@@ -1,8 +1,10 @@
 package com.huangshangi.myblog.controller;
 
 import com.alibaba.fastjson.JSONObject;
+import com.huangshangi.myblog.entity.Article;
 import com.huangshangi.myblog.entity.Comment;
 import com.huangshangi.myblog.entity.User;
+import com.huangshangi.myblog.service.ArticleService;
 import com.huangshangi.myblog.service.CommentService;
 import com.huangshangi.myblog.service.UserService;
 import com.huangshangi.myblog.utils.util;
@@ -24,6 +26,9 @@ public class CommentController {
     @Autowired
     UserService userService;
 
+    @Autowired
+    ArticleService articleService;
+
 
     @RequestMapping(value = "/addComment",method = RequestMethod.POST)
     @ResponseBody
@@ -40,8 +45,19 @@ public class CommentController {
         comment.setCreateTime(util.getTime());
         comment.setParentId((int)jsonObject.get("parentId"));
 
-        if(commentService.insertComment(comment)==1)
+        Article article=articleService.getArticleById(comment.getArticleId());
+        User user=userService.getUserInfo(article.getArticleUserId());
+        if(commentService.insertComment(comment)==1){
             res.put("result",1);
+
+            //更新评论数信息
+            article.setArticleCommentCount(article.getArticleCommentCount()+1);
+            user.setCommentCount(user.getCommentCount()+1);
+
+            articleService.updateArticle(article);
+            userService.updateUser(user);
+        }
+
         else
             res.put("result",0);
         return res.toString();
@@ -55,6 +71,8 @@ public class CommentController {
         User user=(User)request.getSession().getAttribute("user");
 
         List<Comment> list=commentService.getCommentsList(user.getUserId(),1,10);
+
+
 
         int count=userService.getCommentCount(user.getUserId());
 

@@ -46,7 +46,7 @@
 </header>
 
 <aside class="side">
-    <div class="about"> <i><a href="/"><img src="/images/avatar.jpg"></a></i>
+    <div class="about"> <i><a href="/images/avatar.jpg"><img src="/images/avatar.jpg"></a></i>
         <p>关于站长的介绍</p>
     </div>
     <div class="weixin"> <img src="http://www.yangqq.com/skin/html/images/wx.jpg">

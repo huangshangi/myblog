@@ -16,6 +16,11 @@ public class Comment {
 
     private String createTime;//评论创建时间
 
+    //临时字段
+    private String articleTitle;//文章标题
+
+    private String commentUser;//评论者姓名
+
     public Comment() {
     }
 
@@ -75,5 +80,21 @@ public class Comment {
 
     public void setCreateTime(String createTime) {
         this.createTime = createTime;
+    }
+
+    public String getArticleTitle() {
+        return articleTitle;
+    }
+
+    public void setArticleTitle(String articleTitle) {
+        this.articleTitle = articleTitle;
+    }
+
+    public String getCommentUser() {
+        return commentUser;
+    }
+
+    public void setCommentUser(String commentUser) {
+        this.commentUser = commentUser;
     }
 }

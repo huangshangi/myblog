@@ -264,7 +264,7 @@
     	//查看文章
 		function checkArticle(category,id){
 
-		    window.location.href="/article/"+category+"/"+id;
+		    window.location.href="/checkArticle/"+id;
 
 
 		}

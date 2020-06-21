@@ -36,8 +36,8 @@
                     <c:when test="${articleList!=null}">
                         <c:forEach var="item" items="${articleList}">
                             <li>
-                                <h2><a href="/checkArticle/${item.articleStatus}/${item.articleId}"+>${item.articleTitle}</a></h2>
-                                <i><a href="/checkArticle/${item.articleStatus}/${item.articleId}"><img src="http://www.yangqq.com/d/file/jstt/bj/2018-06-29/3f0b6da48a6fd4e626a021ff7bd0d74f.jpg"></a></i>
+                                <h2><a href="/checkArticle/${item.articleId}"+>${item.articleTitle}</a></h2>
+                                <i><a href="/checkArticle/${item.articleId}"><img src="http://www.yangqq.com/d/file/jstt/bj/2018-06-29/3f0b6da48a6fd4e626a021ff7bd0d74f.jpg"></a></i>
                                 <p class="blogtext">${item.articleSummary}</p>
                                 <p class="bloginfo"><span>${item.articleUserId}</span><span>${item.articleCreateTime}</span><span>浏览量:${item.articleCheckCount}</span></p>
                             </li>
@@ -72,7 +72,7 @@
                     <c:when test="${rankList}!=null}">
                         <c:forEach items="${rankList}" var="item">
 
-                            <li><a href="/checkArticle/${item.articleStatus}/${item.articleId}"><span>${item.articleCreateTime}</span>${item.articleTitle}</a></li>
+                            <li><a href="/checkArticle/${item.articleId}"><span>${item.articleCreateTime}</span>${item.articleTitle}</a></li>
 
                         </c:forEach>
                     </c:when>
@@ -87,7 +87,7 @@
                     <c:when test="${recommendList}!=null}">
                         <c:forEach items="${recommendList}" var="item">
 
-                            <li><a href="/checkArticle/${item.articleStatus}/${item.articleId}"><span>${item.articleCreateTime}</span>${item.articleTitle}</a></li>
+                            <li><a href="/checkArticle/${item.articleId}"><span>${item.articleCreateTime}</span>${item.articleTitle}</a></li>
 
                         </c:forEach>
                     </c:when>
@@ -102,7 +102,7 @@
                     <c:when test="${headRecommendList}!=null}">
                         <c:forEach items="${headRecommendList}" var="item">
 
-                            <li><a href="/checkArticle/${item.articleStatus}/${item.articleId}"><span>${item.articleCreateTime}</span>${item.articleTitle}</a></li>
+                            <li><a href="/checkArticle/${item.articleId}"><span>${item.articleCreateTime}</span>${item.articleTitle}</a></li>
 
                         </c:forEach>
                     </c:when>

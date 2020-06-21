@@ -127,6 +127,7 @@
         <jsp-property-group>
             <url-pattern>*.jsp</url-pattern>
             <trim-directive-whitespaces>true</trim-directive-whitespaces>
+            <el-ignored>false</el-ignored>
         </jsp-property-group>
     </jsp-config>
 

@@ -184,7 +184,7 @@
         <set>
             articleUserId = #{articleUserId,jdbcType=INTEGER},
             articleTitle = #{articleTitle,jdbcType=VARCHAR},
-            articleCheckCount = #{articleViewCount,jdbcType=INTEGER},
+            articleCheckCount = #{articleCheckCount,jdbcType=INTEGER},
             articleCommentCount = #{articleCommentCount,jdbcType=INTEGER},
             articleCreateTime = #{articleCreateTime,jdbcType=TIMESTAMP},
             articleUpdateTime = #{articleUpdateTime,jdbcType=TIMESTAMP},
@@ -208,7 +208,7 @@
 
     <select id="getArticleCheckCountById" resultType="java.lang.Integer">
 
-        select count(articleCheckCount)
+        select sum(articleCheckCount)
         from
         <include refid="tn"></include>
         where
@@ -219,7 +219,7 @@
 
     <select id="getArticleCommentCountById" resultType="java.lang.Integer">
 
-        select count(articleCommentCount)
+        select sum(articleCommentCount)
         from
         <include refid="tn"></include>
         where

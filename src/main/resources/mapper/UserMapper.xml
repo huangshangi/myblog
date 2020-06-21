@@ -107,7 +107,11 @@
             userImage=#{userImage},
             userIp=#{userIp},
             userRegisterTime=#{userRegisterTime},
-            userLastTime=#{userLastTime}
+            userLastTime=#{userLastTime},
+            checkCount=#{checkCount},
+            commentCount=#{commentCount},
+            articleCount=#{articleCount}
+
 
         </set>
         where  userId=#{userId}

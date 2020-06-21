@@ -30,7 +30,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User getUserInfo(int id) {
-        return null;
+        return userMapper.getUserById(id);
     }
 
     @Override

@@ -130,9 +130,22 @@ public class CommentServiceImpl implements CommentService {
                 temp+=articleList.get(i).getArticleCommentCount();
             else {
                 if(!flag){
-                    resList.addAll(commentMapper.getComments(articleList.get(i).getArticleId(),temp-start+1,1));
+                    List<Comment> tempList=commentMapper.getComments(articleList.get(i).getArticleId(),temp-start+1,1);
+                    for(Comment comment:tempList){
+                        comment.setArticleTitle(articleList.get(i).getArticleTitle());
+                        comment.setCommentUser(userMapper.getUserById(comment.getUid()).getUserName());
+                        resList.add(comment);
+                    }
+
                 }else{
-                    resList.addAll(commentMapper.getComments(articleList.get(i).getArticleId(),end-temp+1,0));
+
+                    List<Comment> tempList=commentMapper.getComments(articleList.get(i).getArticleId(),end-temp+1,0);
+                    for(Comment comment:tempList){
+                        comment.setArticleTitle(articleList.get(i).getArticleTitle());
+                        comment.setCommentUser(userMapper.getUserById(comment.getUid()).getUserName());
+                        resList.add(comment);
+                    }
+
                     break;
                 }
             }

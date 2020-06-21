@@ -51,8 +51,8 @@
 
 
             <div class="nextinfo">
-                <p>上一篇：<a href="/checkArticle/${preArticle.articleStatus}/${preArticle.articleId}">${preArticle.articleTitle}</a></p>
-                <p>下一篇：<a href="/checkArticle/${nextArticle.articleStatus}/${nextArticle.articleId}">${nextArticle.articleTitle}</a></p>
+                <p>上一篇：<a href="/checkArticle/${preArticle.articleId}">${preArticle.articleTitle}</a></p>
+                <p>下一篇：<a href="/checkArticle/${nextArticle.articleId}">${nextArticle.articleTitle}</a></p>
             </div>
         </div>
         <c:choose>
@@ -106,7 +106,7 @@
                 <c:choose>
                     <c:when test="${rankList!=null}">
                         <c:forEach items="${rankList}" var="item">
-                            <li><a href="/checkArticle/${item.articleStatus}/${item.articleId}"><span>${item.articleCreateTime}</span>${item.articleTitle}</a></li>
+                            <li><a href="/checkArticle/${item.articleId}"><span>${item.articleCreateTime}</span>${item.articleTitle}</a></li>
 
                         </c:forEach>
                     </c:when>
@@ -122,7 +122,7 @@
                 <c:choose>
                     <c:when test="${recommendList!=null}">
                         <c:forEach items="${recommendList}" var="item">
-                            <li><a href="/checkArticle/${item.articleStatus}/${item.articleId}"><span>${item.articleCreateTime}</span>${item.articleTitle}</a></li>
+                            <li><a href="/checkArticle/${item.articleId}"><span>${item.articleCreateTime}</span>${item.articleTitle}</a></li>
 
                         </c:forEach>
                     </c:when>
@@ -136,7 +136,7 @@
                 <c:choose>
                     <c:when test="${headRecommendList!=null}">
                         <c:forEach items="${headRecommendList}" var="item">
-                            <li><a href="/checkArticle/${item.articleStatus}/${item.articleId}"><span>${item.articleCreateTime}</span>${item.articleTitle}</a></li>
+                            <li><a href="/checkArticle/${item.articleId}"><span>${item.articleCreateTime}</span>${item.articleTitle}</a></li>
 
                         </c:forEach>
                     </c:when>

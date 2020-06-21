@@ -10,7 +10,7 @@
 
     </resultMap>
     <sql id="tn">
-        friend
+        Friend
     </sql>
     <sql id="baseList">
         friendId,friendLink,friendSummary

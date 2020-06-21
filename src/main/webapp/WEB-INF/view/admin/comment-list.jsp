@@ -88,7 +88,7 @@
                                     <tbody>
 
                                     <c:choose>
-                                        <c:when test="${commentList==null }">
+                                        <c:when test="${commentList==null}">
                                             <tr>
                                                 <th colspan="8" style="text-align: center">暂无数据</th>
                                             </tr>
@@ -96,19 +96,19 @@
 
                                         <c:otherwise>
                                             <c:forEach  items="${commentList}"  var="item">
-                                                <input class="itemId" value="${item.commentId}" type="hidden"/>
-                                                <tr class="gradeX" id="${item.commentId}">
-                                                    <td><input value="${item.commentId}" type="checkbox"/></td>
+                                                <input class="itemId" value="${item.id}" type="hidden"/>
+                                                <tr class="gradeX" id="${item.id}">
+                                                    <td><input value="${item.id}" type="checkbox"/></td>
                                                     <td><c:out value="${item.articleTitle }"></c:out></td>
                                                     <td><c:out value="${item.commentUser }"></c:out></td>
                                                     <td><c:out value="${item.content }"></c:out></td>
-                                                    <td><c:out value="${item.time }"></c:out></td>
+                                                    <td><c:out value="${item.createTime }"></c:out></td>
                                                     <td>
                                                         <div class="tpl-table-black-operation">
                                                             <a href="javascript:;">
                                                                 <i class="am-icon-pencil"></i> 编辑
                                                             </a>
-                                                            <a href="javascript:;" class="tpl-table-black-operation-del" onclick="deleteArticle(${item.commentId})">
+                                                            <a href="javascript:;" class="tpl-table-black-operation-del" onclick="deleteArticle(${item.id})">
                                                                 <i class="am-icon-trash"></i> 删除
                                                             </a>
                                                         </div>
@@ -200,18 +200,18 @@
                     var list=JSON.stringify(result)
                     for(var i=0;i<list.size();i++){
                         var item=list[i];
-                        var tr=" <tr class=\"gradeX\" id=\""+item.commentId+"\">\n" +
-                            "                                                    <td><input value=\""+item.commentId+"\" type=\"checkbox\"/></td>\n" +
+                        var tr=" <tr class=\"gradeX\" id=\""+item.id+"\">\n" +
+                            "                                                    <td><input value=\""+item.id+"\" type=\"checkbox\"/></td>\n" +
                             "                                                    <td>"+item.articleTitle+"</td>\n" +
                             "                                                    <td>"+item.commentUser+"</td>\n" +
                             "                                                    <td>"+item.content+"</td>\n" +
-                            "                                                    <td>"+item.time+"</td>\n" +
+                            "                                                    <td>"+item.createTime+"</td>\n" +
                             "                                                    <td>\n" +
                             "                                                        <div class=\"tpl-table-black-operation\">\n" +
                             "                                                            <a href=\"javascript:;\">\n" +
                             "                                                                <i class=\"am-icon-pencil\"></i> 编辑\n" +
                             "                                                            </a>\n" +
-                            "                                                            <a href=\"javascript:;\" class=\"tpl-table-black-operation-del\" onclick=\"deleteArticle("+item.commentId+")\">\n" +
+                            "                                                            <a href=\"javascript:;\" class=\"tpl-table-black-operation-del\" onclick=\"deleteArticle("+item.id+")\">\n" +
                             "                                                                <i class=\"am-icon-trash\"></i> 删除\n" +
                             "                                                            </a>\n" +
                             "                                                        </div>\n" +

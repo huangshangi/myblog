@@ -46,6 +46,7 @@ public class AdminController {
         List<User>rankList=userService.getUserList();
         //获取新注册用户信息表
         List<User>registerList=userService.getRegisterList();
+
         //获取操作日志
         List<Operation>operationList=operationService.getOperations(user.getUserId(),8);
 

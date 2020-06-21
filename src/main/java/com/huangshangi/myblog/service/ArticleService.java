@@ -64,4 +64,7 @@ public interface ArticleService {
     //获取某一类别文章页数
     int getArticlePageByCategory(int status,int pageNum);
 
+    //更新文章
+    int updateArticle(Article article);
+
 }

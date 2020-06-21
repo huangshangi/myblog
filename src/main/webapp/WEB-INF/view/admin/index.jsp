@@ -113,7 +113,7 @@
                                               <tr class="gradeX">
                                                   <td><c:out value="${status.count }"></c:out></td>
                                                   <td><c:out value="${rankInfo.userName }"></c:out></td>
-                                                  <td><c:out value="${rankInfo.checkCount }"></c:out></td>
+                                                  <td><c:out value="${rankInfo.articleCount }"></c:out></td>
                                                   <td><c:out value="${rankInfo.userLastTime }"></c:out></td>
                                               </tr>
                                           </c:forEach>

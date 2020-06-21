@@ -112,6 +112,10 @@ public class BackArticleController {
 
         res.put("result",1);
 
+        User user=userService.getUserInfo(article.getArticleUserId());
+        user.setArticleCount(user.getArticleCount()+1);
+        userService.updateUser(user);
+
         return res.toString();
     }
 
