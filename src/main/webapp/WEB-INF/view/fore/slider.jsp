@@ -10,6 +10,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <title>myblog</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="/plugin/layui/css/layui.css"  media="all">
 </head>
@@ -47,10 +48,18 @@
 
 <aside class="side">
     <div class="about"> <i><a href="/images/avatar.jpg"><img src="/images/avatar.jpg"></a></i>
-        <p>关于站长的介绍</p>
+        <p>网名：huangshangi</p>
+
+         <p>职业：学生</p>
+        <p>简介：自己经常在网上查看别人的博客资料，深受启发。近来回想自己学习过的知识，繁多杂乱，故
+            搭建了该博客系统保存自己的学习成果与收获</p>
+
+
+
+
     </div>
-    <div class="weixin"> <img src="http://www.yangqq.com/skin/html/images/wx.jpg">
-        <p>关注我 么么哒！</p>
+    <div class="weixin"> <img src="/images/weixin.jpg">
+
     </div>
 </aside>
 

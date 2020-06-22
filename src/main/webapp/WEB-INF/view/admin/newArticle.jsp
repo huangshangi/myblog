@@ -11,7 +11,7 @@
 <html lang="zh">
 <head>
     <meta charset="utf-8" />
-    <title>Auto height - Editor.md examples</title>
+    <title>写文章</title>
     <link rel="stylesheet" href="/plugin/editormd/examples/css/style.css" />
     <link rel="stylesheet" href="/plugin/editormd/css/editormd.css" />
     <link rel="shortcut icon" href="https://pandao.github.io/editor.md/favicon.ico" type="image/x-icon" />

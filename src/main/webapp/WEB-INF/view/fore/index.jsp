@@ -12,7 +12,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>博客前台</title>
+    <title>myblog</title>
     <meta name="keywords" content="关键词,关键词,关键词,关键词,5个关键词" />
     <meta name="description" content="网站简介，不超过80个字" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -176,15 +176,16 @@
         <h2 class="linktitle">合作伙伴</h2>
 
         <ul class="link-text">
-            <li><a href="http://www.yangqq.com">myblog</a></li>
-            <li><a href="http://www.yangqq.com">myblog</a></li>
-            <li><a href="http://www.yangqq.com">myblog</a></li>
-            <li><a href="http://www.yangqq.com">myblog</a></li>
-            <li><a href="http://www.yangqq.com">myblog</a></li>
+            <li><a >myblog</a></li>
+            <li><a >myblog</a></li>
+            <li><a >myblog</a></li>
+            <li><a >myblog</a></li>
+            <li><a >myblog</a></li>
+
         </ul>
     </div>
     <div class="copyright">
-        <p>Copyright 2019I <a href="/">myblog</a></p>
+        <p>Copyright 2019I <a >myblog</a></p>
     </div>
 </div>
 

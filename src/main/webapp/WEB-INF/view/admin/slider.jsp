@@ -67,7 +67,7 @@
             <div class="tpl-sidebar-user-panel">
                 <div class="tpl-user-panel-slide-toggleable">
                     <div class="tpl-user-panel-profile-picture">
-                        <img src="${sessionScope.user.userImage }" alt="">
+                        <img src="/images/avatar.jpg" alt="">
                     </div>
                     <span class="user-panel-logged-in-text">
               <i class="am-icon-circle-o am-text-success tpl-user-panel-status-icon"></i>
@@ -123,7 +123,11 @@
         </div>
  <script src="/plugin/layui/layui.js" charset="utf-8"></script>
 	   <script>
-	
+
+           layui.use("layer",function(){
+               var $ = layui.jquery, layer = layui.layer;
+           })
+
 		     // 侧边菜单
 		     $('.sidebar-nav-sub-title').on('click', function() {
 		         $(this).siblings('.sidebar-nav-sub').slideToggle(80)

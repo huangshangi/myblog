@@ -53,7 +53,7 @@ public class OpearationAop {
             }
         }
         User user=(User)request.getSession().getAttribute("user");
-
+        if(user==null)return;
         //进行数据组装
         com.huangshangi.myblog.entity.Operation operation=new com.huangshangi.myblog.entity.Operation();
         operation.setOperationIp(util.getIpAddr(request));

@@ -7,7 +7,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>网站标题</title>
+    <title>${article.articleTitle}</title>
     <meta name="keywords" content="关键词,关键词,关键词,关键词,5个关键词" />
     <meta name="description" content="网站简介，不超过80个字" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">

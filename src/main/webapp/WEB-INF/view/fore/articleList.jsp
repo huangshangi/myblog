@@ -12,7 +12,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>网站标题</title>
+    <title>${contant}</title>
     <meta name="keywords" content="关键词,关键词,关键词,关键词,5个关键词" />
     <meta name="description" content="网站简介，不超过80个字" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,7 +27,7 @@
 <%@include file="slider.jsp" %>
 <div class="main-content">
 
-    <div class="welcome">${contant}</div>
+    <div class="welcome">您现在的位置是：首页>${contant}</div>
     <div class="blogbox">
         <div class="bloglist">
             <ul>

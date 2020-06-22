@@ -7,31 +7,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dda03f4b-adad-458a-ad93-76dc33516f66" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Java_EE_6_Java_EE_6.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/huangshangi/myblog/controller/CheckArticleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/huangshangi/myblog/controller/ArticleListController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/huangshangi/myblog/controller/CheckArticlesController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/huangshangi/myblog/controller/DeleteArticleController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/huangshangi/myblog/controller/SubmitArticleController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/huangshangi/myblog/controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resource/assets/images/weixin.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/huangshangi/myblog/controller/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/huangshangi/myblog/controller/AdminController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/huangshangi/myblog/controller/BackArticleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/huangshangi/myblog/controller/BackArticleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/huangshangi/myblog/controller/CommentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/huangshangi/myblog/controller/CommentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/huangshangi/myblog/controller/BackArticleController.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/huangshangi/myblog/controller/ForeArticleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/huangshangi/myblog/controller/ForeArticleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/huangshangi/myblog/entity/Comment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/huangshangi/myblog/entity/Comment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/huangshangi/myblog/impl/ArticleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/huangshangi/myblog/impl/ArticleServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/huangshangi/myblog/impl/CommentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/huangshangi/myblog/impl/CommentServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/huangshangi/myblog/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/huangshangi/myblog/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/huangshangi/myblog/service/ArticleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/huangshangi/myblog/service/ArticleService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/db.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/ArticleMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/ArticleMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/FriendMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/FriendMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/huangshangi/myblog/controller/PersonInfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/huangshangi/myblog/controller/PersonInfoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/huangshangi/myblog/utils/OpearationAop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/huangshangi/myblog/utils/OpearationAop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/spring/spring-mvc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/spring/spring-mvc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/spring/spring-mybatis.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/spring/spring-mybatis.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/admin/comment-list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/admin/comment-list.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/admin/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/admin/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/admin/modifyPassword.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/admin/modifyPassword.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/admin/newArticle.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/admin/newArticle.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/admin/personInfo.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/admin/personInfo.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/admin/slider.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/admin/slider.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/admin/table-list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/admin/table-list.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/fore/articleList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/fore/articleList.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/fore/checkArticle.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/fore/checkArticle.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/fore/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/fore/index.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/fore/slider.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/fore/slider.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resource/assets/images/avatar.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resource/assets/images/avatar.jpg" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,13 +94,13 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../professionApp/tomcat/lib/servlet-api.jar!/" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/webapp/resource/assets/images" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="File.Encoding" />
+    <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -110,11 +110,11 @@
       <recent name="C:\workplace\idea\myblog\src\main\webapp\WEB-INF" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\hzh17\IdeaProjects\myblog\src\main\webapp\resource\assets\images" />
       <recent name="C:\workplace\idea\myblog\src\main\webapp\resource\assets\js" />
       <recent name="C:\workplace\idea\myblog\src\main\webapp\resource\assets\css" />
       <recent name="C:\workplace\idea\myblog\src\main\webapp\resource\assets\plugin" />
       <recent name="C:\workplace\idea\myblog\src\main\webapp\resource\assets\fonts" />
-      <recent name="C:\workplace\idea\myblog\src\main\webapp\resource\assets\img" />
     </key>
   </component>
   <component name="RunManager" selected="Tomcat Server.Tomcat 8.5.47">
@@ -421,7 +421,9 @@
       <workItem from="1574350189437" duration="846000" />
       <workItem from="1574484371717" duration="28032000" />
       <workItem from="1592738288807" duration="2175000" />
-      <workItem from="1592740483325" duration="11437000" />
+      <workItem from="1592740483325" duration="11796000" />
+      <workItem from="1592795702290" duration="6045000" />
+      <workItem from="1592804701494" duration="996000" />
     </task>
     <task id="LOCAL-00001" summary="目录确定">
       <created>1572445981409</created>
@@ -577,7 +579,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574350915049</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="fix bugs">
+      <created>1592752356655</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1592752356655</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TodoView">
@@ -631,69 +640,78 @@
     <MESSAGE value="留言逻辑完成" />
     <MESSAGE value="评论逻辑完成" />
     <MESSAGE value="安全性待配置" />
-    <option name="LAST_COMMIT_MESSAGE" value="安全性待配置" />
+    <MESSAGE value="fix bugs" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix bugs" />
   </component>
   <component name="WindowStateProjectService">
     <state x="574" y="118" key="#com.intellij.ide.util.MemberChooser" timestamp="1592751824876">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="574" y="118" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1592751824876" />
+    <state x="367" y="0" key="CommitChangelistDialog2" timestamp="1592752355376">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="367" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1592752355376" />
     <state x="445" y="153" key="FileChooserDialogImpl" timestamp="1592738434550">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="445" y="153" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1592738434550" />
-    <state width="1445" height="286" key="GridCell.Tab.0.bottom" timestamp="1592752267356">
+    <state width="1445" height="286" key="GridCell.Tab.0.bottom" timestamp="1592805401580">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1445" height="286" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1592752267356" />
-    <state width="1445" height="286" key="GridCell.Tab.0.center" timestamp="1592752267356">
+    <state width="1445" height="286" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1592805401580" />
+    <state width="1445" height="286" key="GridCell.Tab.0.center" timestamp="1592805401580">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1445" height="286" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1592752267356" />
-    <state width="1445" height="286" key="GridCell.Tab.0.left" timestamp="1592752267356">
+    <state width="1445" height="286" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1592805401580" />
+    <state width="1445" height="286" key="GridCell.Tab.0.left" timestamp="1592805401580">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1445" height="286" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1592752267356" />
-    <state width="1445" height="286" key="GridCell.Tab.0.right" timestamp="1592752267356">
+    <state width="1445" height="286" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1592805401580" />
+    <state width="1445" height="286" key="GridCell.Tab.0.right" timestamp="1592805401580">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1445" height="286" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1592752267356" />
-    <state width="1445" height="286" key="GridCell.Tab.1.bottom" timestamp="1592752267356">
+    <state width="1445" height="286" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1592805401580" />
+    <state width="1445" height="286" key="GridCell.Tab.1.bottom" timestamp="1592805401580">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1445" height="286" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1592752267356" />
-    <state width="1445" height="286" key="GridCell.Tab.1.center" timestamp="1592752267356">
+    <state width="1445" height="286" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1592805401580" />
+    <state width="1445" height="286" key="GridCell.Tab.1.center" timestamp="1592805401580">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1445" height="286" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1592752267356" />
-    <state width="1445" height="286" key="GridCell.Tab.1.left" timestamp="1592752267356">
+    <state width="1445" height="286" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1592805401580" />
+    <state width="1445" height="286" key="GridCell.Tab.1.left" timestamp="1592805401580">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1445" height="286" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1592752267356" />
-    <state width="1445" height="286" key="GridCell.Tab.1.right" timestamp="1592752267356">
+    <state width="1445" height="286" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1592805401580" />
+    <state width="1445" height="286" key="GridCell.Tab.1.right" timestamp="1592805401580">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1445" height="286" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1592752267356" />
-    <state width="1445" height="286" key="GridCell.Tab.2.bottom" timestamp="1592752267357">
+    <state width="1445" height="286" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1592805401580" />
+    <state width="1445" height="286" key="GridCell.Tab.2.bottom" timestamp="1592805401580">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1445" height="286" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1592752267357" />
-    <state width="1445" height="286" key="GridCell.Tab.2.center" timestamp="1592752267356">
+    <state width="1445" height="286" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1592805401580" />
+    <state width="1445" height="286" key="GridCell.Tab.2.center" timestamp="1592805401580">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1445" height="286" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1592752267356" />
-    <state width="1445" height="286" key="GridCell.Tab.2.left" timestamp="1592752267356">
+    <state width="1445" height="286" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1592805401580" />
+    <state width="1445" height="286" key="GridCell.Tab.2.left" timestamp="1592805401580">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1445" height="286" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1592752267356" />
-    <state width="1445" height="286" key="GridCell.Tab.2.right" timestamp="1592752267356">
+    <state width="1445" height="286" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1592805401580" />
+    <state width="1445" height="286" key="GridCell.Tab.2.right" timestamp="1592805401580">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1445" height="286" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1592752267356" />
-    <state x="249" y="0" key="SettingsEditor" timestamp="1592747392629">
+    <state width="1445" height="286" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1592805401580" />
+    <state x="249" y="0" key="SettingsEditor" timestamp="1592752551195">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="249" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1592747392629" />
+    <state x="249" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1592752551195" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1592752555800">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1592752555800" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
